@@ -26,6 +26,7 @@ export async function POST(req: Request) {
   try {
     const data: OrderData = await req.json();
     const { items, customerInfo } = data;
+  
 
     // Crear libro de Excel
     const workbook = new ExcelJS.Workbook();
@@ -64,8 +65,9 @@ export async function POST(req: Request) {
         user: process.env.SMTP_USER,  // El correo desde el cual se enviarán los correos.
         pass: process.env.SMTP_PASS,
       },
+   
     });
-
+    
     // Crear la tabla HTML para el correo
     const tableRows = items.map(item => ` 
       <tr> 
@@ -114,14 +116,21 @@ export async function POST(req: Request) {
         },
       ],
     });
+    
 
     // Responder con éxito
     return NextResponse.json({ success: true });
+    
   } catch (error) {
+    
     console.error('Error sending order:', error);
     return NextResponse.json({
+      
       success: false,
       error: 'Error al procesar el pedido',
     });
+  
   }
+
+  
 }
