@@ -46,7 +46,7 @@ export default async function ProductosPage() {
                   src={product.images[0]}  // Usa la primera imagen del array
                   alt={product.name}
                   fill
-                  className="object-scale-down transition-all duration-300 group-hover:brightness-110"
+                  className="object-center transition-all duration-300 group-hover:brightness-110"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   quality={90}
                 />

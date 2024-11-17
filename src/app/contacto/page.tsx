@@ -48,7 +48,7 @@ export default function ContactoPage() {
                 <MapPin className="h-6 w-6 text-primary" />
                 <div>
                   <h3 className="font-semibold">Dirección</h3>
-                  <p>Calle 123, Buenos Aires, Argentina</p>
+                  <p>J. Saulmer 1008, Luján, Buenos Aires</p>
                 </div>
               </div>
 
@@ -56,7 +56,7 @@ export default function ContactoPage() {
                 <Phone className="h-6 w-6 text-primary" />
                 <div>
                   <h3 className="font-semibold">Teléfono</h3>
-                  <p>(011) 4757-0775</p>
+                  <p>(+54) 2323 423-702</p>
                 </div>
               </div>
 
@@ -64,7 +64,7 @@ export default function ContactoPage() {
                 <Mail className="h-6 w-6 text-primary" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p>info@nasellocables.com</p>
+                  <p>ventas@nasellocables.com.ar</p>
                 </div>
               </div>
 
@@ -72,7 +72,7 @@ export default function ContactoPage() {
                 <Clock className="h-6 w-6 text-primary" />
                 <div>
                   <h3 className="font-semibold">Horario de Atención</h3>
-                  <p>Lunes a Viernes: 9:00 - 18:00</p>
+                  <p>Lunes a Viernes: 9:00 - 16:00</p>
                 </div>
               </div>
             </div>

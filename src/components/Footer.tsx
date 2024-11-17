@@ -42,9 +42,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white">Contacto</h3>
             <ul className="mt-4 space-y-2">
-              <li>Calle 123, Buenos Aires</li>
-              <li>(011) 4757-0775</li>
-              <li>info@nasellocables.com</li>
+              <li>J. Saulmer 1008,Luján, Buenos Aires</li>
+              <li>(+54) 2323 423-702</li>
+              <li>ventas@nasellocables.com</li>
             </ul>
           </div>
           
@@ -73,14 +73,15 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin className="h-6 w-6" />
+              
               </a>
             </div>
           </div>
         </div>
         
         <div className="mt-8 border-t border-gray-800 pt-8 text-center">
-          <p>© {new Date().getFullYear()} Nasello Cables. Todos los derechos reservados.</p>
+          <p className="text-sm">© {new Date().getFullYear()} Nasello Cables. Todos los derechos reservados.| Developed by Vicente Woinilowicz</p>
+        
         </div>
       </div>
     </footer>

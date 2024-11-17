@@ -24,11 +24,11 @@ const Navbar = () => {
         <div className="container mx-auto flex justify-end gap-6 text-sm text-white">
           <a href="tel:+541147570775" className="flex items-center gap-2">
             <Phone className="h-4 w-4" />
-            <span>(011) 4757-0775</span>
+            <span>(+54) 2323 423-702</span>
           </a>
           <a href="mailto:dasshsingh.96@gmail.com" className="flex items-center gap-2">
             <Mail className="h-4 w-4" />
-            <span>info@nasellocables.com</span>
+            <span>ventas@nasellocables.com.ar</span>
           </a>
         </div>
       </div>
@@ -36,12 +36,14 @@ const Navbar = () => {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex-shrink-0">
+            <Link href="/">
             <Image
            src="/assets/logo.png"
             width={245}
             height={26}
             alt="logo"
             />
+            </Link>
 
           </div>
           

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter, Linkedin, Youtube, Mail } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Linkedin, Youtube, Mail, MessageCircle } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
 interface SocialMediaProps {
@@ -21,28 +21,16 @@ const SocialMediaFloat = ({ className }: SocialMediaProps) => {
       color: 'hover:text-pink-600'
     },
     {
-      name: 'Twitter',
-      icon: Twitter,
-      url: 'https://twitter.com/tuempresa',
-      color: 'hover:text-blue-400'
-    },
-    {
-      name: 'LinkedIn',
-      icon: Linkedin,
-      url: 'https://linkedin.com/company/tuempresa',
-      color: 'hover:text-blue-700'
-    },
-    {
-      name: 'YouTube',
-      icon: Youtube,
-      url: 'https://youtube.com/tuempresa',
-      color: 'hover:text-red-600'
-    },
-    {
       name: 'Email',
       icon: Mail,
       url: 'mailto:contacto@tuempresa.com',
       color: 'hover:text-gray-600'
+    },
+    {
+      name: 'Whatsapp',
+      icon: MessageCircle,
+      url: 'https://wa.me/15551234567',
+      color: 'hover:text-green-600'
     }
   ];
 

@@ -183,7 +183,7 @@ export default function PedidosPage() {
                 <Input
                   value={customerInfo.name}
                   onChange={(e) => setCustomerInfo({ ...customerInfo, name: e.target.value })}
-                  placeholder="Nombre completo"
+                  placeholder="Nombre completo o de tu empresa"
                   required
                 />
               </div>

@@ -47,28 +47,28 @@ export function ImageSlider() {
       
       <div ref={emblaRef} className="h-full overflow-hidden">
         <div className="flex h-full">
-          {slides.map((slide, index) => (
+          {slides.map((slider, index) => (
             <div
-              key={slide.id}
+              key={slider.id}
               className="relative flex-[0_0_100%] min-w-0 h-full flex items-center justify-center "
             >
               <div className="relative w-full h-full flex items-center justify-center">
                 <Image
-                  src={`/assets/slide${slide.id}.jpg`}
-                  alt={slide.title}
+                  src={`/assets/slider${slider.id}.jpg`}
+                  alt={slider.title}
                   fill
                   priority={index === 0}
                   className="object-cover"
-                  sizes="100vw"
-                  quality={90}
+                  sizes="1000vh"
+                  quality={100}
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-8 z-20 bg-gradient-to-t from-black/80 to-transparent">
                   <div className="max-w-screen-xl mx-auto">
                     <h2 className="text-4xl font-bold text-white mb-2 tracking-tight">
-                      {slide.title}
+                      {slider.title}
                     </h2>
                     <p className="text-lg text-white/90">
-                      {slide.description}
+                      {slider.description}
                     </p>
                   </div>
                 </div>
