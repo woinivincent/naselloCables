@@ -9,7 +9,7 @@ export default function EmpresaPage() {
         {/* Hero Section */}
         <div className="relative mb-12 h-[400px]">
           <Image
-            src="/assets/slide1.jpg"
+            src="/assets/slider5.jpg"
             alt="Fábrica Nasello Cables"
             fill
             className="object-cover brightness-50"
