@@ -129,7 +129,7 @@ export default function PedidosPage() {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch('${window.location.origin}/api/send-order', {
+      const response = await fetch(`${window.location.origin}/api/send-order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
