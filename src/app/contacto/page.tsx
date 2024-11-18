@@ -18,10 +18,20 @@ export default function ContactoPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Construir la URL mailto con los datos del formulario
+    const mailtoLink = `mailto:ventas@nasellocables.com.ar?subject=Consulta de ${formData.nombre}&body=Nombre: ${formData.nombre}%0AEmail: ${formData.email}%0ATeléfono: ${formData.telefono}%0AMensaje: ${formData.mensaje}`;
+
+    // Intentar abrir el cliente de correo del usuario
+    window.location.href = mailtoLink;
+
+    // Mostrar el mensaje de éxito (opcional)
     toast({
-      title: "Mensaje enviado",
-      description: "Nos pondremos en contacto contigo pronto.",
+      title: "Correo abierto",
+      description: "Se ha abierto tu cliente de correo con los datos del formulario. Puedes enviarlo manualmente.",
     });
+
+    // Limpiar el formulario
     setFormData({ nombre: "", email: "", telefono: "", mensaje: "" });
   };
 
