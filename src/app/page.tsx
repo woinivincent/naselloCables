@@ -21,7 +21,7 @@ export default function Home() {
       <section className="relative h-[600px]">
         <ImageSlider
         />
-        <div className="absolute inset-0 flex z-10 items-center justify-center">
+        <div className="absolute inset-0 flex z-10 items-center justify-center max-sm:p-4">
           <div className="container text-center text-white">
             <h1 className="mb-6 text-5xl font-bold">
               Calidad y Confiabilidad en Cables Eléctricos
@@ -37,7 +37,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className=" flex justify-center py-16 ">
+      <section className=" flex justify-center py-16  max-sm:p-4">
         <div className="container">
           <div className="grid gap-8 md:grid-cols-4 items-center">
             <Card>
@@ -84,7 +84,7 @@ export default function Home() {
       </section>
 
       {/* Products Preview Section */}
-      <section className="bg-gray-50 py-16 flex justify-center" >
+      <section className="bg-gray-50 py-16 flex justify-center max-sm:p-4" >
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold">
             Nuestros Productos Destacados

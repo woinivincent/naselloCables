@@ -4,17 +4,17 @@ import { CheckCircle, Shield, Award, FileCheck } from "lucide-react";
 
 export default function CalidadPage() {
   return (
-    <div className="flex justify-center">
-      <div className="container py-12">
+    <div className="flex justify-center ">
+      <div className="container py-12 ">
         {/* Hero Section */}
-        <div className="relative mb-12 h-[400px]">
+        <div className="relative mb-12 h-[400px] ">
           <Image
             src="/assets/DESPACHO.jpg"
             alt="Control de Calidad"
             fill
             className="object-cover brightness-50"
           />
-          <div className="absolute inset-0 flex items-center justify-center text-center text-white">
+          <div className="absolute inset-0 flex items-center justify-center text-center text-white ">
             <div>
               <h1 className="mb-4 text-5xl font-bold">Gestión de Calidad</h1>
               <p className="text-xl">
@@ -25,7 +25,7 @@ export default function CalidadPage() {
         </div>
 
         {/* Certificaciones */}
-        <div className="mb-16">
+        <div className="mb-16 max-sm:p-4">
           <h2 className="mb-8 text-3xl font-bold">Nuestras Certificaciones</h2>
           <div className="grid gap-6 md:grid-cols-4">
             <Card>
@@ -71,7 +71,7 @@ export default function CalidadPage() {
         </div>
 
         {/* Proceso de Control */}
-        <div className="mb-16">
+        <div className="mb-16 max-sm:p-4">
           <h2 className="mb-8 text-3xl font-bold">Proceso de Control de Calidad</h2>
           <div className="grid gap-8 md:grid-cols-2">
             <div>
@@ -102,8 +102,8 @@ export default function CalidadPage() {
         </div>
 
         {/* Laboratorio */}
-        <div>
-          <h2 className="mb-8 text-3xl font-bold">Nuestro Laboratorio</h2>
+        <div className="max-sm:p-4">
+          <h2 className="mb-8 text-3xl font-bold ">Nuestro Laboratorio</h2>
           <div className="grid gap-8 md:grid-cols-3">
             <div className="relative h-[250px]">
               <Image

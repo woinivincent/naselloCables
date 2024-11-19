@@ -4,7 +4,7 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-primary text-white">
-      <div className="container mx-auto  py-12">
+      <div className="container mx-auto  py-12 max-sm:p-4">
         <div className="grid grid-cols-1  gap-8 md:grid-cols-4">
           <div className=""> 
             <h3 className="text-lg text font-semibold text-white">Nasello Cables</h3>

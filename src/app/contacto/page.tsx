@@ -43,11 +43,11 @@ export default function ContactoPage() {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center max-sm:p-4">
       <div className="container py-12">
         <h1 className="mb-8 text-center text-4xl font-bold">Contáctenos</h1>
 
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid gap-12 md:grid-cols-2 ">
           {/* Información de Contacto */}
           <div>
             <h2 className="mb-6 text-2xl font-semibold">
@@ -92,11 +92,12 @@ export default function ContactoPage() {
               <div className="relative h-[300px] overflow-hidden rounded-lg">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.0029909511322!2d-59.0954285236379!3d-34.57879087296337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc87e77d531063%3A0xfdd24c2bf4f40b00!2sNaselo%20cables%20sa!5e0!3m2!1ses-419!2sar!4v1731618066178!5m2!1ses-419!2sar" 
-                  width="700px"
+                  width="450"
                   height="400"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
+                  className="sm:w-full sm:h-full"
                 ></iframe>
               </div>
             </div>
@@ -161,7 +162,7 @@ export default function ContactoPage() {
                 />
               </div>
 
-              <Button type="submit" className="w-full bg-primary">
+              <Button type="submit" className="w-full bg-primary sm:w-auto">
                 Enviar Mensaje
               </Button>
             </form>

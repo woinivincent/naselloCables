@@ -25,7 +25,7 @@ export default function EmpresaPage() {
         </div>
 
         {/* Historia y Valores */}
-        <div className="mb-16">
+        <div className="mb-16 max-sm:p-4">
           <h2 className="mb-8 text-3xl font-bold">Historia y Valores</h2>
           <div className="grid gap-8 md:grid-cols-2">
             <div>
@@ -52,7 +52,7 @@ export default function EmpresaPage() {
         </div>
 
         {/* Pilares */}
-        <div className="mb-16">
+        <div className="mb-16 max-sm:p-4">
           <h2 className="mb-8 text-3xl font-bold">Nuestros Pilares</h2>
           <div className="grid gap-6 md:grid-cols-4">
             <Card>
@@ -98,7 +98,7 @@ export default function EmpresaPage() {
         </div>
 
         {/* Instalaciones */}
-        <div>
+        <div className="max-sm:p-4">
           <h2 className="mb-8 text-3xl font-bold">Nuestras Instalaciones</h2>
           <div className="grid gap-6 md:grid-cols-3">
             <div className="relative h-[250px]">
