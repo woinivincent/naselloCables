@@ -70,8 +70,8 @@ export default function PedidosPage() {
   };
 
   const handleTypeChange = (value: string) => {
-    setCurrentItem({ 
-      ...currentItem, 
+    setCurrentItem({
+      ...currentItem,
       type: value,
       code: "", // Resetear el código cuando cambia el tipo
       color: "" // Resetear el color cuando cambia el tipo
@@ -79,8 +79,8 @@ export default function PedidosPage() {
   };
 
   const handleCodeChange = (value: string) => {
-    setCurrentItem({ 
-      ...currentItem, 
+    setCurrentItem({
+      ...currentItem,
       code: value
     });
   };
@@ -134,9 +134,9 @@ export default function PedidosPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           items,
-          customerInfo 
+          customerInfo
         }),
       });
 
@@ -166,7 +166,7 @@ export default function PedidosPage() {
     }
   };
 
- 
+
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-background">
       <div className="w-full max-w-4xl px-4 py-12">
@@ -176,7 +176,7 @@ export default function PedidosPage() {
           {/* Información de contacto */}
           <div className="rounded-lg border p-6 bg-card">
             <h2 className="mb-4 text-xl font-semibold">Información de Contacto</h2>
-            
+
             <div className="grid gap-4 md:grid-cols-2">
               <div>
                 <label className="mb-2 block text-sm font-medium">Nombre</label>
@@ -225,7 +225,7 @@ export default function PedidosPage() {
           {/* Agregar productos */}
           <div className="rounded-lg border p-6 bg-card">
             <h2 className="mb-4 text-xl font-semibold">Agregar Productos</h2>
-            
+
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               <div>
                 <label className="mb-2 block text-sm font-medium">Tipo</label>
@@ -300,8 +300,9 @@ export default function PedidosPage() {
             <Button
               type="button"
               onClick={addItem}
-              className="mt-4"
+              className="mt-4 bg-primary text-white hover:bg-secondary"
               variant="secondary"
+
             >
               <Plus className="mr-2 h-4 w-4" /> Agregar al Pedido
             </Button>
@@ -311,7 +312,7 @@ export default function PedidosPage() {
           {items.length > 0 && (
             <div className="rounded-lg border p-6 bg-card">
               <h2 className="mb-4 text-xl font-semibold">Resumen del Pedido</h2>
-              
+
               <Table>
                 <TableHeader>
                   <TableRow>
