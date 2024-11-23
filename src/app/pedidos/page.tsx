@@ -18,7 +18,7 @@ import { Plus, Send, Trash2, Loader2 } from "lucide-react";
 import InfoLegend from "@/components/InfoLegend";
 
 // Importar el catálogo
-import cableCatalog from '../../../data/cable_catalog.json';
+import cableCatalog from '../../../public/data/cable_catalog.json';
 
 interface OrderItem {
   code: string;

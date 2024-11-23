@@ -20,7 +20,7 @@ type ProductData = {
 
 export default async function ProductosPage() {
   // Ruta del archivo JSON
-  const filePath = path.join(process.cwd(), "data", "cable_catalog.json");
+  const filePath = path.join(process.cwd(),"public", "data", "cable_catalog.json");
   const jsonData = fs.readFileSync(filePath, "utf-8");
   const parsedData = JSON.parse(jsonData);
 

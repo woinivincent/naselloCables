@@ -6,7 +6,6 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Package, Shield, Truck, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Carousel from "@/components/Carousel";
-
 type Product = {
   name: string;
   description: string;
@@ -16,12 +15,35 @@ type Product = {
   colors: string[];
 };
 
-async function getProductById(id: string): Promise<Product | null> {
+// Utility function to get catalog data
+async function getCatalogData() {
   try {
-    const filePath = path.join(process.cwd(), "data", "cable_catalog.json");
-    const jsonData = fs.readFileSync(filePath, "utf-8");
-    const parsedData = JSON.parse(jsonData);
-    return parsedData.cable_catalog[id] || null;
+    const filePath = path.join(process.cwd(), 'public', 'data', 'cable_catalog.json');
+
+    if (!fs.existsSync(filePath)) {
+      console.error('Catalog file not found at:', filePath);
+      return null;
+    }
+
+    const jsonData = await fs.promises.readFile(filePath, "utf-8");
+    return JSON.parse(jsonData);
+  } catch (error) {
+    console.error('Error reading catalog data:', error);
+    return null;
+  }
+}
+
+async function getProductById(params: Promise<{ id: string }>): Promise<Product | null> {
+  try {
+    const resolvedParams = await params;
+    const catalogData = await getCatalogData();
+
+    if (!catalogData || !catalogData.cable_catalog) {
+      console.error('Invalid catalog data structure');
+      return null;
+    }
+
+    return catalogData.cable_catalog[resolvedParams.id] || null;
   } catch (error) {
     console.error('Error loading product:', error);
     return null;
@@ -30,11 +52,14 @@ async function getProductById(id: string): Promise<Product | null> {
 
 export async function generateStaticParams() {
   try {
-    const filePath = path.join(process.cwd(), "data", "cable_catalog.json");
-    const jsonData = fs.readFileSync(filePath, "utf-8");
-    const parsedData = JSON.parse(jsonData);
-    
-    return Object.keys(parsedData.cable_catalog).map((id) => ({
+    const catalogData = await getCatalogData();
+
+    if (!catalogData || !catalogData.cable_catalog) {
+      console.error('Invalid catalog data structure for static params');
+      return [];
+    }
+
+    return Object.keys(catalogData.cable_catalog).map((id) => ({
       id: id,
     }));
   } catch (error) {
@@ -43,17 +68,15 @@ export async function generateStaticParams() {
   }
 }
 
-type PageParams = {
-  id: string;
-};
-
 type Props = {
-  params: PageParams;
+  params: Promise<{
+    id: string;
+  }>;
 };
 
-//@ts-ignore
 export default async function ProductPage({ params }: Props) {
-  const product = await getProductById(params.id);
+  const resolvedParams = await params;
+  const product = await getProductById(Promise.resolve(resolvedParams));
 
   if (!product) {
     notFound();
