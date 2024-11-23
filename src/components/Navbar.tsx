@@ -24,11 +24,11 @@ const Navbar = () => {
         <div className="container mx-auto flex justify-end gap-6 text-sm text-white max-sm:p-4">
           <a href="tel:+541147570775" className="flex items-center gap-2">
             <Phone className="h-4 w-4" />
-            <span>(+54) 2323 423-702</span>
+            <span>(+54) 9 2323 35-4771</span>
           </a>
           <a href="mailto:dasshsingh.96@gmail.com" className="flex items-center gap-2">
             <Mail className="h-4 w-4" />
-            <span>ventas@nasellocables.com.ar</span>
+            <span>info@nasellocables.com.ar</span>
           </a>
         </div>
       </div>

@@ -5,7 +5,9 @@
       "name": "Cable Bipolar Cristal",
       "description": "Cable bipolar con aislación cristal transparente, ideal para instalaciones a la vista. Conductor flexible de cobre con doble aislación de PVC.",
       "images": [
-        "/assets/cristalparalelo.jpg"
+        "/assets/cristalparalelo.jpg",
+         "/assets/Bipolarsub.jpg"
+        
        
       ],
       "codes": [
@@ -15,8 +17,13 @@
         "CRIS2X2.5"
       ],
       "colors": [
-        "NEGRO",
-        "BLANCO"
+        " No disponible"
+      
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
       ],
       "technical_specs": "Cable según norma NM 247-3, tensión nominal 300/500V"
     },
@@ -37,6 +44,11 @@
       "colors": [
         "NEGRO",
         "BLANCO"
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
       ],
       "technical_specs": "Cable según norma NM 247-3, tensión nominal 300/500V"
     },
@@ -76,6 +88,11 @@
         "NE",
         "BL"
       ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
+      ],
       "technical_specs": "Certificación antillama, libre de metales pesados"
     },
     "automotor_bateria": {
@@ -99,6 +116,11 @@
         "ROJO",
         "NEGRO"
       ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
+      ],
       "technical_specs": "Alta resistencia a aceites y temperatura"
     },
     "soldadura_goma_iec": {
@@ -120,8 +142,13 @@
         "G150"
       ],
       "colors": [
-        "NEGRO",
-        "BLANCO"
+        " No disponible"
+      
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
       ],
       "technical_specs": "Norma IEC, alta resistencia térmica"
     },
@@ -143,8 +170,13 @@
         "A120"
       ],
       "colors": [
-        "NEGRO",
-        "BLANCO"
+        " No disponible"
+      
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
       ],
       "technical_specs": "Norma IEC, cubierta resistente a la abrasión"
     },
@@ -162,8 +194,13 @@
         "BA2x1.5"
       ],
       "colors": [
-        "NEGRO",
-        "BLANCO"
+        "",
+        ""
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
       ],
       "technical_specs": "Conductor de cobre OFC, baja resistencia"
     },
@@ -188,8 +225,13 @@
         "S240"
       ],
       "colors": [
-        "NEGRO",
-        "BLANCO"
+        " No disponible"
+      
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
       ],
       "technical_specs": "0,6/1,1 kV según norma NM 2178"
     },
@@ -237,8 +279,13 @@
         "S7x2.5"
       ],
       "colors": [
-        "NEGRO",
-        "BLANCO"
+        " No disponible"
+      
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
       ],
       "technical_specs": "0,6/1,1 kV según norma NM 2178"
     },
@@ -265,8 +312,13 @@
         "BS4x2.5"
       ],
       "colors": [
-        "NEGRO",
-        "BLANCO"
+        " No disponible"
+      
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
       ],
       "technical_specs": "Diseño plano especial para bombas sumergibles"
     },
@@ -292,8 +344,13 @@
         "DES200"
       ],
       "colors": [
-        "NEGRO",
-        "BLANCO"
+        " No disponible"
+      
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
       ],
       "technical_specs": "100% cobre, alta conductividad"
     },
@@ -342,8 +399,13 @@
         "8X1"
       ],
       "colors": [
-        "NEGRO",
-        "BLANCO"
+        " No disponible"
+      
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
       ],
       "technical_specs": "Según norma NM 247-5:2003"
     }

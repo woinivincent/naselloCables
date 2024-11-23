@@ -58,7 +58,7 @@ export function ImageSlider() {
                   alt={slider.title}
                   fill
                   priority={index === 0}
-                  className="object-cover"
+                  className="object-fit"
                   sizes="1000vh"
                   quality={100}
                 />

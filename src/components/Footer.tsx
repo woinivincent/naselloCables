@@ -9,7 +9,7 @@ const Footer = () => {
           <div className=""> 
             <h3 className="text-lg text font-semibold text-white">Nasello Cables</h3>
             <p className="mt-4">
-              Más de 50 años de experiencia en la fabricación y comercialización de cables y conductores eléctricos.
+              Más de 40 años de experiencia en la fabricación y comercialización de cables y conductores eléctricos.
             </p>
           </div>
           
@@ -42,9 +42,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white">Contacto</h3>
             <ul className="mt-4 space-y-2">
-              <li>J. Saulmer 1008,Luján, Buenos Aires</li>
-              <li>(+54) 2323 423-702</li>
-              <li>ventas@nasellocables.com</li>
+              <li>Luján, Buenos Aires</li>
+              <li>(+54) 9 2323 35-4771</li>
+              <li>info@nasellocables.com</li>
             </ul>
           </div>
           
@@ -60,7 +60,7 @@ const Footer = () => {
                 <Facebook className="h-6 w-6" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/nasellocables_sa/"
                 className="hover:text-white"
                 target="_blank"
                 rel="noopener noreferrer"

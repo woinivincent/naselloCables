@@ -58,7 +58,7 @@ export default function ContactoPage() {
                 <MapPin className="h-6 w-6 text-primary" />
                 <div>
                   <h3 className="font-semibold">Dirección</h3>
-                  <p>J. Saulmer 1008, Luján, Buenos Aires</p>
+                  <p> Luján, Buenos Aires</p>
                 </div>
               </div>
 
@@ -66,7 +66,7 @@ export default function ContactoPage() {
                 <Phone className="h-6 w-6 text-primary" />
                 <div>
                   <h3 className="font-semibold">Teléfono</h3>
-                  <p>(+54) 2323 423-702</p>
+                  <p>(+54) 9 2323 35-4771</p>
                 </div>
               </div>
 
@@ -74,7 +74,7 @@ export default function ContactoPage() {
                 <Mail className="h-6 w-6 text-primary" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p>ventas@nasellocables.com.ar</p>
+                  <p>info@nasellocables.com.ar</p>
                 </div>
               </div>
 
@@ -82,25 +82,12 @@ export default function ContactoPage() {
                 <Clock className="h-6 w-6 text-primary" />
                 <div>
                   <h3 className="font-semibold">Horario de Atención</h3>
-                  <p>Lunes a Viernes: 9:00 - 16:00</p>
+                  <p>Lunes a Viernes: 8:30 - 16:30</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8">
-              <h2 className="mb-4 text-2xl font-semibold">Ubicación</h2>
-              <div className="relative h-[300px] overflow-hidden rounded-lg">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.0029909511322!2d-59.0954285236379!3d-34.57879087296337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc87e77d531063%3A0xfdd24c2bf4f40b00!2sNaselo%20cables%20sa!5e0!3m2!1ses-419!2sar!4v1731618066178!5m2!1ses-419!2sar" 
-                  width="450"
-                  height="400"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  className="sm:w-full sm:h-full"
-                ></iframe>
-              </div>
-            </div>
+
           </div>
 
           {/* Formulario de Contacto */}

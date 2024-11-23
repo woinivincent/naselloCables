@@ -15,9 +15,15 @@ const SocialMediaFloat = ({ className }: SocialMediaProps) => {
       color: 'hover:text-blue-600'
     },
     {
+      name: 'Youtube',
+      icon: Youtube,
+      url: 'https://facebook.com/tuempresa',
+      color: 'hover:text-red-600'
+    },
+    {
       name: 'Instagram',
       icon: Instagram,
-      url: 'https://instagram.com/tuempresa',
+      url: 'https://www.instagram.com/nasellocables_sa/',
       color: 'hover:text-pink-600'
     },
     {
