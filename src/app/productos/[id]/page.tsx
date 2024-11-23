@@ -16,12 +16,10 @@ type Product = {
   colors: string[];
 };
 
-type Props = {
-  params: {
-    id: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+interface PageProps {
+  params: { id: string };
+}
+
 
 async function getProductById(id: string): Promise<Product | null> {
   try {
@@ -50,7 +48,7 @@ export async function generateStaticParams() {
   }
 }
 
-export default async function ProductPage({ params, searchParams }: Props) {
+export default async function ProductPage({ params }: PageProps) {
   const product = await getProductById(params.id);
 
   if (!product) {
