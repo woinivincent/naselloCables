@@ -17,39 +17,37 @@ type Product = {
 };
 
 async function getProductById(id: string): Promise<Product | null> {
-  const filePath = path.join(process.cwd(), "data", "cable_catalog.json");
-  const jsonData = fs.readFileSync(filePath, "utf-8");
-  const parsedData = JSON.parse(jsonData);
-
-  return parsedData.cable_catalog[id] || null;
+  try {
+    const filePath = path.join(process.cwd(), "data", "cable_catalog.json");
+    const jsonData = fs.readFileSync(filePath, "utf-8");
+    const parsedData = JSON.parse(jsonData);
+    return parsedData.cable_catalog[id] || null;
+  } catch (error) {
+    console.error('Error loading product:', error);
+    return null;
+  }
 }
 
-export async function getServerSideProps({ params }: { params: { id: string } }) {
+export async function generateStaticParams() {
+  try {
+    const filePath = path.join(process.cwd(), "data", "cable_catalog.json");
+    const jsonData = fs.readFileSync(filePath, "utf-8");
+    const parsedData = JSON.parse(jsonData);
+    
+    return Object.keys(parsedData.cable_catalog).map((id) => ({
+      id: id,
+    }));
+  } catch (error) {
+    console.error('Error generating static params:', error);
+    return [];
+  }
+}
+
+export default async function ProductPage({ params }: { params: { id: string } }) {
   const product = await getProductById(params.id);
 
   if (!product) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: { product }, // Se pasa el producto como prop
-  };
-}
-
-export default function ProductPage({ product }: { product: Product }) {
-  if (!product) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Producto no encontrado</h1>
-          <Link href="/productos" className="text-blue-600 hover:text-blue-800">
-            Volver al catálogo
-          </Link>
-        </div>
-      </div>
-    );
+    notFound();
   }
 
   return (
@@ -100,7 +98,7 @@ export default function ProductPage({ product }: { product: Product }) {
                 className="mt-4 bg-primary text-white hover:bg-secondary w-full"
                 variant="secondary"
               >
-                <Link href="/pedidos"> Solicitar Cotización</Link>
+                <Link href="/pedidos">Solicitar Cotización</Link>
               </Button>
             </div>
 
