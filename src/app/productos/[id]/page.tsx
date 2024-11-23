@@ -16,11 +16,6 @@ type Product = {
   colors: string[];
 };
 
-interface PageProps {
-  params: { id: string };
-}
-
-
 async function getProductById(id: string): Promise<Product | null> {
   try {
     const filePath = path.join(process.cwd(), "data", "cable_catalog.json");
@@ -48,7 +43,15 @@ export async function generateStaticParams() {
   }
 }
 
-export default async function ProductPage({ params }: PageProps) {
+type PageParams = {
+  id: string;
+};
+
+type Props = {
+  params: PageParams;
+};
+
+export default async function ProductPage({ params }: Props) {
   const product = await getProductById(params.id);
 
   if (!product) {
