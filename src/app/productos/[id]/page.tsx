@@ -15,25 +15,25 @@ type Product = {
   colors: string[];
 };
 
-// Definimos el tipo para las props de la página
-interface ProductPageProps {
-  params: { id: string };
-}
+// Ajustamos el tipo de props para la página
+type Params = {
+  id: string;
+};
 
 // Función para obtener el producto por ID
 async function getProductById(id: string): Promise<Product | null> {
   return cableCatalog.cable_catalog.find((product: Product) => product.id === id) || null;
 }
 
-// Generamos las rutas estáticas en caso de ser necesarias
-export async function generateStaticParams() {
+// Generamos las rutas estáticas para las IDs
+export async function generateStaticParams(): Promise<Params[]> {
   return cableCatalog.cable_catalog.map((product: Product) => ({
     id: product.id,
   }));
 }
 
-// Componente principal de la página
-export default async function ProductPage({ params }: ProductPageProps) {
+// Página principal del producto
+export default async function ProductPage({ params }: { params: Params }) {
   const product = await getProductById(params.id);
 
   if (!product) {
