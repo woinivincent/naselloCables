@@ -32,7 +32,7 @@ export async function POST(req: Request) {
     const templatePath = path.resolve('data/planilla_pedidos.xlsx'); // Cambia esta ruta con la ubicación de tu archivo
     const workbook = new ExcelJS.Workbook();
     await workbook.xlsx.readFile(templatePath);
-    const sheet = workbook.getWorksheet('Pedido');
+    const sheet = workbook.getWorksheet('Pedido') || workbook.addWorksheet('Pedido');
 
     // Rellenar información del cliente
     sheet.getCell('B2').value = customerInfo.name; // Nombre del cliente
