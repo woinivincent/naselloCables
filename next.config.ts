@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
     unoptimized: true
   },
   typescript: {
-    ignoreBuildErrors: true // Temporalmente para probar si el problema es solo de tipos
+    ignoreBuildErrors: true 
   },
 };
 
