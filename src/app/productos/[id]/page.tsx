@@ -9,6 +9,7 @@ import Carousel from "@/components/Carousel";
 
 // Definimos el tipo para los productos
 type Product = {
+    id: string;
     name: string;
     description: string;
     images: string[];
