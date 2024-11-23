@@ -51,6 +51,7 @@ type Props = {
   params: PageParams;
 };
 
+//@ts-ignore
 export default async function ProductPage({ params }: Props) {
   const product = await getProductById(params.id);
 
