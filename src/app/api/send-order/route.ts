@@ -24,7 +24,7 @@ interface OrderData {
 
 export async function POST(req: Request) {
   try {
-    // Validate request body
+
     const data: OrderData = await req.json();
     const { items, customerInfo } = data;
 
@@ -38,10 +38,10 @@ export async function POST(req: Request) {
       );
     }
 
-    // Get Excel template path - adjust this based on your project structure
+
     const templatePath = path.join(process.cwd(), 'public', 'data', 'planilla_pedidos.xlsx');
 
-    // Verify template exists
+
     try {
       const workbook = new ExcelJS.Workbook();
       await workbook.xlsx.readFile(templatePath);
@@ -51,14 +51,13 @@ export async function POST(req: Request) {
         throw new Error('Worksheet "Pedido" not found in template');
       }
 
-      // Fill customer information
+
       sheet.getCell('B2').value = customerInfo.name;
       sheet.getCell('J2').value = customerInfo.notes;
 
-      // Clear existing data and fill new order data
+
       const startRow = 7;
 
-      // Optional: Clear existing data first
       const lastRow = sheet.lastRow?.number || startRow;
       for (let i = startRow; i <= lastRow; i++) {
         const row = sheet.getRow(i);
@@ -67,7 +66,7 @@ export async function POST(req: Request) {
         });
       }
 
-      // Fill new data
+
       items.forEach((item, index) => {
         const row = sheet.getRow(startRow + index);
         row.getCell(2).value = item.code;
@@ -78,10 +77,10 @@ export async function POST(req: Request) {
         row.commit();
       });
 
-      // Generate Excel buffer
+
       const buffer = await workbook.xlsx.writeBuffer();
 
-      // Email configuration with better error handling
+
       const requiredEnvVars = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'ORDER_EMAIL'];
       const missingEnvVars = requiredEnvVars.filter((varName) => !process.env[varName]);
 
@@ -92,22 +91,21 @@ export async function POST(req: Request) {
       const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: parseInt(process.env.SMTP_PORT || '587'),
-        secure: process.env.SMTP_PORT === '465', // Auto-detect secure based on port
+        secure: process.env.SMTP_PORT === '465',
         auth: {
           user: process.env.SMTP_USER,
           pass: process.env.SMTP_PASS,
         },
         tls: {
-          rejectUnauthorized: false, // Only use in development
+          rejectUnauthorized: false,
         },
       });
 
-      // Verify SMTP connection
       await transporter.verify();
 
-      // Send email
+
       const mailResult = await transporter.sendMail({
-        from: process.env.SMTP_USER,
+        from: customerInfo.email,
         to: process.env.ORDER_EMAIL,
         subject: `Nuevo Pedido de ${customerInfo.name}`,
         text: `
