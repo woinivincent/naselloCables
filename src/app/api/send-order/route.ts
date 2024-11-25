@@ -52,8 +52,8 @@ export async function POST(req: Request) {
       }
 
 
-      sheet.getCell('B2').value = customerInfo.name;
-      sheet.getCell('J2').value = customerInfo.notes;
+      sheet.getCell('C2').value = customerInfo.name;
+      sheet.getCell('K2').value = customerInfo.notes;
 
 
       const startRow = 7;
@@ -71,7 +71,7 @@ export async function POST(req: Request) {
         const row = sheet.getRow(startRow + index);
         row.getCell(2).value = item.code;
         row.getCell(3).value = item.color;
-        row.getCell(5).value = item.type;
+        row.getCell(4).value = item.type;
         row.getCell(6).value = item.quantity;
         row.getCell(7).value = item.quantity;
         row.commit();

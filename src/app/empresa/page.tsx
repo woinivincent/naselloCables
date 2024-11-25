@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { History, Users, Target, Factory } from "lucide-react";
+import TimelineSection from "@/components/Timeline";
 
 export default function EmpresaPage() {
   return (
@@ -53,48 +54,7 @@ export default function EmpresaPage() {
 
         {/* Pilares */}
         <div className="mb-16 max-sm:p-4">
-          <h2 className="mb-8 text-3xl font-bold">Nuestros Pilares</h2>
-          <div className="grid gap-6 md:grid-cols-4">
-            <Card>
-              <CardHeader>
-                <History className="h-12 w-12 text-primary" />
-                <CardTitle>Experiencia</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>Más de 50 años en la industria nos respaldan</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <Users className="h-12 w-12 text-primary" />
-                <CardTitle>Equipo</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>Personal altamente capacitado y comprometido</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <Target className="h-12 w-12 text-primary" />
-                <CardTitle>Objetivos</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>Enfocados en la satisfacción del cliente</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <Factory className="h-12 w-12 text-primary" />
-                <CardTitle>Infraestructura</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>Tecnología de última generación</p>
-              </CardContent>
-            </Card>
-          </div>
+        <TimelineSection />
         </div>
 
         {/* Instalaciones */}

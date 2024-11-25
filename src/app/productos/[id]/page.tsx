@@ -86,7 +86,7 @@ export default async function ProductPage({ params }: Props) {
     <div className="min-h-screen bg-gray-50">
       {/* Navegación */}
       <div className="max-w-7xl mx-auto pt-2">
-        <Button type="button" className="mt-4 bg-primary text-white hover:bg-secondary" variant="secondary">
+        <Button type="button"   className="mt-4 bg-primary text-white hover:bg-secondary" variant="secondary">
           <Link href="/productos" className="flex items-center gap-2 text-sm hover:text-blue-100">
             <ArrowLeft size={20} />
             Volver al Catálogo

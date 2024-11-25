@@ -37,9 +37,7 @@ export default async function ProductosPage() {
             <Link href={`/productos/${id}`} key={id}>
               <Card className={cn(
                 "overflow-hidden group relative transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl",
-                "before:absolute before:inset-0 before:opacity-0 before:transition-opacity",
-                "before:bg-gradient-to-r before:from-blue-500/10 before:via-blue-700/10 before:to-blue-300/10",
-                "hover:before:opacity-100 hover:-translate-y-1"
+                "before:absolute before:inset-0 before:opacity-0 before:transition-opacity"
               )}>
                 <div className="relative aspect-[19/6] w-full transition-transform duration-300 group-hover:scale-105">
                   <Image

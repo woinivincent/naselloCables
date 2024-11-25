@@ -80,7 +80,7 @@ export default function CalidadPage() {
 
                 A través de la implementación y el mantenimiento del Sistema de Gestion de Calidad, Nasello Cables S.A. se compromete a cumplir los requisitos aplicables a sus productos, como así también trabaja para hacer realidad los siguientes objetivos de calidad:
               </p>
-              <ul className="list-inside list-disc space-y-2">
+              <ul className="list-inside list-disc space-y-2 mb-4">
                 <li>Orientar el negocio para brindar productos para las nuevas fuentes de energía sustentables con el medio ambiente.</li>
                 <li>Aumentar las ventas, y la rentabilidad del negocio.</li>
                 <li>Aumentar la satisfacción de clientes y que seamos su mejor opción.</li>
@@ -88,7 +88,12 @@ export default function CalidadPage() {
                 <li>Informatizar la planta para lograr información on line y precisa, permitiendo así una rápida reacción.</li>
                 <li>Hacer de Nasello Cables un buen lugar para trabajar y desarrollarse.</li>
                 <li>Promover la Mejora Continua.</li>
+
               </ul>
+              <span className="text-right">
+                <p>La Dirección
+                  <br /> Abril 2023</p>  
+                </span>
             </div>
             <div className="relative h-[500px] ">
               <Image
@@ -107,7 +112,7 @@ export default function CalidadPage() {
           <div className="grid gap-8 md:grid-cols-3">
             <div className="relative h-[250px]">
               <Image
-                src="/assets/slide1.jpg"
+                src="/assets/Labo4.jpeg"
                 alt="Laboratorio 1"
                 fill
                 className="rounded-lg object-cover"
@@ -115,7 +120,7 @@ export default function CalidadPage() {
             </div>
             <div className="relative h-[250px]">
               <Image
-                src="/assets/slide2.jpg"
+                src="/assets/Labo3.jpeg"
                 alt="Laboratorio 2"
                 fill
                 className="rounded-lg object-cover"
@@ -123,7 +128,7 @@ export default function CalidadPage() {
             </div>
             <div className="relative h-[250px]">
               <Image
-                src="/assets/slide3.jpg"
+                src="/assets/Labo2.jpeg"
                 alt="Laboratorio 3"
                 fill
                 className="rounded-lg object-cover"

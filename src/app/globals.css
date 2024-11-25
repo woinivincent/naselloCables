@@ -68,6 +68,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+ 
 }
 
 .nav-link {
@@ -88,5 +89,16 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+@layer components {
+  .timeline-container {
+    @apply relative overflow-x-auto pb-20;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .timeline-container::-webkit-scrollbar {
+    display: none;
   }
 }
