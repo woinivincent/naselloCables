@@ -30,7 +30,7 @@ export default async function ProductosPage() {
   return (
     <div className="flex justify-center">
       <div className="container py-12">
-        <h1 className="mb-8 text-center text-4xl font-bold">Catálogo de Cables</h1>
+        <h1 className="mb-9 text-center text-4xl font-bold">NUESTROS PRODUCTOS</h1>
         
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {Object.entries(products).map(([id, product]) => (
@@ -41,7 +41,7 @@ export default async function ProductosPage() {
               )}>
                 <div className="relative aspect-[19/6] w-full transition-transform duration-300 group-hover:scale-105">
                   <Image
-                    src={product.images[0]}  // Usa la primera imagen del array
+                    src={product.images[2]}  // Usa la primera imagen del array
                     alt={product.name}
                     fill
                     className="object-center transition-all duration-300 group-hover:brightness-110"

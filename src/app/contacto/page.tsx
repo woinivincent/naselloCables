@@ -45,7 +45,7 @@ export default function ContactoPage() {
   return (
     <div className="flex justify-center max-sm:p-4">
       <div className="container py-12">
-        <h1 className="mb-8 text-center text-4xl font-bold">Contáctenos</h1>
+        <h1 className="mb-8 text-center text-4xl font-bold">CONTÁCTANOS</h1>
 
         <div className="grid gap-12 md:grid-cols-2 ">
           {/* Información de Contacto */}

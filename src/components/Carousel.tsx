@@ -35,14 +35,14 @@ const Carousel = ({ images, productName }: CarouselProps) => {
   return (
     <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
       {/* Imágenes del carrusel */}
-      <div className="relative w-full h-[600px] overflow-hidden">
+      <div className="relative w-full h-[600px] overflow-hidden ">
         {images.map((image, index) => (
           <Image
             key={index}
             src={image}
             alt={`${productName} - Imagen ${index + 1}`}
             fill
-            className={`object-cover transition-transform duration-700 ease-in-out ${
+            className={`object-contain transition-transform duration-700 ease-in-out ${
               index === activeImageIndex ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
           />

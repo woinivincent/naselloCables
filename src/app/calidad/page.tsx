@@ -16,7 +16,7 @@ export default function CalidadPage() {
           />
           <div className="absolute inset-0 flex items-center justify-center text-center text-white ">
             <div>
-              <h1 className="mb-4 text-5xl font-bold">Gestión de Calidad</h1>
+              <h1 className="mb-4 text-5xl font-bold">GESTIÓN DE CALIDAD</h1>
               <p className="text-xl">
                 Comprometidos con la excelencia en cada producto
               </p>
@@ -26,7 +26,7 @@ export default function CalidadPage() {
 
         {/* Certificaciones */}
         <div className="mb-16 max-sm:p-4">
-          <h2 className="mb-8 text-3xl font-bold">Nuestras Certificaciones</h2>
+          <h2 className="mb-8 text-3xl font-bold">NUESTRAS CERTIFICACIONES</h2>
           <div className="grid gap-6 md:grid-cols-4">
             <Card>
               <CardHeader>
@@ -64,7 +64,7 @@ export default function CalidadPage() {
                 <CardTitle>Laboratorio</CardTitle>
               </CardHeader>
               <CardContent>
-                <p>Laboratorio propio certificado</p>
+                <p>Laboratorio de ensayos técnicos interno</p>
               </CardContent>
             </Card>
           </div>
@@ -72,7 +72,7 @@ export default function CalidadPage() {
 
         {/* Proceso de Control */}
         <div className="mb-16 max-sm:p-4">
-          <h2 className="mb-8 text-3xl font-bold">Proceso de Control de Calidad</h2>
+          <h2 className="mb-8 text-3xl font-bold">PROCESO DE CONTROL DE CALIDAD</h2>
           <div className="grid gap-8 md:grid-cols-2">
             <div>
               <p className="mb-4 text-balance">
@@ -108,7 +108,7 @@ export default function CalidadPage() {
 
         {/* Laboratorio */}
         <div className="max-sm:p-4">
-          <h2 className="mb-8 text-3xl font-bold ">Nuestro Laboratorio</h2>
+          <h2 className="mb-8 text-3xl font-bold ">NUESTRO LABORATORIO</h2>
           <div className="grid gap-8 md:grid-cols-3">
             <div className="relative h-[250px]">
               <Image

@@ -17,21 +17,21 @@ export default function EmpresaPage() {
           />
           <div className="absolute inset-0 flex items-center justify-center text-center text-white">
             <div>
-              <h1 className="mb-4 text-5xl font-bold">Nuestra Empresa</h1>
+              <h1 className="mb-4 text-5xl font-bold">NUESTRA EMPRESA</h1>
               <p className="text-xl">
-                Más de 50 años de experiencia en la industria del cable
+                Más de 40 años de experiencia en la industria del cable
               </p>
             </div>
           </div>
         </div>
 
         {/* Historia y Valores */}
-        <div className="mb-16 max-sm:p-4">
-          <h2 className="mb-8 text-3xl font-bold">Historia y Valores</h2>
+        <div className="mb-10 max-sm:p-4">
+          <h2 className="mb-8 text-3xl font-bold">HISTORIA Y VALORES</h2>
           <div className="grid gap-8 md:grid-cols-2">
             <div>
               <p className="mb-4 text-lg">
-                Desde 1970, Nasello Cables se ha dedicado a la fabricación y
+                Desde 1976, Nasello Cables se ha dedicado a la fabricación y
                 comercialización de cables y conductores eléctricos, manteniendo
                 siempre los más altos estándares de calidad y servicio.
               </p>
@@ -53,13 +53,13 @@ export default function EmpresaPage() {
         </div>
 
         {/* Pilares */}
-        <div className="mb-16 max-sm:p-4">
-        <TimelineSection />
+        <div className="max-sm:p-4">
+          <TimelineSection />
         </div>
 
         {/* Instalaciones */}
         <div className="max-sm:p-4">
-          <h2 className="mb-8 text-3xl font-bold">Nuestras Instalaciones</h2>
+          <h2 className="mb-8 text-3xl font-bold">NUESTRAS INSTALACIONES</h2>
           <div className="grid gap-6 md:grid-cols-3">
             <div className="relative h-[250px]">
               <Image

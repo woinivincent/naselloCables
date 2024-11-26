@@ -24,10 +24,10 @@ export default function Home() {
         <div className="absolute inset-0 flex z-10 items-center justify-center max-sm:p-4">
           <div className="container text-center text-white">
             <h1 className="mb-6 text-5xl font-bold">
-              Calidad y Confiabilidad en Cables Eléctricos
+              CALIDAD Y CONFIABILIDAD EN CADA PRODUCTO
             </h1>
             <p className="mb-8 text-xl">
-              Más de 50 años de experiencia en la industria
+              Más de 40 años de experiencia en la industria
             </p>
             <Button asChild size="lg" className=" bg-primary hover:bg-secondary">
               <Link href="/productos">Ver Productos</Link>
@@ -56,7 +56,7 @@ export default function Home() {
                 <CardTitle>Experiencia</CardTitle>
               </CardHeader>
               <CardContent>
-                <p>Más de 50 años en la industria de cables eléctricos</p>
+                <p>Más de 40 años en la industria de cables eléctricos</p>
               </CardContent>
             </Card>
 
@@ -87,7 +87,7 @@ export default function Home() {
       <section className="bg-gray-50 py-16 flex justify-center max-sm:p-4" >
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold">
-            Nuestros Productos Destacados
+            NUESTROS PRODUCTOS DESTACADOS
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
             {[

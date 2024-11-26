@@ -8,16 +8,11 @@ interface SocialMediaProps {
 
 const SocialMediaFloat = ({ className }: SocialMediaProps) => {
   const socialLinks = [
-    {
-      name: 'Facebook',
-      icon: Facebook,
-      url: 'https://facebook.com/tuempresa',
-      color: 'hover:text-blue-600'
-    },
+ 
     {
       name: 'Youtube',
       icon: Youtube,
-      url: 'https://facebook.com/tuempresa',
+      url: 'https://youtube.com/@nasello_cables',
       color: 'hover:text-red-600'
     },
     {

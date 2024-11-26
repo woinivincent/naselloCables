@@ -1,43 +1,46 @@
 "use client"
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Building2, Calendar, CheckCircleIcon, Factory, Lightbulb, RefreshCcw, Zap } from 'lucide-react';
 
 const TimelineSection = () => {
   const timelineEvents = [
     {
       year: '1976',
       content: 'Fundación de la micro empresa familiar dirigida por Hector y Mirta Nasello junto con Carlos y Holga Garavano',
-      icon: '💡'
+      icon: <Lightbulb 
+        className='text-secondary'
+      />
     },
     {
       year: '2001',
       content: 'Cese de actividades.',
-      icon: '📅'
+      icon: <Calendar  className='text-secondary' />
     },
     {
       year: '2006',
       content: 'Reinserción en el mercado laboral a cargo de los hermanos Nasello.',
-      icon: '🔄'
+      icon: <RefreshCcw  className='text-secondary' />
     },
     {
       year: '2008',
       content: 'Consolidación oficial de la Sociedad Anónima.',
-      icon: '🏢'
+      icon: <Building2  className='text-secondary' />
     },
     {
       year: '2013',
       content: 'Adquisición de maquinarias y ampliación de depósito',
-      icon: '⚡'
+      icon: <Zap  className='text-secondary' />
     },
     {
       year: '2018',
       content: 'Ampliación de planta productiva y gama de conductores eléctricos.',
-      icon: '🏭'
+      icon: <Factory  className='text-secondary' />
     },
     {
       year: '2023',
       content: 'Certificación oficial de ISO 9001',
-      icon: '✅'
+      icon: <CheckCircleIcon  className='text-secondary'/>
     },
   ];
 
@@ -67,9 +70,9 @@ const TimelineSection = () => {
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl font-bold text-center mb-16 text-primary"
+          className="text-4xl font-bold text-start mb-16 text-black  "
         >
-          Nuestra Historia
+          NUESTRA HISTORIA
         </motion.h2>
 
         <div className="relative overflow-x-visible">
@@ -95,10 +98,10 @@ const TimelineSection = () => {
                   {/* Punto central */}
                   <motion.div
                     whileHover={{ scale: 1.2 }}
-                    className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-full 
+                    className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full 
                              flex items-center justify-center z-10 mb-4 cursor-pointer"
                   >
-                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
                       <span className="text-xl">{event.icon}</span>
                     </div>
                   </motion.div>

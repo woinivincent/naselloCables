@@ -5,8 +5,9 @@
       "name": "Cable Bipolar Cristal",
       "description": "Cable bipolar con aislación cristal transparente, ideal para instalaciones a la vista. Conductor flexible de cobre con doble aislación de PVC.",
       "images": [
+        "/assets/paraleloTabla.png",
         "/assets/cristalparalelo.jpg",
-         "/assets/Bipolarsub.jpg"
+         "/assets/paraleloImagen.png"
         
        
       ],
@@ -54,10 +55,12 @@
     },
     "unipolar_antillama": {
       "id": "UA001",
-      "name": "Cable Unipolar Antillama",
+      "name": "Cable Unipolar",
       "description": "Su cuerda está compuesta por cobre electrolítico rojo.Este conductor es utilizado en instalaciones fijas, domiciliarias o industriales revistiendo características de extra flexibilidad, auto-deslizamiento y anti-llama. Los colores de fabricación standard son: celeste, marrón, rojo, verde/amarillo, negro y blanco. Ofrecemos la fabricación en colores especiales a requerimiento.",
       "images": [
-        "/assets/antillama.jpg"
+        "/assets/unipolarTabla.png",
+        "/assets/unipolares.jpeg",
+        "/assets/unipolarImagen.png"
       
     
       ],
@@ -157,6 +160,8 @@
       "name": "Cable de Soldadura Azul IEC",
       "description": "Cable para soldadura con cubierta azul. Excelente flexibilidad y resistencia al uso intensivo.",
       "images": [
+        "/assets/soldaduraTabla.png",
+        "/assets/soldaduraImagen.png",
         "/assets/soldazul.jpg"
      
       ],
@@ -209,6 +214,8 @@
       "name": "Cable Subterráneo Unipolar",
       "description": "Cable diseñado para instalaciones subterráneas. Alta resistencia a la humedad y agentes externos.",
       "images": [
+        "/assets/subterraneosTabla.png",
+        "/assets/subterraneosImagen.png",  
         "/assets/ABUNIPOLAR.jpg"
        
       ],
@@ -294,6 +301,9 @@
       "name": "Cable para Bomba Sumergible",
       "description": "Cable especial para bombas sumergibles. Resistente al agua y con excelente protección mecánica.",
       "images": [
+        "/assets/ET-VT-002 bomba sumergibleTabla.png",
+         "/assets/bombasum.jpg",
+        
         "/assets/sumergible.jpg"
         
       ],
@@ -327,6 +337,8 @@
       "name": "Cable de Cobre Desnudo",
       "description": "Cable de cobre sin aislación. Ideal para puestas a tierra y sistemas de protección contra rayos.",
       "images": [
+        "/assets/desnudoTabla.png",
+        "/assets/desnudoImagen.png",
         "/assets/cobredesnudo.jpg"
   
       ],
@@ -359,6 +371,8 @@
       "name": "Cable Tipo Taller TPR",
       "description": "Cable flexible multiuso tipo taller. Ideal para uso móvil y conexión de equipos portátiles.",
       "images": [
+        "/assets/tallerTabla.png",
+        "/assets/tallerImagen.png",
         "/assets/taller nasello.jpg"
         
       ],

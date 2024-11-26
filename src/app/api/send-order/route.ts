@@ -8,6 +8,7 @@ interface OrderItem {
   type: string;
   color: string;
   quantity: number;
+  presentation: string;
 }
 
 interface CustomerInfo {
@@ -69,11 +70,12 @@ export async function POST(req: Request) {
 
       items.forEach((item, index) => {
         const row = sheet.getRow(startRow + index);
+        row.getCell(1).value = index + 1;
         row.getCell(2).value = item.code;
         row.getCell(3).value = item.color;
         row.getCell(4).value = item.type;
+        row.getCell(5).value = item.presentation;
         row.getCell(6).value = item.quantity;
-        row.getCell(7).value = item.quantity;
         row.commit();
       });
 

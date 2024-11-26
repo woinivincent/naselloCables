@@ -16,9 +16,9 @@ const InfoLegend = () => {
           <Alert>
             <AlertDescription>
               <span className="font-semibold">Presentación:</span> <ul>
-                <li>Rollo standard : 100mt</li>
-                <li>Bobina : 1000mt</li>
-                <li>Bobinita : 100mt</li>
+                <li>Rollo Estandar</li>
+                <li>Bobina </li>
+                <li>Bobinita </li>
               </ul>
             </AlertDescription>
           </Alert>
