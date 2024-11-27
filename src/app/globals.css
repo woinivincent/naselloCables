@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --primary-blue: #3a7fc9;
+  --primary-blue:  hsl(198, 75%, 52%) ;
   --secondary-blue: #0067B2;
   --accent-orange: #FF6B00;
   --text-dark: #333333;
@@ -101,4 +101,22 @@
   .timeline-container::-webkit-scrollbar {
     display: none;
   }
+}
+
+
+::-webkit-scrollbar-thumb{
+  background: var(--primary-blue);
+  height:.5rem;
+
+}
+::-webkit-scrollbar-track{
+  background-color: transparent;
+  display: hidden;
+}
+::-webkit-scrollbar-button{
+  display: none;
+}
+::-webkit-scrollbar{
+  color: var(--primary);
+  width: 12px;
 }

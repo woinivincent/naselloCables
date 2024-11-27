@@ -180,7 +180,7 @@ export default function PedidosPage() {
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-background">
       <div className="w-full max-w-[1400px] px-4 py-12">
-        <h1 className="mb-8 text-center text-4xl font-bold">REALIZAR PEDIDO</h1>
+        <h1 className="mb-8 text-center text-4xl font-bold">Realizar Pedido</h1>
 
         <div className="flex flex-row gap-6">
           {/* Columna principal del formulario */}

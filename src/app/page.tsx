@@ -103,7 +103,7 @@ export default function Home() {
               },
               {
                 title: "Cables Especiales",
-                image: "/assets/AAPORTADA.jpeg",
+                image: "/assets/torchaImagen.png",
                 description: "Soluciones personalizadas para necesidades específicas",
               },
             ].map((product, index) => (

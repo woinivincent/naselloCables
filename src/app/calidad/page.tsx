@@ -9,7 +9,7 @@ export default function CalidadPage() {
         {/* Hero Section */}
         <div className="relative mb-12 h-[400px] ">
           <Image
-            src="/assets/DESPACHO.jpg"
+            src="/assets/oficina.jpg"
             alt="Control de Calidad"
             fill
             className="object-cover brightness-50"
