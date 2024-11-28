@@ -34,8 +34,8 @@
       "description": "Cable de cobre de sección chata Extra Flexible con aislación y envoltura de P.V.C. Para tensiones de servicio de hasta 300/500 V. Para instalaciones movibles en locales industriales, agrícolas y domésticos; Aparatos portátiles industriales y electrodomésticos en general, excluyendo los de calefacción.",
       "images": [
         "/assets/vainaPlanaTabla.png",
-        "/assets/VainaPlana3.png",
         "/assets/VainaPlana2.png",
+        "/assets/VainaPlana3.png",
         "/assets/vainaPlanaImagen.png"
       ],
       "codes": [
@@ -107,7 +107,7 @@
         "Bobinita"
       ],
       "technical_specs": [
-        "Tensión de trabajo: 450/750 Volts.",
+        "Tensión de trabajo: 450/750V",
         " Apto 1000 V.",
         "Temperatura de Trabajo: -5°C a 70°C.",
         "Flexibilidad: Clase 4 y 5",
@@ -178,8 +178,8 @@
         "Bobina: 500mts"
       ],
       "technical_specs": [
-        "Tensión de trabajo: 450/750 Volts",
-        "Temperatura de Trabajo: -5°C a 105°C",
+        "Tensión de trabajo: 450/750V",
+        "Temperatura de Trabajo:-5°C a 105°C",
         "Flexibilidad: 6",
         "Normativa de fabricación: IEC 245-6 - 2022 "
       ]
@@ -274,7 +274,7 @@
         "Bobinita: 300 mts "
       ],
       "technical_specs": [
-        "Tensión de trabajo: 600/1100 Volts.",
+        "Tensión de trabajo: 600/1100V",
         "Temperatura de trabajo: -5°C a 70°C",
         "Flexibilidad: Clase 5",
         "Normativa de Fabricación: 2178"
@@ -312,7 +312,7 @@
         "Bobinita: 300 mts "
       ],
       "technical_specs": [
-        "Tensión de trabajo: 450/750 Volts.",
+        "Tensión de trabajo: 450/750V",
         "Temperatura de Trabajo: -5°C a 70°C.",
         "Flexibilidad Clase: 5"
       ]
@@ -347,7 +347,11 @@
         "Rollo: 100 mts",
         "Bobinita: 300 mts "
       ],
-      "technical_specs": "Normas: 2004. "
+      "technical_specs": [
+        "Normas: 2004.",
+        "100% Cobre",
+        "Consultar otras medidas"
+      ]
     },
     "tipo_taller_tpr": {
       "id": "TT001",
@@ -403,10 +407,11 @@
         "Bobinita: 300 mts "
       ],
       "technical_specs": [
-        "Tensión de trabajo: 450/750 Volts.",
+        "Tensión de trabajo: 450/750V",
         "Temperatura de Trabajo: -5º C a 70º C.",
         "Flexibilidad: Clase 5",
-        "Normativa de fabricación: IEC 245-6 - 2022 "]
-      }
+        "Normativa de fabricación: IEC 245-6 - 2022 "
+      ]
     }
   }
+}

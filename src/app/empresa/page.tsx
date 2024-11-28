@@ -43,7 +43,7 @@ export default function EmpresaPage() {
             </div>
             <div className="relative h-[300px]">
               <Image
-                src="/assets/slide2.jpg"
+                src="/assets/Galpon.jpeg"
                 alt="Historia Nasello Cables"
                 fill
                 className="rounded-lg object-cover"

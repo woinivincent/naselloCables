@@ -32,8 +32,8 @@ export function ProductDetails({ product }: ProductDetailsProps) {
             <Shield className="text-primary" size={20} />
             <span>Certificado</span>
           </div>
-          <div className="flex items-center gap-2 text-gray-600">
-            <Zap className="text-primary" size={100} />
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <Zap className="text-primary "   />
             <span>{product.technical_specs}</span>
           </div>
           <div className="flex items-center gap-2 text-gray-600">

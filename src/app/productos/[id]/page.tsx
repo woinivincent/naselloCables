@@ -1,4 +1,4 @@
-// src/app/productos/[id]/page.tsx
+
 'use client' 
 
 import { useState, useEffect } from 'react';
@@ -31,11 +31,11 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   const [paramId, setParamId] = useState<string | null>(null);
 
   useEffect(() => {
-    // Desempaquetamos params usando React.use() para acceder a id de forma correcta
+    
     params.then(({ id }) => setParamId(id));
   }, [params]);
 
-  // Cargar datos de catalogo en el lado del cliente
+ 
   useEffect(() => {
     async function fetchCatalogData() {
       const response = await fetch('/data/cable_catalog.json');

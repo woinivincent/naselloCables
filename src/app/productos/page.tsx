@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
-// Definimos el tipo para los productos
+
 type Product = {
   name: string;
   description: string;
@@ -19,12 +19,12 @@ type ProductData = {
 };
 
 export default async function ProductosPage() {
-  // Ruta del archivo JSON
+ 
   const filePath = path.join(process.cwd(), "public", "data", "cable_catalog.json");
   const jsonData = fs.readFileSync(filePath, "utf-8");
   const parsedData = JSON.parse(jsonData);
 
-  // Obtenemos los productos del catálogo
+  
   const products: ProductData = parsedData.cable_catalog;
 
   return (
@@ -42,13 +42,13 @@ export default async function ProductosPage() {
                 )}
               >
                 {/* Imagen del producto */}
-                <div className="relative aspect-[16/6] w-full transition-transform duration-300 group-hover:scale-105">
+                <div className="relative aspect-[16/9] w-full transition-transform duration-300 group-hover:scale-105">
                   <Image
-                    src={product.images[1]} // Usar la primera imagen para mayor consistencia
+                    src={product.images[1]}
                     alt={product.name}
                     fill
-                    className="object-fill transition-all duration-300 group-hover:brightness-110"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 30vw"
+                    className="object-contain transition-all duration-300 group-hover:brightness-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 32vw, 30vw"
                     quality={90}
                   />
                 </div>
@@ -60,7 +60,7 @@ export default async function ProductosPage() {
 
                 {/* Contenido del producto */}
                 <CardContent className="space-y-4 h-full flex flex-col justify-between">
-                  <p className="text-sm text-gray-600 line-clamp-3">{product.description}</p>
+                  <p className="text-sm text-gray-600 line-clamp-2">{product.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {Array.isArray(product.technical_specs) ? (
                       <>
@@ -71,11 +71,7 @@ export default async function ProductosPage() {
                           </Badge>
                         ))}
                         {/* Muestra un indicador si hay más badges */}
-                        {product.technical_specs.length > 2 && (
-                          <span className="text-xs text-gray-500">
-                            +{product.technical_specs.length - 2} más
-                          </span>
-                        )}
+                      
                       </>
                     ) : (
                       <Badge variant="default" className="text-xs">

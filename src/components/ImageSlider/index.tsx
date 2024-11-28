@@ -24,13 +24,12 @@ export function ImageSlider() {
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
-  // Autoplay functionality
   useEffect(() => {
     if (!emblaApi) return;
 
     const interval = setInterval(() => {
       emblaApi.scrollNext();
-    }, 5000); // 7 seconds
+    }, 5000); 
 
     return () => clearInterval(interval);
   }, [emblaApi]);

@@ -17,7 +17,6 @@ import {
 import { Plus, Send, Trash2, Loader2 } from "lucide-react";
 import InfoLegend from "@/components/InfoLegend";
 
-// Importar el catálogo
 import cableCatalog from '../../../public/data/cable_catalog.json';
 
 interface OrderItem {
@@ -53,10 +52,10 @@ export default function PedidosPage() {
     notes: "",
   });
 
-  // Extraer los tipos de cable del catálogo
+
   const cableTypes = Object.values(cableCatalog.cable_catalog).map(cable => cable.name);
 
-  // Función para obtener los códigos disponibles basados en el tipo seleccionado
+ 
   const getAvailableCodes = (selectedType: string) => {
     const selectedCable = Object.values(cableCatalog.cable_catalog).find(
       cable => cable.name === selectedType
@@ -64,7 +63,6 @@ export default function PedidosPage() {
     return selectedCable?.codes || [];
   };
 
-  // Función para obtener los colores disponibles basados en el tipo seleccionado
   const getAvailableColors = (selectedType: string) => {
     const selectedCable = Object.values(cableCatalog.cable_catalog).find(
       cable => cable.name === selectedType
@@ -82,8 +80,8 @@ export default function PedidosPage() {
     setCurrentItem({
       ...currentItem,
       type: value,
-      code: "", // Resetear el código cuando cambia el tipo
-      color: "" ,// Resetear el color cuando cambia el tipo
+      code: "", 
+      color: "" ,
       presentation:""
     });
   };
