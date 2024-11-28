@@ -44,7 +44,7 @@ export function ImageSlider() {
     <div className="relative h-[630px] overflow-hidden bg-black">
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60 z-10" />
       
-      <div ref={emblaRef} className="h-[786px] overflow-hidden">
+      <div ref={emblaRef} className="h-[792px] overflow-hidden">
         <div className="flex h-full">
           {slides.map((slider, index) => (
             <div
