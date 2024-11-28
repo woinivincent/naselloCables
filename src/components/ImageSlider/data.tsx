@@ -5,7 +5,11 @@ export interface SlideData {
   }
   
   export const slides: SlideData[] = [
-    
+    {
+      id: 4,
+      title: '',
+      description: ''
+    },  
     {
       id: 5,
       title: '',
