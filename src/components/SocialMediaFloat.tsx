@@ -8,11 +8,11 @@ interface SocialMediaProps {
 
 const SocialMediaFloat = ({ className }: SocialMediaProps) => {
   const socialLinks = [
- 
+
     {
       name: 'Youtube',
       icon: Youtube,
-      url: 'https://youtube.com/@nasello_cables',
+      url: 'https://www.youtube.com/@NaselloCables',
       color: 'hover:text-red-600'
     },
     {
@@ -24,13 +24,13 @@ const SocialMediaFloat = ({ className }: SocialMediaProps) => {
     {
       name: 'Email',
       icon: Mail,
-      url: 'mailto:contacto@tuempresa.com',
+      url: 'mailto: recepcion@nasellocables.com',
       color: 'hover:text-gray-600'
     },
     {
       name: 'Whatsapp',
       icon: MessageCircle,
-      url: 'https://wa.me/15551234567',
+      url: 'https://wa.me/2323354771',
       color: 'hover:text-green-600'
     }
   ];
