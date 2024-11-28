@@ -44,7 +44,7 @@ export function ImageSlider() {
     <div className="relative h-[600px] overflow-hidden bg-black">
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60 z-10" />
       
-      <div ref={emblaRef} className="h-full overflow-hidden">
+      <div ref={emblaRef} className="h-[725px] overflow-hidden">
         <div className="flex h-full">
           {slides.map((slider, index) => (
             <div
@@ -57,8 +57,8 @@ export function ImageSlider() {
                   alt={slider.title}
                   fill
                   priority={index === 0}
-                  className="object-fit"
-                  sizes="1000vh"
+                  className="object-fill"
+                  sizes="100vh"
                   quality={100}
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-8 z-20 bg-gradient-to-t from-black/80 to-transparent">
