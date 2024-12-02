@@ -30,7 +30,7 @@ export default async function ProductosPage() {
   return (
     <div className="flex justify-center">
       <div className="container py-12">
-        <h1 className="mb-9 text-center text-4xl font-bold">NUESTROS PRODUCTOS</h1>
+        <h1 className="mb-9 text-center text-4xl font-medium">NUESTROS PRODUCTOS</h1>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {Object.entries(products).map(([id, product]) => (

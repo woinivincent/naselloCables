@@ -9,6 +9,13 @@ export default {
   ],
   theme: {
   	extend: {
+		
+			fontFamily: {
+			  'custom': [ 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif'],
+			  'title': ['Montserrat', 'sans-serif'],
+			  'body': ['Open Sans', 'sans-serif']
+			},
+		  
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

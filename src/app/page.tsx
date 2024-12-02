@@ -18,18 +18,15 @@ export default function Home() {
   return (
     <>
 
-      <section className="relative h-[600px]">
-        <ImageSlider
-        />
+      <section className="relative">
+        <ImageSlider />
         <div className="absolute inset-0 flex z-10 items-center justify-center max-sm:p-4">
-          <div className="container text-center text-white">
-            <h1 className="mb-6 text-5xl font-bold">
+          <div className="container text-center text-white max-sm:hidden">
+            <h1 className="mb-6 text-5xl font-medium text-white">
               CALIDAD Y CONFIABILIDAD EN CADA PRODUCTO
             </h1>
-            <p className="mb-8 text-xl">
-              Más de 40 años de experiencia en la industria
-            </p>
-            <Button asChild size="lg" className=" bg-primary hover:bg-secondary">
+            <p className="mb-8 text-xl">Más de 40 años de experiencia en la industria</p>
+            <Button asChild size="lg" className="bg-primary hover:bg-secondary">
               <Link href="/productos">Ver Productos</Link>
             </Button>
           </div>

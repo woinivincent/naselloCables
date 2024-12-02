@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { slides } from './data';
 
 export function ImageSlider() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+  const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     duration: 30,
     dragFree: true
@@ -29,7 +29,7 @@ export function ImageSlider() {
 
     const interval = setInterval(() => {
       emblaApi.scrollNext();
-    }, 5000); 
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [emblaApi]);
@@ -41,41 +41,38 @@ export function ImageSlider() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative h-[630px] overflow-hidden bg-black">
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60 z-10" />
-      
-      <div ref={emblaRef} className="h-[792px] overflow-hidden">
-        <div className="flex h-full">
-          {slides.map((slider, index) => (
-            <div
-              key={slider.id}
-              className="relative flex-[0_0_100%] min-w-0 h-full flex items-center justify-center "
-            >
-              <div className="relative w-full h-full flex items-center justify-center">
-                <Image
-                  src={`/assets/slider${slider.id}.jpg`}
-                  alt={slider.title}
-                  fill
-                  priority={index === 0}
-                  className="object-fill"
-                  sizes="100vh"
-                  quality={100}
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-8 z-20 bg-gradient-to-t from-black/80 to-transparent">
-                  <div className="max-w-screen-xl mx-auto">
-                    <h2 className="text-4xl font-bold text-white mb-2 tracking-tight">
-                      {slider.title}
-                    </h2>
-                    <p className="text-lg text-white/90">
-                      {slider.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+    <div className="relative w-full h-[65vh]  overflow-hidden max-sm:h-[50vh] ">
+     <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60 z-10" />
+<div ref={emblaRef} className="overflow-hidden">
+  <div className="flex">
+    {slides.map((slider, index) => (
+      <div
+        key={slider.id}
+        className="relative flex-[0_0_100%] min-w-0"
+      >
+        <div className="w-full h-[600px] max-h-[80vh] relative overflow-hidden">
+          <Image
+            src={`/assets/slider${slider.id}.jpg`}
+            alt={slider.title}
+            fill
+            priority={index === 0}
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 p-8 z-20 bg-gradient-to-t from-black/80 to-transparent">
+          <div className="max-w-screen-xl mx-auto">
+            <h2 className="text-4xl font-bold text-white mb-2 tracking-tight">
+              {slider.title}
+            </h2>
+            <p className="text-lg text-white/90">{slider.description}</p>
+          </div>
         </div>
       </div>
+    ))}
+  </div>
+</div>
+
 
       {/* Navigation Controls */}
       <div className="absolute bottom-8 right-8 flex items-center gap-4 z-30">
@@ -105,13 +102,13 @@ export function ImageSlider() {
             onClick={() => emblaApi?.scrollTo(index)}
             className={cn(
               'h-1.5 rounded-full transition-all duration-300',
-              selectedIndex === index 
-                ? 'w-8 bg-white' 
+              selectedIndex === index
+                ? 'w-8 bg-white'
                 : 'w-4 bg-white/40 hover:bg-white/60'
             )}
           />
         ))}
       </div>
-    </div>
+    </div >
   );
 }
