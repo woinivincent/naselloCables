@@ -90,12 +90,12 @@ export default function Home() {
             {[
               {
                 title: "Cables Subterráneos",
-                image: "/assets/subte-nasello.jpg",
+                image: "/assets/SubteHome.jpeg",
                 description: "Cables de alta resistencia para instalaciones subterráneas",
               },
               {
                 title: "Cables para Soldadura",
-                image: "/assets/soldazul.jpg",
+                image: "/assets/SoldaduraHome.png",
                 description: "Especialistas en la confección de cables de soldadura desde 1976",
               },
               {
@@ -105,15 +105,16 @@ export default function Home() {
               },
             ].map((product, index) => (
               <Card key={index} className="group transition-all duration-300 hover:scale-[1.07] hover:shadow-lg">
-                <div className="relative aspect-[20/7] w-full">
+                <div className="relative aspect-[17/8] w-full">
                   <Image
                     src={product.image}
                     alt={product.title}
                     fill
-                    className="object-contain object-center transition-all duration-300 group-hover:brightness-105"
-                    sizes="1000vw"
+                    className="object-center object-cover transition-all duration-300 group-hover:brightness-105"
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     quality={90}
                   />
+
                 </div>
                 <CardHeader>
                   <CardTitle>{product.title}</CardTitle>

@@ -12,6 +12,7 @@ export default function CalidadPage() {
             src="/assets/oficina.jpg"
             alt="Control de Calidad"
             fill
+            quality={1}
             className="object-cover brightness-50"
           />
           <div className="absolute inset-0 flex items-center justify-center text-center text-white ">

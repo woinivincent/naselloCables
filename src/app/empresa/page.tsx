@@ -45,7 +45,7 @@ export default function EmpresaPage() {
               <p className="text-lg font-light">
                 Explora nuestra página web para saber más sobre nuestros productos y servicios.
 
-                Seguimos transmitiendo energía ⚡
+                Seguimos transmitiendo energía 
               </p>
             </div>
             <div className="relative h-[300px]">
