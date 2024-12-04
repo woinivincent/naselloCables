@@ -94,14 +94,14 @@ export default function Home() {
                 description: "Cables de alta resistencia para instalaciones subterráneas",
               },
               {
-                title: "Cables Unipolares",
-                image: "/assets/unipolares.jpeg",
-                description: "Ideal para instalaciones domésticas e industriales",
+                title: "Cables para Soldadura",
+                image: "/assets/soldazul.jpg",
+                description: "Especialistas en la confección de cables de soldadura desde 1976",
               },
               {
                 title: "Cables Especiales",
                 image: "/assets/torchaImagen.png",
-                description: "Soluciones personalizadas para necesidades específicas",
+                description: "Tenemos nuevas propuestas para seguir transmitiendo energía en el futuro",
               },
             ].map((product, index) => (
               <Card key={index} className="group transition-all duration-300 hover:scale-[1.07] hover:shadow-lg">
@@ -110,8 +110,8 @@ export default function Home() {
                     src={product.image}
                     alt={product.title}
                     fill
-                    className="object-contain transition-all duration-300 group-hover:brightness-105"
-                    sizes="100vw"
+                    className="object-contain object-center transition-all duration-300 group-hover:brightness-105"
+                    sizes="1000vw"
                     quality={90}
                   />
                 </div>
