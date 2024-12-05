@@ -32,9 +32,11 @@ export default function CalidadPage() {
             <Card>
               <CardHeader>
                 <Shield className="h-12 w-12 text-primary" />
+
                 <CardTitle>ISO 9001:2015</CardTitle>
               </CardHeader>
               <CardContent>
+
                 <p>Sistema de Gestión de Calidad certificado</p>
               </CardContent>
             </Card>
@@ -45,7 +47,7 @@ export default function CalidadPage() {
                 <CardTitle>IRAM</CardTitle>
               </CardHeader>
               <CardContent>
-                <p>Certificación de productos según normas IRAM</p>
+                <p>Proceso de certificación de productos según normas IRAM</p>
               </CardContent>
             </Card>
 
@@ -93,8 +95,8 @@ export default function CalidadPage() {
               </ul>
               <span className="text-right">
                 <p>La Dirección
-                  <br /> Abril 2023</p>  
-                </span>
+                  <br /> Abril 2023</p>
+              </span>
             </div>
             <div className="relative h-[500px] ">
               <Image

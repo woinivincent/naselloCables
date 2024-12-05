@@ -44,7 +44,7 @@ export default async function ProductosPage() {
                 {/* Imagen del producto */}
                 <div className="relative aspect-[16/9] w-full transition-transform duration-300 group-hover:scale-105">
                   <Image
-                    src={product.images[1]}
+                    src={product.images[0]}
                     alt={product.name}
                     fill
                     className="object-contain transition-all duration-300 group-hover:brightness-110"

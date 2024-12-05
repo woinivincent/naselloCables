@@ -16,7 +16,7 @@ const TimelineSection = () => {
     { year: "2013", content: "Adquisición de maquinarias y ampliación de depósito", icon: <Zap className="text-secondary" /> },
     { year: "2018", content: "Ampliación de planta productiva y gama de conductores eléctricos.", icon: <Factory className="text-secondary" /> },
     { year: "2023", content: "Certificación oficial de ISO 9001", icon: <CheckCircleIcon className="text-secondary" /> },
-    { year: "2024", content: "Certificación oficial de normas Iram", icon: <AwardIcon className="text-secondary" /> },
+    { year: "2024", content: "Proceso de certificación oficial de normas Iram", icon: <AwardIcon className="text-secondary" /> },
   ];
 
   const containerVariants = {

@@ -5,15 +5,22 @@
       "name": "Cable Bipolar Cristal",
       "description": "Cable bipolar con aislación cristal transparente, ideal para instalaciones a la vista. Conductor flexible de cobre con doble aislación de PVC.",
       "images": [
-        "/assets/paraleloTabla.png",
         "/assets/cristalparalelo.jpg",
+        "/assets/ParaleloNegro.jpg",
+        "/assets/ParaleloBlanco.png",
+        "/assets/ParaleloNegro2.jpg",
+        "/assets/paraleloTabla.png",
         "/assets/paraleloImagen.png"
       ],
       "codes": [
         "CRIS2X0.75",
         "CRIS2X1",
         "CRIS2X1.5",
-        "CRIS2X2.5"
+        "CRIS2X2.5",
+        "PAR2X0.75",
+        "PAR2X1",
+        "PAR2X1.5",
+        "PAR2X2.5"
       ],
       "colors": [
         " No disponible"
@@ -33,16 +40,12 @@
       "name": "Cable Bipolar Vaina Plana",
       "description": "Cable de cobre de sección chata Extra Flexible con aislación y envoltura de P.V.C. Para tensiones de servicio de hasta 300/500 V. Para instalaciones movibles en locales industriales, agrícolas y domésticos; Aparatos portátiles industriales y electrodomésticos en general, excluyendo los de calefacción.",
       "images": [
-        "/assets/vainaPlanaTabla.png",
         "/assets/VainaPlana2.png",
         "/assets/VainaPlana3.png",
-        "/assets/vainaPlanaImagen.png"
+        "/assets/vainaPlanaImagen.png",
+        "/assets/vainaPlanaTabla.png"
       ],
       "codes": [
-        "PAR2X0.75",
-        "PAR2X1",
-        "PAR2X1.5",
-        "PAR2X2.5",
         "VP2X0.75",
         "VP2X1",
         "VP2X1.5",
@@ -70,9 +73,10 @@
       "name": "Cable Unipolar",
       "description": "Su cuerda está compuesta por cobre electrolítico rojo.Este conductor es utilizado en instalaciones fijas, domiciliarias o industriales revistiendo características de extra flexibilidad, auto-deslizamiento y anti-llama. Los colores de fabricación standard son: celeste, marrón, rojo, verde/amarillo, negro y blanco. Ofrecemos la fabricación en colores especiales a requerimiento.",
       "images": [
-        "/assets/unipolarTabla.png",
+        "/assets/Unipolares.jpg",
+        "/assets/unipolarImagen.png",
         "/assets/unipolares.jpeg",
-        "/assets/unipolarImagen.png"
+        "/assets/unipolarTabla.png"
       ],
       "codes": [
         "0.75",
@@ -119,8 +123,8 @@
       "name": "Cable para Automotor y Batería",
       "description": "Cable especialmente diseñado para uso automotriz y conexiones de baterías. Alta resistencia a la temperatura y al desgaste.",
       "images": [
-        "/assets/cableBaterias.webp",
-        "/assets/cableBateria.webp"
+        "/assets/cableBateria.webp",
+        "/assets/cableBaterias.webp"
       ],
       "codes": [
         "AUT10",
@@ -147,8 +151,8 @@
       "name": "Cable de Soldadura ",
       "description": "Los cables para soldadura son elaborados con cobre electrolítico rojo. sobre la cuerda de cobre se coloca un separador de papel que permite su desplazamiento longitudinal cuando el cable es flexionado. La vaina exterior esta compuesta a base de caucho sintético del tipo EPDM color negro, impreso con el nombre de la empresa. presenta excelentes características contra los agentes atmosféricos nocivos, la acción de los ácidos, solventes comunes y aceites; de particular resistencia tanto a altas y bajas temperaturas como a fricción por rozamiento o aplastamiento.",
       "images": [
-        "/assets/soldaduraTabla.png",
         "/assets/soldaduraImagen.png",
+        "/assets/soldaduraTabla.png",
         "/assets/soldazul.jpg"
       ],
       "codes": [
@@ -189,8 +193,9 @@
       "name": "Cable para Bafle/Audio Premium",
       "description": "Cable de alta calidad para sistemas de audio. Mínima pérdida de señal y máxima fidelidad en la transmisión.",
       "images": [
-        "/assets/audiobobinas.jpeg",
-        "/assets/audiobobina.jpeg"
+        "/assets/BAFLE.jpg",
+        "/assets/bafle 2.png",
+        "/assets/bafle3.png"
       ],
       "codes": [
         "BA2x0.75",
@@ -216,9 +221,10 @@
       "name": "Cables Subterráneos",
       "description": "Conductor eléctrico conformado en su interior por cables unipolares multifilares de cobre electrolítico rojo, envainados en PVC flexible y anti-llama. Los cables unipolares interiores están recubiertos con una película de material antiadherente que facilita su separación de la vaina exterior. El recubrimiento extra-flexible de PVC violeta de excelente calidad y anti-flama, sobre la cual salen impresas las especificaciones del conductor y el metrado para facilitar su despacho. Se utiliza para cablea-dos subterráneos o bien sobre bandejas porta-cables.",
       "images": [
-        "/assets/subterraneosTabla.png",
         "/assets/subterraneosImagen.png",
-        "/assets/ABUNIPOLAR.jpg"
+        "/assets/subterraneosTabla.png",
+        "/assets/subte-nasello.jpg",
+        "/assets/SubteHome.jpeg"
       ],
       "codes": [
         "S16",
@@ -285,8 +291,8 @@
       "name": "Cable para Bomba Sumergible",
       "description": "Conductor eléctrico conformado en su interior por cables unipolares multifilares de cobre electrolítico rojo, envainados en PVC flexible y antillama. Los cables unipolares interiores están recubiertos con una película de material antiadherente que facilita su separación de la vaina exterior.En su exterior posee una vaina extraflexible de PVC verde de excelente calidad y resistente a la llama. Posee marcación metro a metro para facilitar su despacho.Se utiliza para el conexionado de todo tipo de bombas.",
       "images": [
-        "/assets/ET-VT-002 bomba sumergibleTabla.png",
         "/assets/bombasum.jpg",
+        "/assets/ET-VT-002 bomba sumergibleTabla.png",
         "/assets/sumergible.jpg"
       ],
       "codes": [
@@ -322,8 +328,8 @@
       "name": "Cable de Cobre Desnudo",
       "description": " Para puestas a tierra, Instalación de Antenas, descarga de pararrayos, etc. Calidad del cobre: Elaborado con Cobre de cátodo, en conformidad con las especificaciones ASTM 115-93, grado 1, con una pureza de Cobre mínima del 99,5%",
       "images": [
-        "/assets/desnudoTabla.png",
         "/assets/desnudoImagen.png",
+        "/assets/desnudoTabla.png",
         "/assets/cobredesnudo.jpg"
       ],
       "codes": [
@@ -358,8 +364,8 @@
       "name": "Cable Tipo Taller ",
       "description": "Conductor eléctrico conformado en su interior por cables unipolares multifilares de cobre electrolítico rojo, envainados en PVC flexible y antillama. Los cables unipolares interiores están recubiertos con una película de material antiadherente que facilita su separación de la vaina exterior. En su exterior posee una vaina extraflexible de PVC negro de excelente calidad y resistente a la llama.Se utiliza en instalaciones móviles industriales, domesticas y extensiones para maquinas portátiles, ofreciendo seguridad mecánica ante los golpes.",
       "images": [
-        "/assets/tallerTabla.png",
         "/assets/tallerImagen.png",
+        "/assets/tallerTabla.png",
         "/assets/taller nasello.jpg"
       ],
       "codes": [
@@ -411,6 +417,33 @@
         "Temperatura de Trabajo: -5º C a 70º C.",
         "Flexibilidad: Clase 5",
         "Normativa de fabricación: IEC 245-6 - 2022 "
+      ]
+    },
+    "merchadising": {
+      "id": "M001",
+      "name": "Merchandising",
+      "description": "Utiles oficiales de la empresa para la comercialización de cables",
+      "images": [
+        "/assets/FotoMerch5.jpg",
+        "/assets/FotoMerch1.jpg",
+        "/assets/FotoMerch2.jpg",
+        "/assets/FotoMerch3.jpg",
+        "/assets/FotoMerch4.jpg",
+        "/assets/FotoMerch6.jpg"
+      ],
+      "codes": [
+        "No disponible"
+      ],
+      "colors": [
+        " No disponible"
+      ],
+      "presentation": [
+        "Bobina: 1000 mts",
+        "Rollo: 100 mts",
+        "Bobinita: 300 mts "
+      ],
+      "technical_specs": [
+        "No disponible"
       ]
     }
   }

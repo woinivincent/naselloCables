@@ -105,12 +105,12 @@ export default function Home() {
               },
             ].map((product, index) => (
               <Card key={index} className="group transition-all duration-300 hover:scale-[1.07] hover:shadow-lg">
-                <div className="relative aspect-[17/8] w-full">
+                <div className="relative min-h-[300px] w-full">
                   <Image
                     src={product.image}
                     alt={product.title}
                     fill
-                    className="object-center object-cover transition-all duration-300 group-hover:brightness-105"
+                    className=" object-contain transition-all duration-300 group-hover:brightness-105"
                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     quality={90}
                   />
