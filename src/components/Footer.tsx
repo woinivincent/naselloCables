@@ -1,18 +1,29 @@
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <footer className="bg-primary text-white">
+
       <div className="container mx-auto  py-12 max-sm:p-4">
-        <div className="grid grid-cols-1  gap-8 md:grid-cols-4">
-          <div className=""> 
-            <h3 className="text-lg text font-semibold text-white">Nasello Cables</h3>
-            <p className="mt-4">
-              Más de 40 años de experiencia en la fabricación y comercialización de cables y conductores eléctricos.
-            </p>
+        <Image
+          src={"/assets/logo.png"}
+          alt="Logo"
+          width={100}
+          height={80}
+          className="w-[180px] relative left-1/2 -translate-x-1/2"
+        />
+        <div className="grid grid-cols-1 gap-7 md:grid-cols-4">
+
+          <div className="">
+
+            <h3 className="mt-1">
+              Líderes en conductores eléctricos desde hace más de 40 años, ofrecemos soluciones de alta calidad y confiabilidad para todo el país.
+              Calidad, Innovación y Servicio en la industria nacional
+            </h3>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold text-white">Enlaces</h3>
             <ul className="mt-4 space-y-2">
@@ -38,7 +49,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold text-white">Contacto</h3>
             <ul className="mt-4 space-y-2">
@@ -47,17 +58,17 @@ const Footer = () => {
               <li>info@nasellocables.com</li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold text-white">Síguenos</h3>
             <div className="mt-4 flex space-x-4">
               <a
-                href="#"
+                href="https://www.youtube.com/@NaselloCables"
                 className="hover:text-white"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Facebook className="h-6 w-6" />
+                <Youtube className="h-7 w-7" />
               </a>
               <a
                 href="https://www.instagram.com/nasellocables_sa/"
@@ -73,15 +84,24 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              
+
               </a>
+
             </div>
+            <Image
+              src="/assets/Iso9001.png"
+              alt="Iso9001"
+              className="h-[90px] w-[230px] mt-5"
+              width={50}
+              height={24}
+
+            />
           </div>
         </div>
-        
+
         <div className="mt-8 border-t border-gray-800 pt-8 text-center">
           <p className="text-sm">© {new Date().getFullYear()} Nasello Cables. Todos los derechos reservados.| Developed by Vicente Woinilowicz</p>
-        
+
         </div>
       </div>
     </footer>

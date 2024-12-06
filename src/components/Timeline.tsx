@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AwardIcon, Building2, Calendar, CheckCircleIcon, Factory, FileBadge2Icon, Lightbulb, RefreshCcw, Zap } from "lucide-react";
+import Image from "next/image";
 
 const TimelineSection = () => {
   const timelineEvents = [
@@ -15,7 +16,7 @@ const TimelineSection = () => {
     { year: "2008", content: "Consolidación oficial de la Sociedad Anónima.", icon: <Building2 className="text-secondary" /> },
     { year: "2013", content: "Adquisición de maquinarias y ampliación de depósito", icon: <Zap className="text-secondary" /> },
     { year: "2018", content: "Ampliación de planta productiva y gama de conductores eléctricos.", icon: <Factory className="text-secondary" /> },
-    { year: "2023", content: "Certificación oficial de ISO 9001", icon: <CheckCircleIcon className="text-secondary" /> },
+    { year: "2023", content: "Certificación oficial de ISO 9001", icon: <CheckCircleIcon className="text-secondary" />, image: "/assets/Iso9001noQr.jpg" },
     { year: "2024", content: "Proceso de certificación oficial de normas Iram", icon: <AwardIcon className="text-secondary" /> },
   ];
 
@@ -88,15 +89,28 @@ const TimelineSection = () => {
 
                   {/* Card con contenido */}
                   <div
-                    className={`absolute w-48 ${
-                      index % 2 === 0 ? "top-20" : "bottom-20"
-                    } left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 sm:w-56`}
+                    className={`absolute w-48 ${index % 2 === 0 ? "top-20" : "bottom-20"
+                      } left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 sm:w-56`}
                   >
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="bg-white p-4 rounded-xl shadow-lg"
+                      className="bg-white p-4 rounded-xl shadow-lg "
+
                     >
+                      {event.image && (
+                        <div className="mb-3">
+                          <Image
+                            src={event.image}
+                            alt={`Imagen de ${event.year}`}
+                            className="rounded-lg"
+                            width={150} // Ajusta el tamaño según tu diseño
+                            height={100} // Ajusta el tamaño según tu diseño
+                          />
+                        </div>
+                      )}
                       <p className="text-sm text-gray-600">{event.content}</p>
+
+
                     </motion.div>
                   </div>
                 </div>
