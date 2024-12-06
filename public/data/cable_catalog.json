@@ -123,8 +123,9 @@
       "name": "Cable para Automotor y Batería",
       "description": "Cable especialmente diseñado para uso automotriz y conexiones de baterías. Alta resistencia a la temperatura y al desgaste.",
       "images": [
-        "/assets/cableBateria.webp",
-        "/assets/cableBaterias.webp"
+        "/assets/automotor3.jpg",
+        "/assets/automotor1.jpg",
+        "/assets/automotor2.jpg"
       ],
       "codes": [
         "AUT10",
@@ -151,9 +152,9 @@
       "name": "Cable de Soldadura ",
       "description": "Los cables para soldadura son elaborados con cobre electrolítico rojo. sobre la cuerda de cobre se coloca un separador de papel que permite su desplazamiento longitudinal cuando el cable es flexionado. La vaina exterior esta compuesta a base de caucho sintético del tipo EPDM color negro, impreso con el nombre de la empresa. presenta excelentes características contra los agentes atmosféricos nocivos, la acción de los ácidos, solventes comunes y aceites; de particular resistencia tanto a altas y bajas temperaturas como a fricción por rozamiento o aplastamiento.",
       "images": [
+        "/assets/SoldaduraHome.png",
         "/assets/soldaduraImagen.png",
-        "/assets/soldaduraTabla.png",
-        "/assets/soldazul.jpg"
+        "/assets/soldaduraTabla.png"
       ],
       "codes": [
         "G16",
@@ -221,6 +222,7 @@
       "name": "Cables Subterráneos",
       "description": "Conductor eléctrico conformado en su interior por cables unipolares multifilares de cobre electrolítico rojo, envainados en PVC flexible y anti-llama. Los cables unipolares interiores están recubiertos con una película de material antiadherente que facilita su separación de la vaina exterior. El recubrimiento extra-flexible de PVC violeta de excelente calidad y anti-flama, sobre la cual salen impresas las especificaciones del conductor y el metrado para facilitar su despacho. Se utiliza para cablea-dos subterráneos o bien sobre bandejas porta-cables.",
       "images": [
+        "/assets/SubteHome.jpeg",
         "/assets/subterraneosImagen.png",
         "/assets/subterraneosTabla.png",
         "/assets/subte-nasello.jpg",
@@ -328,9 +330,10 @@
       "name": "Cable de Cobre Desnudo",
       "description": " Para puestas a tierra, Instalación de Antenas, descarga de pararrayos, etc. Calidad del cobre: Elaborado con Cobre de cátodo, en conformidad con las especificaciones ASTM 115-93, grado 1, con una pureza de Cobre mínima del 99,5%",
       "images": [
+        "/assets/CobreDesnudo1.jpg",
         "/assets/desnudoImagen.png",
-        "/assets/desnudoTabla.png",
-        "/assets/cobredesnudo.jpg"
+        "/assets/desnudoTabla.png"
+
       ],
       "codes": [
         "DES6",
@@ -364,9 +367,9 @@
       "name": "Cable Tipo Taller ",
       "description": "Conductor eléctrico conformado en su interior por cables unipolares multifilares de cobre electrolítico rojo, envainados en PVC flexible y antillama. Los cables unipolares interiores están recubiertos con una película de material antiadherente que facilita su separación de la vaina exterior. En su exterior posee una vaina extraflexible de PVC negro de excelente calidad y resistente a la llama.Se utiliza en instalaciones móviles industriales, domesticas y extensiones para maquinas portátiles, ofreciendo seguridad mecánica ante los golpes.",
       "images": [
+        "/assets/taller nasello.jpg",
         "/assets/tallerImagen.png",
-        "/assets/tallerTabla.png",
-        "/assets/taller nasello.jpg"
+        "/assets/tallerTabla.png"
       ],
       "codes": [
         "2x0.75",

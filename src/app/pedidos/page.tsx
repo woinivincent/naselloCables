@@ -323,6 +323,7 @@ export default function PedidosPage() {
                       value={currentItem.quantity || ""}
                       onChange={(e) => setCurrentItem({ ...currentItem, quantity: parseInt(e.target.value) })}
                       min="1"
+                      max="999"
                     />
                   </div>
                 </div>
