@@ -73,6 +73,7 @@
       "name": "Cable Unipolar",
       "description": "Su cuerda está compuesta por cobre electrolítico rojo.Este conductor es utilizado en instalaciones fijas, domiciliarias o industriales revistiendo características de extra flexibilidad, auto-deslizamiento y anti-llama. Los colores de fabricación standard son: celeste, marrón, rojo, verde/amarillo, negro y blanco. Ofrecemos la fabricación en colores especiales a requerimiento.",
       "images": [
+        "/assets/unipolarPortada.jpeg",
         "/assets/Unipolares.jpg",
         "/assets/unipolarImagen.png",
         "/assets/unipolares.jpeg",
@@ -123,9 +124,12 @@
       "name": "Cable para Automotor y Batería",
       "description": "Cable especialmente diseñado para uso automotriz y conexiones de baterías. Alta resistencia a la temperatura y al desgaste.",
       "images": [
+        "/assets/automotor4.jpg",
+        "/assets/automotor5.jpg",
         "/assets/automotor3.jpg",
         "/assets/automotor1.jpg",
-        "/assets/automotor2.jpg"
+        "/assets/automotor2.jpg",
+        "/assets/automotor6.jpg"
       ],
       "codes": [
         "AUT10",
@@ -152,6 +156,8 @@
       "name": "Cable de Soldadura ",
       "description": "Los cables para soldadura son elaborados con cobre electrolítico rojo. sobre la cuerda de cobre se coloca un separador de papel que permite su desplazamiento longitudinal cuando el cable es flexionado. La vaina exterior esta compuesta a base de caucho sintético del tipo EPDM color negro, impreso con el nombre de la empresa. presenta excelentes características contra los agentes atmosféricos nocivos, la acción de los ácidos, solventes comunes y aceites; de particular resistencia tanto a altas y bajas temperaturas como a fricción por rozamiento o aplastamiento.",
       "images": [
+        "/assets/soldadura2.jpg",
+        "/assets/soldadura3.png",
         "/assets/SoldaduraHome.png",
         "/assets/soldaduraImagen.png",
         "/assets/soldaduraTabla.png"
@@ -194,9 +200,9 @@
       "name": "Cable para Bafle/Audio Premium",
       "description": "Cable de alta calidad para sistemas de audio. Mínima pérdida de señal y máxima fidelidad en la transmisión.",
       "images": [
+        "/assets/bafle3.png",
         "/assets/BAFLE.jpg",
-        "/assets/bafle 2.png",
-        "/assets/bafle3.png"
+        "/assets/bafle 2.png"
       ],
       "codes": [
         "BA2x0.75",
@@ -222,11 +228,10 @@
       "name": "Cables Subterráneos",
       "description": "Conductor eléctrico conformado en su interior por cables unipolares multifilares de cobre electrolítico rojo, envainados en PVC flexible y anti-llama. Los cables unipolares interiores están recubiertos con una película de material antiadherente que facilita su separación de la vaina exterior. El recubrimiento extra-flexible de PVC violeta de excelente calidad y anti-flama, sobre la cual salen impresas las especificaciones del conductor y el metrado para facilitar su despacho. Se utiliza para cablea-dos subterráneos o bien sobre bandejas porta-cables.",
       "images": [
+        "/assets/subte-nasello.jpg",
         "/assets/SubteHome.jpeg",
         "/assets/subterraneosImagen.png",
-        "/assets/subterraneosTabla.png",
-        "/assets/subte-nasello.jpg",
-        "/assets/SubteHome.jpeg"
+        "/assets/subterraneosTabla.png"
       ],
       "codes": [
         "S16",
@@ -330,10 +335,12 @@
       "name": "Cable de Cobre Desnudo",
       "description": " Para puestas a tierra, Instalación de Antenas, descarga de pararrayos, etc. Calidad del cobre: Elaborado con Cobre de cátodo, en conformidad con las especificaciones ASTM 115-93, grado 1, con una pureza de Cobre mínima del 99,5%",
       "images": [
+        "/assets/cobredes1.webp",
+        "/assets/cobredes2.jpg",
+        "/assets/cobredes3.jpg", 
         "/assets/CobreDesnudo1.jpg",
         "/assets/desnudoImagen.png",
         "/assets/desnudoTabla.png"
-
       ],
       "codes": [
         "DES6",
@@ -367,6 +374,7 @@
       "name": "Cable Tipo Taller ",
       "description": "Conductor eléctrico conformado en su interior por cables unipolares multifilares de cobre electrolítico rojo, envainados en PVC flexible y antillama. Los cables unipolares interiores están recubiertos con una película de material antiadherente que facilita su separación de la vaina exterior. En su exterior posee una vaina extraflexible de PVC negro de excelente calidad y resistente a la llama.Se utiliza en instalaciones móviles industriales, domesticas y extensiones para maquinas portátiles, ofreciendo seguridad mecánica ante los golpes.",
       "images": [
+        "/assets/taller3.jpg",
         "/assets/taller nasello.jpg",
         "/assets/tallerImagen.png",
         "/assets/tallerTabla.png"

@@ -34,7 +34,7 @@ export default function RootLayout({
             <Navbar  />
 
             <main className="flex-1 max-w-full ">{children}
-            <SocialMediaFloat  />
+            <SocialMediaFloat className="max-[320px]: hidden"/>
             <BackToTop />
             </main>
             <Footer />

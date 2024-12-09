@@ -46,11 +46,11 @@ export function ImageSlider() {
 
   return (
     <div
-      className="relative w-full h-[65vh] overflow-hidden max-sm:h-[50vh]"
+      className="relative w-full h-[65vh] overflow-hidden  "
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60 z-10 max-sm:max-h-[600px]" />
       <div ref={emblaRef} className="overflow-hidden">
         <div className="flex">
           {slides.map((slider, index) => (
@@ -64,11 +64,11 @@ export function ImageSlider() {
                   alt={slider.title}
                   fill
                   priority={index === 0}
-                  className="object-cover object-center"
+                  className="object-cover object-center max-[640px]:object-center "
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-8 z-20 bg-gradient-to-t from-black/80 to-transparent">
+              <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
                 <div className="max-w-screen-xl mx-auto">
                   <h2 className="text-4xl font-bold text-white mb-2 tracking-tight">
                     {slider.title}

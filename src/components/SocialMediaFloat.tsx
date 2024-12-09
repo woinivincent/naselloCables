@@ -37,7 +37,7 @@ const SocialMediaFloat = ({ className }: SocialMediaProps) => {
 
   return (
     <div className={cn(
-      "fixed right-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 bg-white p-2 rounded-l-lg shadow-lg border border-r-0 z-50", className
+     " md:block fixed right-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 bg-white p-2 rounded-l-lg shadow-lg border border-r-0 z-50" , className 
     )}>
       {socialLinks.map((social) => {
         const Icon = social.icon;
@@ -53,7 +53,7 @@ const SocialMediaFloat = ({ className }: SocialMediaProps) => {
             )}
             aria-label={`Visitar ${social.name}`}
           >
-            <Icon className="w-6 h-6" />
+            <Icon className="w-6 h-6 mb-2" />
           </a>
         );
       })}

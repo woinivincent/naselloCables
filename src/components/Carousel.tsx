@@ -33,16 +33,16 @@ const Carousel = ({ images, productName }: CarouselProps) => {
   };
 
   return (
-    <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
+    <div className="relative bg-white rounded-lg shadow-lg overflow-hidden ">
       {/* Imágenes del carrusel */}
-      <div className="relative w-full h-[600px] overflow-hidden ">
+      <div className=" object-contain relative w-full h-[600px] overflow-hidden ">
         {images.map((image, index) => (
           <Image
             key={index}
             src={image}
             alt={`${productName} - Imagen ${index + 1}`}
             fill
-            className={`object-contain transition-transform duration-700 ease-in-out ${
+            className={` object-contain transition-transform duration-700 ease-in-out ${
               index === activeImageIndex ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
           />
@@ -52,7 +52,7 @@ const Carousel = ({ images, productName }: CarouselProps) => {
       {/* Botón "Anterior" */}
       <ChevronLeft
         onClick={handlePrevImage}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-primary text-white rounded-full p-2 hover:bg-secondary opacity-80" 
+        className=" absolute left-4 top-1/2 transform -translate-y-1/2 bg-primary text-white rounded-full p-2 hover:bg-secondary opacity-80" 
         aria-label="Imagen anterior"
         size={50}
       >
