@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-white">
 
-      <div className="container mx-auto  py-12 max-sm:p-4">
+      <div className="container mx-auto  max-sm:p-4">
         <Image
           src={"/assets/logo.png"}
           alt="Logo"
@@ -99,7 +99,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-gray-800 pt-8 text-center">
+        <div className="my-8 border-t border-gray-800 pt-8 text-center">
           <p className="text-sm">© {new Date().getFullYear()} Nasello Cables. Todos los derechos reservados.| Developed by Vicente Woinilowicz</p>
 
         </div>

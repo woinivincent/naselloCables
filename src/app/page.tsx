@@ -134,7 +134,7 @@ export default function Home() {
       </section>
 
       <Banners />
-      {/* CTA Section */}
+      {/* CTA Section 
       <section className=" flex justify-center bg-primary py-8 text-white">
         <div className="container text-center">
           <h2 className="mb-6 text-2xl font-bold">
@@ -152,7 +152,7 @@ export default function Home() {
             <Link href="/contacto">Contáctenos</Link>
           </Button>
         </div>
-      </section>
+      </section>*/}
     </>
   );
 }
