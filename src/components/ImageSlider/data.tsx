@@ -10,11 +10,7 @@ export interface SlideData {
       title: '',
       description: ''
     },  
-    {
-      id: 2,
-      title: '',
-      description: ''
-    },  
+   
     {
       id: 3,
       title: '',

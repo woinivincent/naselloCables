@@ -19,9 +19,9 @@ export default function Home() {
   return (
     <>
 
-      <section className="relative">
+      <section className="relative h-[600px] max-sm:h-[320px]" >
         <ImageSlider />
-        <div className="absolute inset-0 flex z-10 items-center justify-center max-sm:p-4">
+        <div className="absolute inset-0 flex z-10 items-center justify-center ">
           <div className="container text-center text-white max-sm:hidden">
             <h1 className="mb-6 text-5xl font-medium text-white">
               CALIDAD Y CONFIABILIDAD EN CADA PRODUCTO
@@ -134,25 +134,7 @@ export default function Home() {
       </section>
 
       <Banners />
-      {/* CTA Section 
-      <section className=" flex justify-center bg-primary py-8 text-white">
-        <div className="container text-center">
-          <h2 className="mb-6 text-2xl font-bold">
-            ¿Necesita asesoramiento profesional?
-          </h2>
-          <p className="mb-8 text-lg">
-            Nuestro equipo de expertos está listo para ayudarte
-          </p>
-          <Button
-            asChild
-            size="lg"
-            variant="secondary"
-            className="bg-white text-primary hover:bg-secondary hover:text-white"
-          >
-            <Link href="/contacto">Contáctenos</Link>
-          </Button>
-        </div>
-      </section>*/}
+
     </>
   );
 }

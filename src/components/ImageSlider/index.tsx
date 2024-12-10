@@ -46,25 +46,28 @@ export function ImageSlider() {
 
   return (
     <div
-      className="relative w-full h-[65vh] overflow-hidden  "
+      className="relative w-full h-[65vh] overflow-hidden max-sm:h-[320px]  "
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60 z-10 max-sm:max-h-[600px]" />
-      <div ref={emblaRef} className="overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60 z-10 " />
+      <div ref={emblaRef} className="overflow-hidden max-sm:h-[320px]">
         <div className="flex">
           {slides.map((slider, index) => (
             <div
               key={slider.id}
               className="relative flex-[0_0_100%] min-w-0"
             >
-              <div className="w-full h-[600px] max-h-[80vh] relative overflow-hidden">
+              <div className="w-full h-[600px] max-h-[80vh] relative overflow-hidden max-sm:h-[320px]">
                 <Image
                   src={`/assets/slider${slider.id}.jpg`}
                   alt={slider.title}
                   fill
                   priority={index === 0}
-                  className="object-cover object-center max-[640px]:object-center "
+                  className={`object-cover object-center ${index === 0
+                      ? 'max-sm:object-cover '
+                      : 'max-sm:h-[600px] max-sm:object-cover max-sm:object-center'
+                    }`}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>

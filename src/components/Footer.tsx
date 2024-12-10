@@ -4,16 +4,11 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-primary text-white ">
 
-      <div className="container mx-auto  max-sm:p-4">
-        <Image
-          src={"/assets/logo.png"}
-          alt="Logo"
-          width={100}
-          height={80}
-          className="w-[180px] relative left-1/2 -translate-x-1/2"
-        />
+      <div className="container mx-auto mt-8  max-sm:p-4">
+
+       
         <div className="grid grid-cols-1 gap-7 md:grid-cols-4">
 
           <div className="">
