@@ -1,228 +1,5 @@
 {
   "cable_catalog": {
-    "bipolar_cristal_paralelos": {
-      "id": "BC001",
-      "name": "Cable Bipolar Cristal",
-      "description": "Cable bipolar con aislación cristal transparente, ideal para instalaciones a la vista. Conductor flexible de cobre con doble aislación de PVC.",
-      "images": [
-        "/assets/cristalparalelo.jpg",
-        "/assets/ParaleloNegro.jpg",
-        "/assets/ParaleloBlanco.png",
-        "/assets/ParaleloNegro2.jpg",
-        "/assets/paraleloTabla.png",
-        "/assets/paraleloImagen.png"
-      ],
-      "codes": [
-        "CRIS2X0.75",
-        "CRIS2X1",
-        "CRIS2X1.5",
-        "CRIS2X2.5",
-        "PAR2X0.75",
-        "PAR2X1",
-        "PAR2X1.5",
-        "PAR2X2.5"
-      ],
-      "colors": [
-        " No disponible"
-      ],
-      "presentation": [
-        "Bobina: 1000 mts",
-        "Rollo: 100 mts",
-        "Bobinita: 300 mts "
-      ],
-      "technical_specs": [
-        "Cable según norma NM 247-3",
-        "Tensión nominal 300/500V"
-      ]
-    },
-    "bipolar_vaina_plana": {
-      "id": "VP001",
-      "name": "Cable Bipolar Vaina Plana",
-      "description": "Cable de cobre de sección chata Extra Flexible con aislación y envoltura de P.V.C. Para tensiones de servicio de hasta 300/500 V. Para instalaciones movibles en locales industriales, agrícolas y domésticos; Aparatos portátiles industriales y electrodomésticos en general, excluyendo los de calefacción.",
-      "images": [
-        "/assets/VainaPlana2.png",
-        "/assets/VainaPlana3.png",
-        "/assets/vainaPlanaImagen.png",
-        "/assets/vainaPlanaTabla.png"
-      ],
-      "codes": [
-        "VP2X0.75",
-        "VP2X1",
-        "VP2X1.5",
-        "VP2X2.5",
-        "VP3X1",
-        "VP3X1.5",
-        "VP3X2.5"
-      ],
-      "colors": [
-        "NEGRO",
-        "BLANCO"
-      ],
-      "presentation": [
-        "Bobina: 1000 mts",
-        "Rollo: 100 mts",
-        "Bobinita: 300 mts "
-      ],
-      "technical_specs": [
-        "Cable según norma NM 247-3",
-        "Tensión nominal 300/500V"
-      ]
-    },
-    "unipolar_antillama": {
-      "id": "UA001",
-      "name": "Cable Unipolar",
-      "description": "Su cuerda está compuesta por cobre electrolítico rojo.Este conductor es utilizado en instalaciones fijas, domiciliarias o industriales revistiendo características de extra flexibilidad, auto-deslizamiento y anti-llama. Los colores de fabricación standard son: celeste, marrón, rojo, verde/amarillo, negro y blanco. Ofrecemos la fabricación en colores especiales a requerimiento.",
-      "images": [
-        "/assets/unipolarPortada.jpeg",
-        "/assets/Unipolares.jpg",
-        "/assets/unipolarImagen.png",
-        "/assets/unipolares.jpeg",
-        "/assets/unipolarTabla.png"
-      ],
-      "codes": [
-        "0.75",
-        "1",
-        "1.5",
-        "2.5",
-        "4",
-        "6",
-        "10",
-        "16",
-        "25",
-        "35",
-        "50",
-        "70",
-        "95",
-        "120",
-        "150",
-        "185",
-        "240"
-      ],
-      "colors": [
-        "CE",
-        "RO",
-        "V/A",
-        "MA",
-        "NE",
-        "BL"
-      ],
-      "presentation": [
-        "Bobina",
-        "Rollo",
-        "Bobinita"
-      ],
-      "technical_specs": [
-        "Tensión de trabajo: 450/750V",
-        " Apto 1000 V.",
-        "Temperatura de Trabajo: -5°C a 70°C.",
-        "Flexibilidad: Clase 4 y 5",
-        "Normativa de fabricación: NM 243-3:2003."
-      ]
-    },
-    "automotor_bateria": {
-      "id": "AB001",
-      "name": "Cable para Automotor y Batería",
-      "description": "Cable especialmente diseñado para uso automotriz y conexiones de baterías. Alta resistencia a la temperatura y al desgaste.",
-      "images": [
-        "/assets/automotor4.jpg",
-        "/assets/automotor5.jpg",
-        "/assets/automotor3.jpg",
-        "/assets/automotor1.jpg",
-        "/assets/automotor2.jpg",
-        "/assets/automotor6.jpg"
-      ],
-      "codes": [
-        "AUT10",
-        "AUT16",
-        "AUT25",
-        "AUT35",
-        "AUT50",
-        "AUT70",
-        "AUT95"
-      ],
-      "colors": [
-        "ROJO",
-        "NEGRO"
-      ],
-      "presentation": [
-        "Bobina",
-        "Rollo",
-        "Bobinita"
-      ],
-      "technical_specs": "Alta resistencia a aceites y temperatura"
-    },
-    "soldadura": {
-      "id": "SG001",
-      "name": "Cable de Soldadura ",
-      "description": "Los cables para soldadura son elaborados con cobre electrolítico rojo. sobre la cuerda de cobre se coloca un separador de papel que permite su desplazamiento longitudinal cuando el cable es flexionado. La vaina exterior esta compuesta a base de caucho sintético del tipo EPDM color negro, impreso con el nombre de la empresa. presenta excelentes características contra los agentes atmosféricos nocivos, la acción de los ácidos, solventes comunes y aceites; de particular resistencia tanto a altas y bajas temperaturas como a fricción por rozamiento o aplastamiento.",
-      "images": [
-        "/assets/soldadura2.jpg",
-        "/assets/soldadura3.png",
-        "/assets/SoldaduraHome.png",
-        "/assets/soldaduraImagen.png",
-        "/assets/soldaduraTabla.png"
-      ],
-      "codes": [
-        "G16",
-        "G25",
-        "G35",
-        "G50",
-        "G70",
-        "G95",
-        "G120",
-        "G150",
-        "A16",
-        "A25",
-        "A35",
-        "A50",
-        "A70",
-        "A95",
-        "A120"
-      ],
-      "colors": [
-        " NegroGoma",
-        " AzulIEC"
-      ],
-      "presentation": [
-        "Rollo: 25mts ",
-        "Bobinita: 100mts",
-        "Bobina: 500mts"
-      ],
-      "technical_specs": [
-        "Tensión de trabajo: 450/750V",
-        "Temperatura de Trabajo:-5°C a 105°C",
-        "Flexibilidad: 6",
-        "Normativa de fabricación: IEC 245-6 - 2022 "
-      ]
-    },
-    "bafle_audio_premium": {
-      "id": "BA001",
-      "name": "Cable para Bafle/Audio Premium",
-      "description": "Cable de alta calidad para sistemas de audio. Mínima pérdida de señal y máxima fidelidad en la transmisión.",
-      "images": [
-        "/assets/bafle3.png",
-        "/assets/BAFLE.jpg",
-        "/assets/bafle 2.png"
-      ],
-      "codes": [
-        "BA2x0.75",
-        "BA2x1",
-        "BA2x1.5"
-      ],
-      "colors": [
-        "",
-        ""
-      ],
-      "presentation": [
-        "Bobina",
-        "Rollo",
-        "Bobinita"
-      ],
-      "technical_specs": [
-        "Conductor de cobre OFC",
-        "Baja resistencia"
-      ]
-    },
     "subterraneos": {
       "id": "SU001",
       "name": "Cables Subterráneos",
@@ -293,82 +70,6 @@
         "Normativa de Fabricación: 2178"
       ]
     },
-    "bomba_sumergible": {
-      "id": "BS001",
-      "name": "Cable para Bomba Sumergible",
-      "description": "Conductor eléctrico conformado en su interior por cables unipolares multifilares de cobre electrolítico rojo, envainados en PVC flexible y antillama. Los cables unipolares interiores están recubiertos con una película de material antiadherente que facilita su separación de la vaina exterior.En su exterior posee una vaina extraflexible de PVC verde de excelente calidad y resistente a la llama. Posee marcación metro a metro para facilitar su despacho.Se utiliza para el conexionado de todo tipo de bombas.",
-      "images": [
-        "/assets/bombasum.jpg",
-        "/assets/ET-VT-002 bomba sumergibleTabla.png",
-        "/assets/sumergible.jpg"
-      ],
-      "codes": [
-        "BS2X1.5",
-        "BS2X2.5",
-        "BS3X1.5",
-        "BS3X2.5",
-        "BS3X4",
-        "BS3X6",
-        "BS3X10",
-        "BS3X16",
-        "BS3X25",
-        "BS3X35",
-        "BS4x1.5",
-        "BS4x2.5"
-      ],
-      "colors": [
-        " No disponible"
-      ],
-      "presentation": [
-        "Bobina: 1000 mts",
-        "Rollo: 100 mts",
-        "Bobinita: 300 mts "
-      ],
-      "technical_specs": [
-        "Tensión de trabajo: 450/750V",
-        "Temperatura de Trabajo: -5°C a 70°C.",
-        "Flexibilidad Clase: 5"
-      ]
-    },
-    "cable_cobre_desnudo": {
-      "id": "CD001",
-      "name": "Cable de Cobre Desnudo",
-      "description": " Para puestas a tierra, Instalación de Antenas, descarga de pararrayos, etc. Calidad del cobre: Elaborado con Cobre de cátodo, en conformidad con las especificaciones ASTM 115-93, grado 1, con una pureza de Cobre mínima del 99,5%",
-      "images": [
-        "/assets/cobredes1.webp",
-        "/assets/cobredes2.jpg",
-        "/assets/cobredes3.jpg", 
-        "/assets/CobreDesnudo1.jpg",
-        "/assets/desnudoImagen.png",
-        "/assets/desnudoTabla.png"
-      ],
-      "codes": [
-        "DES6",
-        "DES10",
-        "DES16",
-        "DES25",
-        "DES35",
-        "DES50",
-        "DES70",
-        "DES95",
-        "DES120",
-        "DES150",
-        "DES200"
-      ],
-      "colors": [
-        " No disponible"
-      ],
-      "presentation": [
-        "Bobina: 1000 mts",
-        "Rollo: 100 mts",
-        "Bobinita: 300 mts "
-      ],
-      "technical_specs": [
-        "Normas: 2004.",
-        "100% Cobre",
-        "Consultar otras medidas"
-      ]
-    },
     "tipo_taller_tpr": {
       "id": "TT001",
       "name": "Cable Tipo Taller ",
@@ -428,6 +129,305 @@
         "Temperatura de Trabajo: -5º C a 70º C.",
         "Flexibilidad: Clase 5",
         "Normativa de fabricación: IEC 245-6 - 2022 "
+      ]
+    },
+    "soldadura": {
+      "id": "SG001",
+      "name": "Cable de Soldadura ",
+      "description": "Los cables para soldadura son elaborados con cobre electrolítico rojo. sobre la cuerda de cobre se coloca un separador de papel que permite su desplazamiento longitudinal cuando el cable es flexionado. La vaina exterior esta compuesta a base de caucho sintético del tipo EPDM color negro, impreso con el nombre de la empresa. presenta excelentes características contra los agentes atmosféricos nocivos, la acción de los ácidos, solventes comunes y aceites; de particular resistencia tanto a altas y bajas temperaturas como a fricción por rozamiento o aplastamiento.",
+      "images": [
+        "/assets/soldadura2.jpg",
+        "/assets/soldadura3.png",
+        "/assets/SoldaduraHome.png",
+        "/assets/soldaduraImagen.png",
+        "/assets/soldaduraTabla.png"
+      ],
+      "codes": [
+        "G16",
+        "G25",
+        "G35",
+        "G50",
+        "G70",
+        "G95",
+        "G120",
+        "G150",
+        "A16",
+        "A25",
+        "A35",
+        "A50",
+        "A70",
+        "A95",
+        "A120"
+      ],
+      "colors": [
+        " NegroGoma",
+        " AzulIEC"
+      ],
+      "presentation": [
+        "Rollo: 25mts ",
+        "Bobinita: 100mts",
+        "Bobina: 500mts"
+      ],
+      "technical_specs": [
+        "Tensión de trabajo: 450/750V",
+        "Temperatura de Trabajo:-5°C a 105°C",
+        "Flexibilidad: 6",
+        "Normativa de fabricación: IEC 245-6 - 2022 "
+      ]
+    },
+    "bomba_sumergible": {
+      "id": "BS001",
+      "name": "Cable para Bomba Sumergible",
+      "description": "Conductor eléctrico conformado en su interior por cables unipolares multifilares de cobre electrolítico rojo, envainados en PVC flexible y antillama. Los cables unipolares interiores están recubiertos con una película de material antiadherente que facilita su separación de la vaina exterior.En su exterior posee una vaina extraflexible de PVC verde de excelente calidad y resistente a la llama. Posee marcación metro a metro para facilitar su despacho.Se utiliza para el conexionado de todo tipo de bombas.",
+      "images": [
+        "/assets/bombasum.jpg",
+        "/assets/ET-VT-002 bomba sumergibleTabla.png",
+        "/assets/sumergible.jpg"
+      ],
+      "codes": [
+        "BS2X1.5",
+        "BS2X2.5",
+        "BS3X1.5",
+        "BS3X2.5",
+        "BS3X4",
+        "BS3X6",
+        "BS3X10",
+        "BS3X16",
+        "BS3X25",
+        "BS3X35",
+        "BS4x1.5",
+        "BS4x2.5"
+      ],
+      "colors": [
+        " No disponible"
+      ],
+      "presentation": [
+        "Bobina: 1000 mts",
+        "Rollo: 100 mts",
+        "Bobinita: 300 mts "
+      ],
+      "technical_specs": [
+        "Tensión de trabajo: 450/750V",
+        "Temperatura de Trabajo: -5°C a 70°C.",
+        "Flexibilidad Clase: 5"
+      ]
+    },
+    "unipolar_antillama": {
+      "id": "UA001",
+      "name": "Cable Unipolar",
+      "description": "Su cuerda está compuesta por cobre electrolítico rojo.Este conductor es utilizado en instalaciones fijas, domiciliarias o industriales revistiendo características de extra flexibilidad, auto-deslizamiento y anti-llama. Los colores de fabricación standard son: celeste, marrón, rojo, verde/amarillo, negro y blanco. Ofrecemos la fabricación en colores especiales a requerimiento.",
+      "images": [
+        "/assets/unipolarPortada.jpeg",
+        "/assets/Unipolares.jpg",
+        "/assets/unipolarImagen.png",
+        "/assets/unipolares.jpeg",
+        "/assets/unipolarTabla.png"
+      ],
+      "codes": [
+        "0.75",
+        "1",
+        "1.5",
+        "2.5",
+        "4",
+        "6",
+        "10",
+        "16",
+        "25",
+        "35",
+        "50",
+        "70",
+        "95",
+        "120",
+        "150",
+        "185",
+        "240"
+      ],
+      "colors": [
+        "CE",
+        "RO",
+        "V/A",
+        "MA",
+        "NE",
+        "BL"
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
+      ],
+      "technical_specs": [
+        "Tensión de trabajo: 450/750V",
+        " Apto 1000 V.",
+        "Temperatura de Trabajo: -5°C a 70°C.",
+        "Flexibilidad: Clase 4 y 5",
+        "Normativa de fabricación: NM 243-3:2003."
+      ]
+    },
+    "bipolar_vaina_plana": {
+      "id": "VP001",
+      "name": "Cable Bipolar Vaina Plana",
+      "description": "Cable de cobre de sección chata Extra Flexible con aislación y envoltura de P.V.C. Para tensiones de servicio de hasta 300/500 V. Para instalaciones movibles en locales industriales, agrícolas y domésticos; Aparatos portátiles industriales y electrodomésticos en general, excluyendo los de calefacción.",
+      "images": [
+        "/assets/VainaPlana2.png",
+        "/assets/VainaPlana3.png",
+        "/assets/vainaPlanaImagen.png",
+        "/assets/vainaPlanaTabla.png"
+      ],
+      "codes": [
+        "VP2X0.75",
+        "VP2X1",
+        "VP2X1.5",
+        "VP2X2.5",
+        "VP3X1",
+        "VP3X1.5",
+        "VP3X2.5"
+      ],
+      "colors": [
+        "NEGRO",
+        "BLANCO"
+      ],
+      "presentation": [
+        "Bobina: 1000 mts",
+        "Rollo: 100 mts",
+        "Bobinita: 300 mts "
+      ],
+      "technical_specs": [
+        "Cable según norma NM 247-3",
+        "Tensión nominal 300/500V"
+      ]
+    },
+    "automotor_bateria": {
+      "id": "AB001",
+      "name": "Cable para Automotor y Batería",
+      "description": "Cable especialmente diseñado para uso automotriz y conexiones de baterías. Alta resistencia a la temperatura y al desgaste.",
+      "images": [
+        "/assets/automotor4.jpg",
+        "/assets/automotor5.jpg",
+        "/assets/automotor3.jpg",
+        "/assets/automotor1.jpg",
+        "/assets/automotor2.jpg",
+        "/assets/automotor6.jpg"
+      ],
+      "codes": [
+        "AUT10",
+        "AUT16",
+        "AUT25",
+        "AUT35",
+        "AUT50",
+        "AUT70",
+        "AUT95"
+      ],
+      "colors": [
+        "ROJO",
+        "NEGRO"
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
+      ],
+      "technical_specs": "Alta resistencia a aceites y temperatura"
+    },
+    "cable_cobre_desnudo": {
+      "id": "CD001",
+      "name": "Cable de Cobre Desnudo",
+      "description": " Para puestas a tierra, Instalación de Antenas, descarga de pararrayos, etc. Calidad del cobre: Elaborado con Cobre de cátodo, en conformidad con las especificaciones ASTM 115-93, grado 1, con una pureza de Cobre mínima del 99,5%",
+      "images": [
+        "/assets/cobredes1.webp",
+        "/assets/cobredes2.jpg",
+        "/assets/cobredes3.jpg",
+        "/assets/CobreDesnudo1.jpg",
+        "/assets/desnudoImagen.png",
+        "/assets/desnudoTabla.png"
+      ],
+      "codes": [
+        "DES6",
+        "DES10",
+        "DES16",
+        "DES25",
+        "DES35",
+        "DES50",
+        "DES70",
+        "DES95",
+        "DES120",
+        "DES150",
+        "DES200"
+      ],
+      "colors": [
+        " No disponible"
+      ],
+      "presentation": [
+        "Bobina: 1000 mts",
+        "Rollo: 100 mts",
+        "Bobinita: 300 mts "
+      ],
+      "technical_specs": [
+        "Normas: 2004.",
+        "100% Cobre",
+        "Consultar otras medidas"
+      ]
+    },
+    "bafle_audio_premium": {
+      "id": "BA001",
+      "name": "Cable para Bafle/Audio Premium",
+      "description": "Cable de alta calidad para sistemas de audio. Mínima pérdida de señal y máxima fidelidad en la transmisión.",
+      "images": [
+        "/assets/bafle3.png",
+        "/assets/BAFLE.jpg",
+        "/assets/bafle 2.png"
+      ],
+      "codes": [
+        "BA2x0.75",
+        "BA2x1",
+        "BA2x1.5"
+      ],
+      "colors": [
+        "",
+        ""
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
+      ],
+      "technical_specs": [
+        "Conductor de cobre OFC",
+        "Baja resistencia"
+      ]
+    },
+    "bipolar_cristal_paralelos": {
+      "id": "BC001",
+      "name": "Cable Bipolar Cristal",
+      "description": "Cable bipolar con aislación cristal transparente, ideal para instalaciones a la vista. Conductor flexible de cobre con doble aislación de PVC.",
+      "images": [
+        "/assets/cristalparalelo.jpg",
+        "/assets/ParaleloNegro.jpg",
+        "/assets/ParaleloBlanco.png",
+        "/assets/ParaleloNegro2.jpg",
+        "/assets/paraleloTabla.png",
+        "/assets/paraleloImagen.png"
+      ],
+      "codes": [
+        "CRIS2X0.75",
+        "CRIS2X1",
+        "CRIS2X1.5",
+        "CRIS2X2.5",
+        "PAR2X0.75",
+        "PAR2X1",
+        "PAR2X1.5",
+        "PAR2X2.5"
+      ],
+      "colors": [
+        " No disponible"
+      ],
+      "presentation": [
+        "Bobina: 1000 mts",
+        "Rollo: 100 mts",
+        "Bobinita: 300 mts "
+      ],
+      "technical_specs": [
+        "Cable según norma NM 247-3",
+        "Tensión nominal 300/500V"
       ]
     },
     "merchadising": {

@@ -7,7 +7,7 @@ const upcomingProducts = [
         id: 1,
 
 
-        image: "/assets/solar.png",
+        image: "/assets/banner2.jpeg",
     },
     {
         id: 2,
@@ -28,7 +28,7 @@ export function Banners() {
     }, []);
 
     return (
-        <div className="relative h-[300px] w-full overflow-hidden bg-gray-900 ">
+        <div className="relative h-[300px] w-full overflow-hidden max-sm:bg-white max-sm:h-[100px] ">
             {upcomingProducts.map((product, index) => (
                 <div
                     key={product.id}
@@ -40,7 +40,7 @@ export function Banners() {
                             src={product.image}
                             alt="bannerImage"
                             fill
-                            className="opacity-75 zoom-out-150 object-center"
+                            className="zoom-out-150 object-center max-sm:object-fill "
                             sizes="1vw"
                             quality={90}
                         />

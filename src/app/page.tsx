@@ -57,7 +57,7 @@ export default function Home() {
               {
                 title: "Cables Unipolares",
                 image: "/assets/Unipolares.jpeg",
-                description: "Tenemos nuevas propuestas para seguir transmitiendo energía en el futuro",
+                description: "Amplia variedad de secciones y colores en cables de uso domiciliario e industrial",
               },
             ].map((product, index) => (
               <Card key={index} className="group transition-all duration-300 hover:scale-[1.07] hover:shadow-lg">
