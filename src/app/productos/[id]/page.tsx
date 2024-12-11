@@ -1,8 +1,8 @@
 
-'use client' 
+'use client'
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';  
+import { useRouter } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import Carousel from "@/components/Carousel";
 import Link from "next/link";
@@ -31,11 +31,11 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   const [paramId, setParamId] = useState<string | null>(null);
 
   useEffect(() => {
-    
+
     params.then(({ id }) => setParamId(id));
   }, [params]);
 
- 
+
   useEffect(() => {
     async function fetchCatalogData() {
       const response = await fetch('/data/cable_catalog.json');
