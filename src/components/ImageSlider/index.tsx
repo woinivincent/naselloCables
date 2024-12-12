@@ -64,7 +64,7 @@ export function ImageSlider() {
                   alt={slider.title}
                   fill
                   priority={index === 0}
-                  className='object-center max-sm:h-[600px] max-sm:object-cover max-sm:object-center'
+                  className='object-center max-sm:h-[600px] max-sm:object-cover max-sm:object-center '  
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
