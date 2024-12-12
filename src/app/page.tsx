@@ -22,7 +22,7 @@ export default function Home() {
       <section className="relative h-[600px] max-sm:h-[320px]" >
         <ImageSlider />
         <div className="absolute inset-0 flex z-10 items-center justify-center ">
-          <div className="container text-center text-white max-sm:hidden">
+         {/* <div className="container text-center text-white max-sm:hidden">
             <h1 className="mb-6 text-5xl font-medium text-white">
               CALIDAD Y CONFIABILIDAD EN CADA PRODUCTO
             </h1>
@@ -30,7 +30,7 @@ export default function Home() {
             <Button asChild size="lg" className="bg-primary hover:bg-secondary">
               <Link href="/productos">Ver Productos</Link>
             </Button>
-          </div>
+          </div>*/}
         </div>
       </section>
 

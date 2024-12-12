@@ -58,14 +58,14 @@ export function ImageSlider() {
               key={slider.id}
               className="relative flex-[0_0_100%] min-w-0"
             >
-              <div className="h-[65vh]  overflow-hidden max-sm:h-[320px]">
+              <div className="w-full h-[600px] max-h-[80vh] relative overflow-hidden max-sm:h-[320px]">
                 <Image
                   src={`/assets/slider${slider.id}.jpg`}
                   alt={slider.title}
                   fill
-
-
-
+                  priority={index === 0}
+                  className='object-center max-sm:h-[600px] max-sm:object-cover max-sm:object-center'
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
