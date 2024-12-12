@@ -26,9 +26,9 @@ const Navbar = () => {
             <Phone className="h-4 w-4" />
             <span>(+54) 9 2323 35-4771</span>
           </a>
-          <a href="mailto:dasshsingh.96@gmail.com" className="flex items-center gap-2">
+          <a href="mailto:recepcion@nasellocables.com.ar" className="flex items-center gap-2">
             <Mail className="h-4 w-4" />
-            <span>info@nasellocables.com.ar</span>
+            <span>recepcion@nasellocables.com.ar</span>
           </a>
         </div>
       </div>
