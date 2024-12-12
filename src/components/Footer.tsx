@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white">Síguenos</h3>
+            <h3 className="text-lg font-semibold text-white">Redes</h3>
             <div className="mt-4 flex space-x-4">
               <a
                 href="https://www.youtube.com/@NaselloCables"

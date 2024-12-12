@@ -31,9 +31,5 @@ export interface SlideData {
       description: ''
     },
   
-    {
-      id: 9,
-      title: '',
-      description: ''
-    }
+    
     ];
