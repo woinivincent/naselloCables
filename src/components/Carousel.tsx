@@ -45,7 +45,7 @@ const Carousel = ({ images, productName }: CarouselProps) => {
 
   return (
     <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
-      <div className="object-contain relative w-full h-[600px] overflow-hidden">
+      <div className="object-contain relative w-full h-[800px] overflow-hidden">
         {images.map((image, index) => (
           <div key={index} className="absolute inset-0">
             <Image

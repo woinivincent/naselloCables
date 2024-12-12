@@ -12,11 +12,11 @@ type ProductNavigationProps = {
 export function ProductNavigation({ goToNextProduct, goToPreviousProduct }: ProductNavigationProps) {
   return (
     <div className="flex gap-4 justify-between mt-3">
-      <Button type="button" className="bg-primary text-white" onClick={goToPreviousProduct}>
+      <Button type="button" className="bg-primary text-white hover:bg-secondary" onClick={goToPreviousProduct}>
         <ArrowLeft size={20} />
         Anterior
       </Button>
-      <Button type="button" className="bg-primary text-white" onClick={goToNextProduct}>
+      <Button type="button" className="bg-primary text-white hover:bg-secondary" onClick={goToNextProduct} >
         Siguiente
         <ArrowRight size={20} />
       </Button>

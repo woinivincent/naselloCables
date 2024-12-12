@@ -8,13 +8,11 @@
         "/assets/subte-nasello.jpg",
         "/assets/SubteHome.jpeg",
         "/assets/subterraneosImagen.png",
-        "/assets/subterraneosTabla.png",
         {
-          "url": "/assets/subterraneosTabla.png", 
+          "url": "/assets/subterraneosTabla.png",
           "label": "ET-VT-009"
         }
       ],
-
       "codes": [
         "S16",
         "S25",
@@ -83,9 +81,8 @@
         "/assets/taller3.jpg",
         "/assets/taller nasello.jpg",
         "/assets/tallerImagen.png",
-        "/assets/tallerTabla.png",
         {
-          "url": "/assets/tallerTabla.png", 
+          "url": "/assets/tallerTabla.png",
           "label": "ET-VT-010"
         }
       ],
@@ -149,9 +146,8 @@
         "/assets/soldadura3.png",
         "/assets/SoldaduraHome.png",
         "/assets/soldaduraImagen.png",
-        "/assets/soldaduraTabla.png",
         {
-          "url": "/assets/soldaduraTabla.png", 
+          "url": "/assets/soldaduraTabla.png",
           "label": "ET-VT-008"
         }
       ],
@@ -194,10 +190,9 @@
       "description": "Conductor eléctrico conformado en su interior por cables unipolares multifilares de cobre electrolítico rojo, envainados en PVC flexible y antillama. Los cables unipolares interiores están recubiertos con una película de material antiadherente que facilita su separación de la vaina exterior.En su exterior posee una vaina extraflexible de PVC verde de excelente calidad y resistente a la llama. Posee marcación metro a metro para facilitar su despacho.Se utiliza para el conexionado de todo tipo de bombas.",
       "images": [
         "/assets/bombasum.jpg",
-        "/assets/sumergibleTabla.png",
         "/assets/sumergible.jpg",
         {
-          "url": "/assets/sumergibleTabla.png", 
+          "url": "/assets/sumergibleTabla.png",
           "label": "ET-VT-002"
         }
       ],
@@ -238,12 +233,10 @@
         "/assets/Unipolares.jpg",
         "/assets/unipolarImagen.png",
         "/assets/unipolares.jpeg",
-        "/assets/unipolarTabla.png",
         {
-          "url": "/assets/unipolarTabla.png", 
+          "url": "/assets/unipolarTabla.png",
           "label": "ET-VT-007"
         }
-
       ],
       "codes": [
         "0.75",
@@ -293,9 +286,8 @@
         "/assets/VainaPlana2.png",
         "/assets/VainaPlana3.png",
         "/assets/vainaPlanaImagen.png",
-        "/assets/vainaPlanaTabla.png",
         {
-          "url": "/assets/vainaPlanaTabla.png", 
+          "url": "/assets/vainaPlanaTabla.png",
           "label": "ET-VT-006"
         }
       ],
@@ -364,9 +356,8 @@
         "/assets/cobredes3.jpg",
         "/assets/CobreDesnudo1.jpg",
         "/assets/desnudoImagen.png",
-        "/assets/desnudoTabla.png",
         {
-          "url": "/assets/desnudoTabla.png", 
+          "url": "/assets/desnudoTabla.png",
           "label": "ET-VT-005"
         }
       ],
@@ -412,8 +403,8 @@
         "BA2x1.5"
       ],
       "colors": [
-        "",
         ""
+     
       ],
       "presentation": [
         "Bobina",
@@ -434,10 +425,9 @@
         "/assets/ParaleloNegro.jpg",
         "/assets/ParaleloBlanco.png",
         "/assets/ParaleloNegro2.jpg",
-        "/assets/paraleloTabla.png",
         "/assets/paraleloImagen.png",
         {
-          "url": "/assets/paraleloTabla.png", 
+          "url": "/assets/paraleloTabla.png",
           "label": "ET-VT-004"
         }
       ],
