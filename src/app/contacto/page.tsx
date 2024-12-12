@@ -72,7 +72,7 @@ export default function ContactoPage() {
                 <Mail className="h-6 w-6 text-primary" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p>info@nasellocables.com.ar</p>
+                  <p>recepcion@nasellocables.com.ar</p>
                 </div>
               </div>
 
@@ -80,7 +80,7 @@ export default function ContactoPage() {
                 <Clock className="h-6 w-6 text-primary" />
                 <div>
                   <h3 className="font-semibold">Horario de Atención</h3>
-                  <p>Lunes a Viernes: 8:30 - 16:30</p>
+                  <p>Lunes a Viernes: 9:00 - 16:00</p>
                 </div>
               </div>
             </div>
