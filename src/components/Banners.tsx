@@ -32,7 +32,7 @@ export function Banners() {
             {upcomingProducts.map((product, index) => (
                 <div
                     key={product.id}
-                    className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+                    className={`absolute inset-0 transition-opacity duration-500 ${index === currentSlide ? "opacity-100" : "opacity-0"
                         }`}
                 >
                     <div className="relative h-full w-full">

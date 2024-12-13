@@ -33,22 +33,23 @@ const Navbar = () => {
         </div>
       </div>
       
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="container max-h[100px] mx-2 px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 max-h-fit">
             <Link href="/">
             <Image
            src="/assets/logo.png"
-            width={245}
+            width={185}
             height={26}
             alt="logo"
+            className="overflow-hidden"
             />
             </Link>
 
           </div>
           
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-4">
+            <div className="ml-2 flex items-center space-x-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
