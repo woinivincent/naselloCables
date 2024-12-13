@@ -8,7 +8,7 @@ const Footer = () => {
 
       <div className="container mx-auto mt-8  max-sm:p-4">
 
-       
+
         <div className="grid grid-cols-1 gap-7 md:grid-cols-4">
 
           <div className="">
@@ -55,43 +55,18 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white">Redes</h3>
-            <div className="mt-4 flex space-x-4">
-              <a
-                href="https://www.youtube.com/@NaselloCables"
-                className="hover:text-white"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Youtube className="h-7 w-7" />
-              </a>
-              <a
-                href="https://www.instagram.com/nasellocables_sa/"
-                className="hover:text-white"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Instagram className="h-6 w-6" />
-              </a>
-              <a
-                href="#"
-                className="hover:text-white"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+           
 
-              </a>
-
-            </div>
-            <Image
-              src="/assets/TUV.png"
+          
+            <div className="max-h-16 object-contain">  <Image
+              src="/assets/iso9001.png"
               alt="Iso9001"
-              className="h-[100px] w-[240px] "
+              className="size-full"
               width={50}
               height={24}
               quality={100}
 
-            />
+            /></div>
           </div>
         </div>
 
