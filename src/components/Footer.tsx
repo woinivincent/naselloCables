@@ -84,11 +84,12 @@ const Footer = () => {
 
             </div>
             <Image
-              src="/assets/Iso9001.png"
+              src="/assets/TUV.png"
               alt="Iso9001"
-              className="h-[90px] w-[230px] mt-5"
+              className="h-[100px] w-[240px] "
               width={50}
               height={24}
+              quality={100}
 
             />
           </div>

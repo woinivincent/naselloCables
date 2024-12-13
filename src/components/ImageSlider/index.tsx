@@ -6,77 +6,93 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { slides } from './data';
 
-export function ImageSlider() {
+interface SlideData {
+  id: number;
+  title: string;
+  description: string;
+  imagePath: string;
+}
+
+interface ImageSliderProps {
+  slides: SlideData[];
+}
+
+export function ImageSlider({ slides }: ImageSliderProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     duration: 20,
     dragFree: true
   });
+  
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi || isPaused) return;
 
-    const interval = setInterval(() => {
+    const intervalId = setInterval(() => {
       emblaApi.scrollNext();
     }, 5000);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(intervalId);
   }, [emblaApi, isPaused]);
 
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-  }, [emblaApi, onSelect]);
 
-  const handleMouseEnter = () => setIsPaused(true);
-  const handleMouseLeave = () => setIsPaused(false);
+    const handleSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    };
+    
+    handleSelect();
+    emblaApi.on('select', handleSelect);
+    
+    return () => {
+      emblaApi.off('select', handleSelect);
+    };
+  }, [emblaApi]); 
 
   return (
     <div
-      className="relative w-full h-[65vh] overflow-hidden max-sm:h-[320px]  "
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      className="relative w-full h-[65vh] overflow-hidden max-sm:h-[320px]"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60 z-10 " />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent z-10" />
       <div ref={emblaRef} className="overflow-hidden max-sm:h-[320px]">
         <div className="flex">
-          {slides.map((slider, index) => (
-            <div
-              key={slider.id}
-              className="relative flex-[0_0_100%] min-w-0"
-            >
+          {slides.map((slide, index) => (
+            <div key={slide.id} className="relative flex-[0_0_100%] min-w-0">
               <div className="w-full h-[600px] max-h-[80vh] relative overflow-hidden max-sm:h-[320px]">
                 <Image
-                  src={`/assets/slider${slider.id}.jpg`}
-                  alt={slider.title}
+                  src={slide.imagePath}
+                  alt={slide.title}
                   fill
                   priority={index === 0}
-                  className='object-center max-sm:h-[600px] max-sm:object-cover max-sm:object-center '  
+                  className="object-center max-sm:h-[600px] max-sm:object-cover max-sm:object-center"
                   quality={100}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-                <div className="max-w-screen-xl mx-auto">
-                  <h2 className="text-4xl font-bold text-white mb-2 tracking-tight">
-                    {slider.title}
-                  </h2>
-                  <p className="text-lg text-white/90">{slider.description}</p>
+              {(slide.title || slide.description) && (
+                <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
+                  <div className="max-w-screen-xl mx-auto">
+                    <h2 className="text-4xl font-bold text-white mb-2 tracking-tight">
+                      {slide.title}
+                    </h2>
+                    <p className="text-lg text-white/90">{slide.description}</p>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           ))}
         </div>

@@ -12,6 +12,8 @@ import {
 import { Shield, Award, Zap, Factory } from "lucide-react";
 import { ImageSlider } from "@/components/ImageSlider";
 import { Banners } from "@/components/Banners";
+import { slides } from "@/components/ImageSlider/data";
+
 
 
 
@@ -19,8 +21,8 @@ export default function Home() {
   return (
     <>
 
-      <section className="relative h-[600px] max-sm:h-[320px] m-9" >
-        <ImageSlider />
+      <section className="relative h-[600px] max-sm:h-[320px] " >
+        <ImageSlider slides={slides}/>
         <div className="absolute inset-0 flex z-10 items-center justify-center ">
          {/* <div className="container text-center text-white max-sm:hidden">
             <h1 className="mb-6 text-5xl font-medium text-white">
@@ -37,7 +39,7 @@ export default function Home() {
 
 
       {/* Products Preview Section */}
-      <section className="bg-gray-50 py-16 flex justify-center max-sm:p-4" >
+      <section className="bg-white py-16 flex justify-center max-sm:p-4" >
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold">
             NUESTROS PRODUCTOS DESTACADOS

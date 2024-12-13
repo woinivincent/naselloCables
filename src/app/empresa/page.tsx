@@ -13,7 +13,7 @@ export default function EmpresaPage() {
             src="/assets/slider5.jpg"
             alt="Fábrica Nasello Cables"
             fill
-            className="object-cover brightness-50"
+            className="object-cover brightness-70"
           />
           <div className="absolute inset-0 flex items-center justify-center text-center text-white">
             <div>
