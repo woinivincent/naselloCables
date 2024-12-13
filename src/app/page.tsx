@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
 
-      <section className="relative h-[600px] max-sm:h-[320px]" >
+      <section className="relative h-[600px] max-sm:h-[320px] m-9" >
         <ImageSlider />
         <div className="absolute inset-0 flex z-10 items-center justify-center ">
          {/* <div className="container text-center text-white max-sm:hidden">

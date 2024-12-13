@@ -42,7 +42,7 @@ export function Banners() {
                             fill
                             className="zoom-out-150 object-center max-sm:object-fill "
                             sizes="1vw"
-                            quality={90}
+                            quality={100}
                         />
 
                     </div>
