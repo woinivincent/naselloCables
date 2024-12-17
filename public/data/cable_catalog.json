@@ -284,7 +284,7 @@
       "description": "Cable de cobre de sección chata Extra Flexible con aislación y envoltura de P.V.C. Para tensiones de servicio de hasta 300/500 V. Para instalaciones movibles en locales industriales, agrícolas y domésticos; Aparatos portátiles industriales y electrodomésticos en general, excluyendo los de calefacción.",
       "images": [
         "/assets/VainaPlana2.png",
-        "/assets/VainaPlana3.png",
+        "/assets/VainaPlana4.jpg",
         "/assets/vainaPlanaImagen.png",
         {
           "url": "/assets/vainaPlanaTabla.png",
@@ -422,7 +422,7 @@
       "description": "Cable bipolar con aislación cristal transparente, ideal para instalaciones a la vista. Conductor flexible de cobre con doble aislación de PVC.",
       "images": [
         "/assets/cristalparalelo.jpg",
-        "/assets/ParaleloNegro.jpg",
+       
         "/assets/ParaleloBlanco.png",
         "/assets/ParaleloNegro2.jpg",
         "/assets/paraleloImagen.png",

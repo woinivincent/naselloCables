@@ -58,10 +58,10 @@ const Footer = () => {
            
 
           
-            <div className="max-h-16 object-contain">  <Image
+            <div className="max-h-10 object-contain mb-3">  <Image
               src="/assets/iso9001.png"
               alt="Iso9001"
-              className="size-full"
+              className="size-full max-[768px]:size-4/12   "
               width={50}
               height={24}
               quality={100}
@@ -71,7 +71,7 @@ const Footer = () => {
         </div>
 
         <div className="my-8 border-t border-gray-800 pt-8 text-center">
-          <p className="text-sm">© {new Date().getFullYear()} Nasello Cables. Todos los derechos reservados.| Developed by Vicente Woinilowicz</p>
+          <p className="text-sm  max-[320px]:mt-7 max-[640px]:mt-7">© {new Date().getFullYear()} Nasello Cables. Todos los derechos reservados.| Developed by Vicente Woinilowicz</p>
 
         </div>
       </div>
