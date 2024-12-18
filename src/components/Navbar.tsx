@@ -32,22 +32,20 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-      
+
       <nav className="container max-h[100px] mx-2 px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex-shrink-0 max-h-fit">
-            <Link href="/">
-            <Image
-           src="/assets/logo.png"
-            width={185}
-            height={26}
-            alt="logo"
-            className="overflow-hidden"
-            />
-            </Link>
-
-          </div>
-          
+          <Link href="/">
+            <div className="flex-shrink-0 max-h-fit">
+              <Image
+                src="/assets/logo.png"
+                width={185}
+                height={26}
+                alt="logo"
+                className="overflow-hidden"
+              />
+            </div>
+          </Link>
           <div className="hidden md:block">
             <div className="ml-2 flex items-center space-x-4">
               {navigation.map((item) => (
@@ -61,7 +59,7 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-          
+
           <div className="md:hidden">
             <Button
               variant="ghost"

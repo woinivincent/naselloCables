@@ -72,15 +72,15 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   }
 
   return (<div>
-    <div className="max-w-7xl mx-auto pt-4">
+    <div className="max-w-7xl mx-auto pt-4 ml-[220px]">
       {/* Botón para regresar a la página previa */}
       <Button
         variant="default"
         onClick={(e) => {
-          e.preventDefault(); // Evita comportamientos inesperados
-          router.back(); // Redirige a la página anterior
+          e.preventDefault();
+          router.back();
         }}
-        className="flex items-center bg-primary gap-2 text-sm hover:text-white hover:bg-secondary"
+        className="flex  items-center  bg-primary gap-2 text-sm hover:text-white hover:bg-secondary"
       >
         <ArrowLeft size={20} />
         Volver al Catálogo
