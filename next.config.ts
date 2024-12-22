@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-
+ 
+    output:'standalone'
+      
+  ,
+  
   eslint: {
    
     ignoreDuringBuilds: true,
@@ -13,6 +17,7 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true 
   },
+  
 };
 
 export default nextConfig;
