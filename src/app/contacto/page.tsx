@@ -5,7 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import MapPin from "@/icons/icono_Contacto_Ubicacion_.svg";
+import Phone from "@/icons/icono_Contacto_Telefono_.svg";
+import Mail from "@/icons/icono_Contacto_Mail_.svg";
+import Clock from "@/icons/icono_Contacto_Horario_.svg";
 
 export default function ContactoPage() {
   const { toast } = useToast();
@@ -42,44 +45,43 @@ export default function ContactoPage() {
 
   return (
     <div className="flex justify-center max-sm:p-4">
-      <div className="container py-12">
-        <h1 className="mb-8 text-center text-4xl font-bold">CONTÁCTANOS</h1>
+      <div className="container py-8">
+        <h1 className="mb-12 text-center text-4xl font-bold">CONTACTO</h1>
 
         <div className="grid gap-12 md:grid-cols-2 ">
           {/* Información de Contacto */}
           <div>
-            <h2 className="mb-6 text-2xl font-semibold">
+            <h2 className="mb-6 text-1xl font-semibold">
               Información de Contacto
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-7">
               <div className="flex items-start gap-4">
-                <MapPin className="h-6 w-6 text-primary" />
+                <MapPin className="h-8 w-8 text-primary" />
                 <div>
-                  <h3 className="font-semibold">Dirección</h3>
                   <p> Luján, Buenos Aires</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <Phone className="h-6 w-6 text-primary" />
+                <Phone className="h-8 w-8 text-primary" />
                 <div>
-                  <h3 className="font-semibold">Teléfono</h3>
+
                   <p>(+54) 9 2323 35-4771</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <Mail className="h-6 w-6 text-primary" />
+                <Mail className="h-8 w-8 text-primary" />
                 <div>
-                  <h3 className="font-semibold">Email</h3>
+
                   <p>recepcion@nasellocables.com.ar</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <Clock className="h-6 w-6 text-primary" />
+                <Clock className="h-8 w-8 text-primary" />
                 <div>
-                  <h3 className="font-semibold">Horario de Atención</h3>
+
                   <p>Lunes a Viernes: 9:00 - 16:00</p>
                 </div>
               </div>
@@ -90,10 +92,10 @@ export default function ContactoPage() {
 
           {/* Formulario de Contacto */}
           <div>
-            <h2 className="mb-6 text-2xl font-semibold">Envíenos un Mensaje</h2>
+            <h2 className="mb-2 text-1xl font-semibold">Enviar un Mensaje</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="nombre" className="mb-2 block font-medium">
+                <label htmlFor="nombre" className="mb-2 block font-light">
                   Nombre
                 </label>
                 <Input
@@ -102,11 +104,12 @@ export default function ContactoPage() {
                   value={formData.nombre}
                   onChange={handleChange}
                   required
+                  className="bg-gray-200"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="mb-2 block font-medium">
+                <label htmlFor="email" className=" block font-medium">
                   Email
                 </label>
                 <Input
@@ -116,6 +119,7 @@ export default function ContactoPage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  className="bg-gray-200"
                 />
               </div>
 
@@ -130,6 +134,7 @@ export default function ContactoPage() {
                   value={formData.telefono}
                   onChange={handleChange}
                   required
+                  className="bg-gray-200"
                 />
               </div>
 
@@ -144,11 +149,12 @@ export default function ContactoPage() {
                   onChange={handleChange}
                   rows={5}
                   required
+                  className="bg-gray-200"
                 />
               </div>
 
-              <Button type="submit" className="w-full bg-primary sm:w-auto">
-                Enviar Mensaje
+              <Button type="submit" className="w-full text-xs bg-primary hover:bg-secondary  sm:w-auto">
+                ENVIAR MENSAJE
               </Button>
             </form>
           </div>

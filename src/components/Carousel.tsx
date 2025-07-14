@@ -1,96 +1,50 @@
-"use client";
+'use client';
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { LabelOverlay } from "./ui/label-overlay";
+import { useState } from "react";
 
-type ImageType = string | { url: string; label: string };
-
-type CarouselProps = {
-  images: ImageType[];
+interface CarouselProps {
+  images: (string | { url: string; label?: string })[];
   productName: string;
-};
+}
 
-const Carousel = ({ images, productName }: CarouselProps) => {
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
+export default function Carousel({ images, productName }: CarouselProps) {
+  const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 8000);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  const handlePrevImage = () => {
-    setActiveImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  const handlePrev = () => {
+    setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
-  const handleNextImage = () => {
-    setActiveImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  const handleNext = () => {
+    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
-  const handleImageChange = (index: number) => {
-    setActiveImageIndex(index);
-  };
-
-  const getImageUrl = (image: ImageType): string => {
-    return typeof image === "string" ? image : image.url;
-  };
-
-  const getImageLabel = (image: ImageType): string | undefined => {
-    return typeof image === "object" ? image.label : undefined;
-  };
+  const currentImage = images[current];
+  const src = typeof currentImage === 'string' ? currentImage : currentImage.url;
+  const alt = typeof currentImage === 'string' ? productName : currentImage.label || productName;
 
   return (
-    <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
-      <div className="object-contain relative w-full h-[800px] overflow-hidden">
-        {images.map((image, index) => (
-          <div key={index} className="absolute inset-0">
-            <Image
-              src={getImageUrl(image)}
-              alt={`${productName} - Imagen ${index + 1}`}
-              fill
-              className={`object-contain transition-transform duration-700 ease-in-out ${
-                index === activeImageIndex ? "opacity-100 scale-100" : "opacity-0 scale-95"
-              }`}
-            />
-            {getImageLabel(image) && index === activeImageIndex && (
-              <LabelOverlay label={getImageLabel(image)!} />
-            )}
-          </div>
-        ))}
-      </div>
-
-      <ChevronLeft
-        onClick={handlePrevImage}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-primary text-white rounded-full p-2 hover:bg-secondary opacity-80 cursor-pointer"
-        aria-label="Imagen anterior"
-        size={50}
+    <div className="relative w-[500px] h-[400px] overflow-hidden ">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-fit"
+        sizes="(max-width: 768px) 100vw, 700px"
       />
+      <button
+  onClick={handlePrev}
+  className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-400 text-white w-8 h-8 flex items-center justify-center rounded-full text-2xl"
+>
+  ‹
+</button>
 
-      <ChevronRight
-        onClick={handleNextImage}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-primary text-white rounded-full p-2 hover:bg-secondary opacity-80 cursor-pointer"
-        aria-label="Imagen siguiente"
-        size={50}
-      />
-
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => handleImageChange(index)}
-            className={`w-3 h-3 rounded-full ${
-              index === activeImageIndex ? "bg-primary" : "bg-gray-300"
-            }`}
-            aria-label={`Ver imagen ${index + 1}`}
-          />
-        ))}
-      </div>
+<button
+  onClick={handleNext}
+  className="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-400 text-white w-8 h-8 flex items-center justify-center rounded-full text-2xl"
+>
+  ›
+</button>
     </div>
   );
-};
-
-export default Carousel;
+}

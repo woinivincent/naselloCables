@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --primary-blue:  hsl(198, 75%, 52%) ;
+  --primary-blue: #0092d1 ;
   --secondary-blue: #0067B2;
   --accent-orange: #FF6B00;
   --text-dark: #333333;
@@ -19,7 +20,7 @@
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 198, 75%, 52%;
+    --primary: 198.09, 100%, 40.98%;
     --primary-foreground: 0 0% 98%;
     --secondary: 205, 100%, 35%;
     --secondary-foreground: 0 0% 9%;
@@ -86,7 +87,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border ;
   }
   body {
     @apply bg-background text-foreground;
@@ -104,20 +105,3 @@
   }
 }
 
-
-::-webkit-scrollbar-thumb{
-  background: var(--primary-blue);
-  height:.5rem;
-
-}
-::-webkit-scrollbar-track{
-  background-color: transparent;
-  display: hidden;
-}
-::-webkit-scrollbar-button{
-  display: none;
-}
-::-webkit-scrollbar{
-  color: var(--primary);
-  width: 12px;
-}

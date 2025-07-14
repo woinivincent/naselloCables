@@ -12,6 +12,7 @@ interface SlideData {
   title: string;
   description: string;
   imagePath: string;
+  textPosition?: 'center' | 'left' | 'right'; // ← agregado
 }
 
 interface ImageSliderProps {
@@ -24,7 +25,7 @@ export function ImageSlider({ slides }: ImageSliderProps) {
     duration: 20,
     dragFree: true
   });
-  
+
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -52,14 +53,14 @@ export function ImageSlider({ slides }: ImageSliderProps) {
     const handleSelect = () => {
       setSelectedIndex(emblaApi.selectedScrollSnap());
     };
-    
+
     handleSelect();
     emblaApi.on('select', handleSelect);
-    
+
     return () => {
       emblaApi.off('select', handleSelect);
     };
-  }, [emblaApi]); 
+  }, [emblaApi]);
 
   return (
     <div
@@ -68,6 +69,7 @@ export function ImageSlider({ slides }: ImageSliderProps) {
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent z-10" />
+      
       <div ref={emblaRef} className="overflow-hidden max-sm:h-[320px]">
         <div className="flex">
           {slides.map((slide, index) => (
@@ -83,9 +85,19 @@ export function ImageSlider({ slides }: ImageSliderProps) {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
+
               {(slide.title || slide.description) && (
-                <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-                  <div className="max-w-screen-xl mx-auto">
+                <div
+                  className={cn(
+                    'absolute inset-0 flex items-center p-8 z-20',
+                    slide.textPosition === 'center'
+                      ? 'justify-center text-center'
+                      : slide.textPosition === 'right'
+                      ? 'justify-end text-right'
+                      : 'justify-start text-left'
+                  )}
+                >
+                  <div className="bg-black/50 p-6 rounded-md max-w-xl">
                     <h2 className="text-4xl font-bold text-white mb-2 tracking-tight">
                       {slide.title}
                     </h2>

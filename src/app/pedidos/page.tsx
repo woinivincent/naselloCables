@@ -1,11 +1,17 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { useToast } from '@/hooks/use-toast';
 import {
   Table,
   TableBody,
@@ -13,18 +19,18 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Plus, Send, Trash2, Loader2 } from "lucide-react";
-import InfoLegend from "@/components/InfoLegend";
-
-import cableCatalog from '../../../public/data/cable_catalog.json';
-
+} from '@/components/ui/table';
+import { Plus, Trash2, Download } from 'lucide-react';
+import InfoLegend from '@/components/InfoLegend';
+import cableCatalog from '@/data/cable_catalog.json' assert { type: "json" };
+import Agregar from '@/icons/icono_Pedidos_Agrgar-producto_.svg';
+import Datos from '@/icons/icono_Pedidos_Info_ (1).svg';
 interface OrderItem {
   code: string;
   type: string;
   color: string;
   quantity: number;
-  presentation:string;
+  presentation: string;
 }
 
 interface CustomerInfo {
@@ -37,78 +43,68 @@ interface CustomerInfo {
 export default function PedidosPage() {
   const { toast } = useToast();
   const [items, setItems] = useState<OrderItem[]>([]);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentItem, setCurrentItem] = useState<OrderItem>({
-    code: "",
-    type: "",
-    color: "",
+    code: '',
+    type: '',
+    color: '',
     quantity: 0,
-    presentation:"",
+    presentation: '',
   });
+
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
-    name: "",
-    email: "",
-    phone: "",
-    notes: "",
+    name: '',
+    email: '',
+    phone: '',
+    notes: '',
   });
 
+  const cableTypes = Object.values(cableCatalog.cable_catalog).map(
+    (cable) => cable.name
+  );
 
-  const cableTypes = Object.values(cableCatalog.cable_catalog).map(cable => cable.name);
-
- 
   const getAvailableCodes = (selectedType: string) => {
     const selectedCable = Object.values(cableCatalog.cable_catalog).find(
-      cable => cable.name === selectedType
+      (cable) => cable.name === selectedType
     );
     return selectedCable?.codes || [];
   };
 
   const getAvailableColors = (selectedType: string) => {
     const selectedCable = Object.values(cableCatalog.cable_catalog).find(
-      cable => cable.name === selectedType
+      (cable) => cable.name === selectedType
     );
     return selectedCable?.colors || [];
   };
 
   const getAvailablePresentation = (selectedType: string) => {
     const selectedCable = Object.values(cableCatalog.cable_catalog).find(
-      cable => cable.name === selectedType
+      (cable) => cable.name === selectedType
     );
-    return selectedCable?.presentation|| [];
-  };
-  const handleTypeChange = (value: string) => {
-    setCurrentItem({
-      ...currentItem,
-      type: value,
-      code: "", 
-      color: "" ,
-      presentation:""
-    });
-  };
-
-  const handleCodeChange = (value: string) => {
-    setCurrentItem({
-      ...currentItem,
-      code: value
-    });
+    return selectedCable?.presentation || [];
   };
 
   const addItem = () => {
-    if (!currentItem.type || !currentItem.code || !currentItem.quantity) {
+    if (
+      !currentItem.type ||
+      !currentItem.code ||
+      !currentItem.color ||
+      !currentItem.presentation ||
+      !currentItem.quantity
+    ) {
       toast({
-        title: "Error",
-        description: "Por favor complete todos los campos del producto",
-        variant: "destructive",
+        title: 'Error',
+        description: 'Por favor complete todos los campos del producto',
+        variant: 'destructive',
       });
       return;
     }
     setItems([...items, currentItem]);
     setCurrentItem({
-      code: "",
-      type: "",
-      color: "",
+      code: '',
+      type: '',
+      color: '',
       quantity: 0,
-      presentation:"",
+      presentation: '',
     });
   };
 
@@ -116,63 +112,32 @@ export default function PedidosPage() {
     setItems(items.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (items.length === 0) {
-      toast({
-        title: "Error",
-        description: "Agregue al menos un ítem al pedido",
-        variant: "destructive",
-      });
-      return;
-    }
+  const generateCSV = () => {
+    let csvContent = `Nombre,Email,Teléfono,Notas\n"${customerInfo.name}","${customerInfo.email}","${customerInfo.phone}","${customerInfo.notes}"\n\n`;
+    csvContent += 'Código,Tipo,Color,Presentación,Cantidad\n';
 
-    if (!customerInfo.name || !customerInfo.email || !customerInfo.phone) {
-      toast({
-        title: "Error",
-        description: "Por favor complete todos los campos de contacto",
-        variant: "destructive",
-      });
-      return;
-    }
+    items.forEach((item) => {
+      csvContent += `"${item.code}","${item.type}","${item.color}","${item.presentation}","${item.quantity}"\n`;
+    });
 
-    setIsSubmitting(true);
-    try {
-      const response = await fetch(`${window.location.origin}/api/send-order`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          items,
-          customerInfo
-        }),
-      });
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
 
-      if (!response.ok) {
-        throw new Error('Error al enviar el pedido');
-      }
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute(
+      'download',
+      `pedido_${customerInfo.name || 'cliente'}.csv`
+    );
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 
-      toast({
-        title: "Pedido enviado",
-        description: "Nos pondremos en contacto contigo pronto para confirmar tu pedido.",
-      });
-      setItems([]);
-      setCustomerInfo({
-        name: "",
-        email: "",
-        phone: "",
-        notes: "",
-      });
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Hubo un problema al enviar el pedido. Por favor intente nuevamente.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    toast({
+      title: 'Pedido generado',
+      description:
+        'El pedido ha sido generado en formato CSV. Podés enviarlo por correo manualmente.',
+    });
   };
 
   return (
@@ -181,193 +146,199 @@ export default function PedidosPage() {
         <h1 className="mb-8 text-center text-4xl font-bold">Realizar Pedido</h1>
 
         <div className="flex flex-row gap-6">
-          {/* Columna principal del formulario */}
           <div className="flex-1">
-            <form onSubmit={handleSubmit} className="space-y-8">
-              {/* Información de contacto */}
-              <div className="rounded-lg border p-6 bg-card">
-                <h2 className="mb-4 text-xl font-semibold">Información de Contacto</h2>
-                
+            <div className="space-y-8">
+              {/* Datos del cliente */}
+              <div className=" border p-6 bg-card">
+
+                <div className="flex items-center mb-4">
+                  <Datos className="h-6 mr-2" />
+                  <h2 className="mb-3 text-xl font-semibold">
+                    Información de Contacto
+                  </h2>
+                </div>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div>
-                    <label className="mb-2 block text-sm font-medium">Nombre</label>
-                    <Input
-                      value={customerInfo.name}
-                      onChange={(e) => setCustomerInfo({ ...customerInfo, name: e.target.value })}
-                      placeholder="Nombre completo o de tu empresa"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="mb-2 block text-sm font-medium">Email</label>
-                    <Input
-                      type="email"
-                      value={customerInfo.email}
-                      onChange={(e) => setCustomerInfo({ ...customerInfo, email: e.target.value })}
-                      placeholder="correo@ejemplo.com"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="mb-2 block text-sm font-medium">Teléfono</label>
-                    <Input
-                      type="tel"
-                      value={customerInfo.phone}
-                      onChange={(e) => setCustomerInfo({ ...customerInfo, phone: e.target.value })}
-                      placeholder="Número de teléfono"
-                      required
-                    />
-                  </div>
-
-                  <div className="md:col-span-2">
-                    <label className="mb-2 block text-sm font-medium">Notas adicionales</label>
-                    <Textarea
-                      value={customerInfo.notes}
-                      onChange={(e) => setCustomerInfo({ ...customerInfo, notes: e.target.value })}
-                      placeholder="Agrega cualquier información adicional sobre tu pedido"
-                      rows={3}
-                    />
-                  </div>
+                  <Input
+                    placeholder="Nombre completo o de tu empresa"
+                    value={customerInfo.name}
+                    onChange={(e) =>
+                      setCustomerInfo({ ...customerInfo, name: e.target.value })
+                    }
+                    required
+                    className='bg-gray-200'
+                  />
+                  <Input
+                    type="email"
+                    placeholder="correo@ejemplo.com"
+                    value={customerInfo.email}
+                    onChange={(e) =>
+                      setCustomerInfo({ ...customerInfo, email: e.target.value })
+                    }
+                    required
+                    className='bg-gray-200'
+                  />
+                  <Input
+                    type="tel"
+                    placeholder="Número de teléfono"
+                    value={customerInfo.phone}
+                    onChange={(e) =>
+                      setCustomerInfo({ ...customerInfo, phone: e.target.value })
+                    }
+                    required
+                    className='bg-gray-200'
+                  />
+                  <Textarea
+                    placeholder="Notas adicionales"
+                    value={customerInfo.notes}
+                    onChange={(e) =>
+                      setCustomerInfo({ ...customerInfo, notes: e.target.value })
+                    }
+                    rows={2}
+                    className='bg-gray-200 '
+                  />
                 </div>
               </div>
 
-              {/* Agregar productos */}
-              <div className="rounded-lg border p-6 bg-card max-w-full">
-                <h2 className="mb-4 text-xl font-semibold">Agregar Productos</h2>
+              {/* Formulario de productos */}
+              <div className=" border p-6 bg-card">
+                <div className="flex items-center mb-4">
+                  <Agregar className="h-6 mr-2" />
+                  <h2 className="text-xl font-semibold">Agregar Productos</h2>
+                </div>
+                <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+                  <Select
+                    value={currentItem.type}
+                    onValueChange={(value) =>
+                      setCurrentItem({
+                        ...currentItem,
+                        type: value,
+                        code: '',
+                        color: '',
+                        presentation: '',
+                      })
+                    }
 
-                <div className="grid  gap-5 row md:grid-cols-2 lg:grid-cols-4">
-                  <div>
-                    <label className="mb-2 block text-sm font-medium">Tipo</label>
-                    <Select
-                      value={currentItem.type}
-                      onValueChange={handleTypeChange}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Seleccionar tipo" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {cableTypes.map((type) => (
-                          <SelectItem key={type} value={type}>
-                            {type}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Seleccionar tipo" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {cableTypes.map((type) => (
+                        <SelectItem key={type} value={type}>
+                          {type}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
 
-                  <div>
-                    <label className="mb-2 block text-sm font-medium">Sección</label>
-                    <Select
-                      value={currentItem.code}
-                      onValueChange={handleCodeChange}
-                      disabled={!currentItem.type}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Seleccionar código" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {getAvailableCodes(currentItem.type).map((code) => (
-                          <SelectItem key={code} value={code}>
-                            {code}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
+                  <Select
+                    value={currentItem.code}
+                    onValueChange={(value) =>
+                      setCurrentItem({ ...currentItem, code: value })
+                    }
+                    disabled={!currentItem.type}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Seleccionar sección" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {getAvailableCodes(currentItem.type).map((code) => (
+                        <SelectItem key={code} value={code}>
+                          {code}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
 
-                  <div>
-                    <label className="mb-2 block text-sm font-medium">Color</label>
-                    <Select
-                      value={currentItem.color}
-                      onValueChange={(value) => setCurrentItem({ ...currentItem, color: value })}
-                      disabled={!currentItem.type}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Seleccionar color" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {getAvailableColors(currentItem.type).map((color) => (
-                          <SelectItem key={color} value={color}>
-                            {color}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <label className="mb-2 block text-sm font-medium">Presentacion</label>
-                    <Select
-                      value={currentItem.presentation}
-                      onValueChange={(value) => setCurrentItem({ ...currentItem, presentation: value })}
-                      disabled={!currentItem.type}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Seleccionar Presentacion" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {getAvailablePresentation(currentItem.type).map((presentation) => (
+                  <Select
+                    value={currentItem.color}
+                    onValueChange={(value) =>
+                      setCurrentItem({ ...currentItem, color: value })
+                    }
+                    disabled={!currentItem.type}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Seleccionar color" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {getAvailableColors(currentItem.type).map((color) => (
+                        <SelectItem key={color} value={color}>
+                          {color}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+
+                  <Select
+                    value={currentItem.presentation}
+                    onValueChange={(value) =>
+                      setCurrentItem({ ...currentItem, presentation: value })
+                    }
+                    disabled={!currentItem.type}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Presentación" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {getAvailablePresentation(currentItem.type).map(
+                        (presentation) => (
                           <SelectItem key={presentation} value={presentation}>
                             {presentation}
                           </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
+                        )
+                      )}
+                    </SelectContent>
+                  </Select>
 
-                  <div>
-                    <label className="mb-2 block text-sm font-medium">Cantidad (unidades)</label>
-                    <Input
-                      type="number"
-                      value={currentItem.quantity || ""}
-                      onChange={(e) => setCurrentItem({ ...currentItem, quantity: parseInt(e.target.value) })}
-                      min="1"
-                      max="999"
-                    />
-                  </div>
+                  <Input
+                    type="number"
+                    value={currentItem.quantity || ''}
+                    onChange={(e) =>
+                      setCurrentItem({
+                        ...currentItem,
+                        quantity: parseInt(e.target.value),
+                      })
+                    }
+                    min={1}
+                    placeholder="Cantidad"
+                    className='bg-gray-200 '
+                  />
                 </div>
-
-                <Button
-                  type="button"
-                  onClick={addItem}
-                  className="mt-4 bg-primary text-white hover:bg-secondary"
-                  variant="secondary"
-                >
-                  <Plus className="mr-2 h-4 w-4" /> Agregar al Pedido
+                <Button className="mt-4 p-2 hover:bg-secondary" onClick={addItem}>
+                 <p className='text-xs'>AGREGAR PEDIDO</p>
                 </Button>
               </div>
 
-              {/* Resumen del pedido */}
+              {/* Tabla de resumen */}
               {items.length > 0 && (
                 <div className="rounded-lg border p-6 bg-card">
-                  <h2 className="mb-4 text-xl font-semibold">Resumen del Pedido</h2>
-
+                  <h2 className="mb-4 text-xl font-semibold">
+                    Resumen del Pedido
+                  </h2>
                   <Table>
                     <TableHeader>
                       <TableRow>
-                        <TableHead>Código</TableHead>
                         <TableHead>Tipo</TableHead>
+                        <TableHead>Sección</TableHead>
                         <TableHead>Color</TableHead>
                         <TableHead>Presentación</TableHead>
                         <TableHead>Cantidad</TableHead>
-                        <TableHead className="w-[50px]"></TableHead>
+                        <TableHead></TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
                       {items.map((item, index) => (
                         <TableRow key={index}>
-                          <TableCell>{item.code}</TableCell>
                           <TableCell>{item.type}</TableCell>
+                          <TableCell>{item.code}</TableCell>
                           <TableCell>{item.color}</TableCell>
                           <TableCell>{item.presentation}</TableCell>
-                          <TableCell>{item.quantity} </TableCell>
+                          <TableCell>{item.quantity}</TableCell>
                           <TableCell>
                             <Button
                               variant="ghost"
                               size="icon"
                               onClick={() => removeItem(index)}
-                              className="text-destructive hover:text-destructive/90"
                             >
                               <Trash2 className="h-4 w-4" />
                             </Button>
@@ -377,23 +348,19 @@ export default function PedidosPage() {
                     </TableBody>
                   </Table>
 
-                  <Button type="submit" className="mt-4" disabled={isSubmitting}>
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Enviando...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="mr-2 h-4 w-4" /> Enviar Pedido
-                      </>
-                    )}
+                  <Button
+                    className="mt-4 bg-green-600 text-white hover:bg-green-700"
+                    onClick={generateCSV}
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Descargar Pedido (CSV)
                   </Button>
                 </div>
               )}
-            </form>
+            </div>
           </div>
 
-          {/* Columna de la leyenda */}
+          {/* Leyenda o sección informativa */}
           <div className="w-[350px] hidden lg:block">
             <InfoLegend />
           </div>

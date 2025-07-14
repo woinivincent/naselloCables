@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "export": "next export",
+    "start": "serve out",
     "lint": "next lint"
   },
   "dependencies": {
@@ -64,6 +65,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.16",
     "@types/react": "^18",

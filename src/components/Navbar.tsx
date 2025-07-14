@@ -2,95 +2,100 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigation = [
-    { name: "Inicio", href: "/" },
-    { name: "Productos", href: "/productos" },
-    { name: "Empresa", href: "/empresa" },
-    { name: "Calidad", href: "/calidad" },
-    { name: "Contacto", href: "/contacto" },
-    { name: "Pedidos", href: "/pedidos" },
+    { name: "HOME", href: "/" },
+    { name: "EMPRESA", href: "/empresa" },
+    { name: "PRODUCTOS", href: "/productos" },
+    { name: "CALIDAD", href: "/calidad" },
+    { name: "CONTACTO", href: "/contacto" },
+    { name: "PEDIDOS", href: "/pedidos" },
   ];
 
   return (
-    <header className="relative bg-white shadow-sm ">
-      <div className="bg-primary py-2" >
-        <div className="container mx-auto flex justify-end gap-6 text-sm text-white max-sm:px-2">
-          <a href="tel:+542323354771" className="flex items-center gap-2">
-            <Phone className="h-4 w-4" />
-            <span>(+54) 9 2323 35-4771</span>
-          </a>
-          <a href="mailto:recepcion@nasellocables.com.ar" className="flex items-center gap-2">
-            <Mail className="h-4 w-4" />
-            <span>recepcion@nasellocables.com.ar</span>
-          </a>
+    <header className="bg-gradient-to-b from-gray-100 to-white shadow-sm border-b-[4px] border-[#009CDE] relative z-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        {/* LOGO + LEMA */}
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/assets/logo.png"
+            alt="Nasello Cables"
+            width={200}
+            height={100}
+     
+            priority
+          />
+     
+        </Link>
+
+        {/* NAVEGACIÓN DESKTOP */}
+        <div className="hidden md:flex items-end space-x-6">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-black hover:text-[#0092d1] text-sm  tracking-wide transition-colors"
+            >
+              {item.name}
+            </Link>
+          ))}
+
+          {/* ICONOS REDES */}
+          <div className="flex items-center space-x-3 ml-6">
+            <a href="mailto:recepcion@nasellocables.com.ar" target="_blank" rel="noopener noreferrer">
+              <Image src="/assets/email.svg" alt="Email" width={28} height={28} />
+            </a>
+            <a href="https://wa.me/5492323354771" target="_blank" rel="noopener noreferrer">
+              <Image src="/assets/whatsapp.svg" alt="WhatsApp" width={28} height={28} />
+            </a>
+            <a href="https://instagram.com/nasellocables" target="_blank" rel="noopener noreferrer">
+              <Image src="/assets/instagram.svg" alt="Instagram" width={28} height={28} />
+            </a>
+          </div>
+        </div>
+
+        {/* HAMBURGUER MOBILE */}
+        <div className="md:hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
         </div>
       </div>
 
-      <nav className="container max-h[100px] mx-2 px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <Link href="/">
-            <div className="flex-shrink-0 max-h-fit">
-              <Image
-                src="/assets/logo.png"
-                width={185}
-                height={26}
-                alt="logo"
-                className="overflow-hidden"
-              />
-            </div>
-          </Link>
-          <div className="hidden md:block">
-            <div className="ml-2 flex items-center space-x-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-primary"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center rounded-md p-2"
-            >
-              {isOpen ? (
-                <X className="h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="h-6 w-6" aria-hidden="true" />
-              )}
-            </Button>
-          </div>
-        </div>
-      </nav>
-
-      {/* Mobile menu */}
+      {/* MENÚ MOBILE */}
       {isOpen && (
-        <div className="md:hidden">
-          <div className="space-y-1 px-2 pb-3 pt-2">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+        <div className="md:hidden px-4 pb-4">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+              className="block py-2 text-sm font-medium text-black hover:text-[#009CDE]"
+            >
+              {item.name}
+            </Link>
+          ))}
+
+          <div className="mt-4 flex space-x-4">
+            <a href="mailto:recepcion@nasellocables.com.ar">
+              <Image src="/assets/icons/email.svg" alt="Email" width={28} height={28} />
+            </a>
+            <a href="https://wa.me/5492323354771">
+              <Image src="/assets/icons/whatsapp.svg" alt="WhatsApp" width={28} height={28} />
+            </a>
+            <a href="https://instagram.com/nasellocables">
+              <Image src="/assets/icons/instagram.svg" alt="Instagram" width={28} height={28} />
+            </a>
           </div>
         </div>
       )}

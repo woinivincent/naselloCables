@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
-import SocialMediaFloat from '@/components/SocialMediaFloat';
+
 import BackToTop from '@/components/BackToTop';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -30,11 +30,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col ">
+          <div className="font-custom flex min-h-screen flex-col ">
             <Navbar  />
 
-            <main className="flex-1 max-w-full ">{children}
-            <SocialMediaFloat className="max-[320px]: hidden"/>
+            <main className="flex-2 max-w-full ">{children}
+           
             <BackToTop />
             </main>
             <Footer />

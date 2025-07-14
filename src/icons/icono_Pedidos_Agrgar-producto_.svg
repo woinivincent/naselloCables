@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="12.2148mm" height="12.2148mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 31.07 31.07"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#0092D1;stroke-width:2.54;stroke-miterlimit:22.9256}
+    .fil1 {fill:none}
+    .fil0 {fill:#0092D1;fill-rule:nonzero}
+   ]]>
+  </style>
+   <clipPath id="id0">
+    <path d="M15.53 1.27c-7.88,0 -14.26,6.39 -14.26,14.26 0,7.88 6.39,14.26 14.26,14.26 7.88,0 14.26,-6.39 14.26,-14.26 0,-7.88 -6.39,-14.26 -14.26,-14.26z"/>
+   </clipPath>
+ </defs>
+ <g id="Capa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g>
+  </g>
+  <g style="clip-path:url(#id0)">
+   <g id="_2169830272032">
+    <g>
+     <path class="fil0" d="M12.01 21.33c0,3.19 1.14,5.92 3.41,8.19 2.27,2.27 5.01,3.4 8.2,3.4 0.31,-0 0.62,-0.01 0.92,-0.03l0.04 -5.84c-0.31,0.05 -0.63,0.07 -0.96,0.07 -1.59,0 -2.96,-0.57 -4.1,-1.7 -1.14,-1.14 -1.7,-2.5 -1.71,-4.09l-0 -5.8 -5.8 0.01 0 5.8z"/>
+     <path class="fil0" d="M13.56 14.38l2.99 -0 0.07 -7.59c-0,-0.42 -0.14,-0.78 -0.43,-1.07 -0.29,-0.29 -0.64,-0.43 -1.07,-0.43 -0.42,0 -0.78,0.14 -1.07,0.43 -0.29,0.29 -0.43,0.64 -0.43,1.07l-0.07 7.59z"/>
+    </g>
+   </g>
+  </g>
+  <path class="fil1 str0" d="M15.53 1.27c-7.88,0 -14.26,6.39 -14.26,14.26 0,7.88 6.39,14.26 14.26,14.26 7.88,0 14.26,-6.39 14.26,-14.26 0,-7.88 -6.39,-14.26 -14.26,-14.26z"/>
+ </g>
+</svg>

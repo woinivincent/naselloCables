@@ -5,12 +5,12 @@ import TimelineSection from "@/components/Timeline";
 
 export default function EmpresaPage() {
   return (
-    <div className="flex justify-center">
-      <div className="container py-12">
+    <div className="flex justify-center ">
+      <div className=" py-12">
         {/* Hero Section */}
-        <div className="relative mb-12 h-[400px]">
+        <div className="relative mb-12 h-[400px] w-full">
           <Image
-            src="/assets/slider5.jpg"
+            src="/assets/imagen-encabezado-empresa.jpg"
             alt="Fábrica Nasello Cables"
             fill
             className="object-cover brightness-70"
@@ -26,34 +26,39 @@ export default function EmpresaPage() {
         </div>
 
         {/* Historia y Valores */}
-        <div className="mb-10 max-sm:p-4">
-          <h2 className="mb-8 text-3xl font-medium">HISTORIA Y VALORES</h2>
+        <div className="p-12 mb-10 max-sm:p-4">
+          <h2 className="mb-8 text-3xl font-bold">HISTORIA Y VALORES</h2>
           <div className="grid gap-8 md:grid-cols-2">
             <div>
-              <p className="mb-4 text-lg font-light">
-                En Nasello Cables S.A somos líderes en conductores eléctricos desde hace más de 40 años, ofrecemos soluciones de alta calidad y confiabilidad para todo el país.
-                <br />
-                Calidad, Innovación y Servicio en la industria nacional
-                <br />
-                En estos últimos años nos perfeccionamos para poder ofrecerles certificaciones de calidad, con un laboratorio completamente equipado.
-                Brindamos atención personalizada para grandes y medianos distribuidores.
-                <br />
-                Conócenos más
-                <br />
-
+              <p className="mb-4 text-lg font-bold ">
+                Nasello Cables S.A. | Más de 40 años liderando la industria de conductores
+                eléctricos
               </p>
+              <p className="mb-4 text-lg font-light"> Contamos con una sólida trayectoria de más de cuatro décadas en la
+                fabricación de conductores eléctricos, brindando soluciones de alta calidad y
+                confiabilidad en todo el territorio nacional.
+                <br />
+                <br />
+                Comprometidos con los más altos estándares, nos enfocamos en la calidad,
+                la innovación y el servicio, consolidándonos como un referente en la industria
+                nacional. En los últimos años, hemos perfeccionado nuestros procesos e
+                incorporado tecnología de vanguardia, incluyendo un laboratorio propio
+                totalmente equipado para garantizar productos certificados y de excelencia.
+                <br />
+                <br />
+                Ofrecemos atención personalizada a grandes y medianos distribuidores, con
+                un enfoque orientado a construir relaciones de confianza a largo plazo.</p>
               <p className="text-lg font-light">
-                Explora nuestra página web para saber más sobre nuestros productos y servicios.
-
-                Seguimos transmitiendo energía 
+                Te invitamos a visitar nuestro sitio web y descubrir más sobre nuestros
+                productos y servicios.
               </p>
             </div>
             <div className="relative h-[300px]">
               <Image
-                src="/assets/slider4.jpg"
+                src="/assets/foto-empresa-1.jpg"
                 alt="Historia Nasello Cables"
                 fill
-                
+
                 className="rounded-lg object-cover"
               />
             </div>
@@ -66,12 +71,12 @@ export default function EmpresaPage() {
         </div>
 
         {/* Instalaciones */}
-        <div className="max-sm:p-4">
+        <div className="max-sm:p-4 p-5">
           <h2 className="mb-8 text-3xl font-medium">NUESTRAS INSTALACIONES</h2>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3 ">
             <div className="relative h-[250px]">
               <Image
-                src="/assets/ZSTOCKK.jpeg"
+                src="/assets/foto-empresa-1.jpg"
                 alt="Planta de producción"
                 fill
                 className="rounded-lg object-cover"
@@ -79,7 +84,7 @@ export default function EmpresaPage() {
             </div>
             <div className="relative h-[250px]">
               <Image
-                src="/assets/slider3.jpg"
+                src="/assets/foto-empresa-2.jpg"
                 alt="Laboratorio de control"
                 fill
                 className="rounded-lg object-cover"
@@ -87,7 +92,7 @@ export default function EmpresaPage() {
             </div>
             <div className="relative h-[250px]">
               <Image
-                src="/assets/DESPACHO.jpg"
+                src="/assets/foto-empresa-3.jpg"
                 alt="Almacén"
                 fill
                 className="rounded-lg object-cover"

@@ -1,109 +1,72 @@
-'use client'
-
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Carousel from "@/components/Carousel";
 import { ProductDetails } from "./ProductDetails";
-import { ProductNavigation } from "./ProductNavigation";
-import { ArrowLeft } from 'lucide-react';
+import { ProductNavigationClient } from "./ProductNavigationClient";
+import { ArrowLeft } from "lucide-react";
+import { BackButtonClient } from './BackButtonClient';
+
+import rawCatalog from "@/data/cable_catalog.json";
+
+
+const catalog = rawCatalog as {
+  cable_catalog: {
+    [key: string]: {
+      id: string;
+      name: string;
+      description: string;
+      images: (string | { url: string; label?: string })[];
+      codes: string[];
+      colors: string[];
+      presentation: string[];
+      technical_specs: string[] | string;
+    };
+  };
+};
 
 type Product = {
+  id: string;
   name: string;
   description: string;
-  images: string[];
-  technical_specs: string;
+  images: (string | { url: string; label: string })[];
   codes: string[];
   colors: string[];
+  presentation: string[];
+  technical_specs: string[] | string;
 };
 
-type CatalogData = {
-  cable_catalog: { [key: string]: Product };
-};
+export async function generateStaticParams() {
+  return Object.keys(catalog.cable_catalog).map((id) => ({ id }));
+}
 
-export default function ProductPage({ params }: { params: Promise<{ id: string }> }) {
-  const router = useRouter();
+export default function ProductPage({ params }: { params: { id: string } }) {
+  const keys = Object.keys(catalog.cable_catalog);
+  const id = params.id;
 
-  const [catalogData, setCatalogData] = useState<CatalogData | null>(null);
-  const [currentProduct, setCurrentProduct] = useState<Product | null>(null);
-  const [productKeys, setProductKeys] = useState<string[]>([]);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [paramId, setParamId] = useState<string | null>(null);
+  if (!keys.includes(id)) return notFound();
 
-  useEffect(() => {
-    params.then(({ id }) => setParamId(id));
-  }, [params]);
+  const product = catalog.cable_catalog[id] as Product;
+  const index = keys.indexOf(id);
+  const nextId = keys[(index + 1) % keys.length];
+  const prevId = keys[(index - 1 + keys.length) % keys.length];
 
-  useEffect(() => {
-    async function fetchCatalogData() {
-      const response = await fetch('/data/cable_catalog.json');
-      const data = await response.json();
-      setCatalogData(data);
-      const keys = Object.keys(data.cable_catalog);
-      setProductKeys(keys);
-      if (paramId) {
-        const initialProduct = data.cable_catalog[paramId];
-        setCurrentProduct(initialProduct);
-        setCurrentIndex(keys.indexOf(paramId));
-      }
-    }
-
-    if (paramId) {
-      fetchCatalogData();
-    }
-  }, [paramId]);
-
-  const goToNextProduct = () => {
-    const nextIndex = (currentIndex + 1) % productKeys.length;
-    const nextProduct = catalogData?.cable_catalog[productKeys[nextIndex]];
-    setCurrentProduct(nextProduct || null);
-    setCurrentIndex(nextIndex);
-  };
-
-  const goToPreviousProduct = () => {
-    const prevIndex = (currentIndex - 1 + productKeys.length) % productKeys.length;
-    const prevProduct = catalogData?.cable_catalog[productKeys[prevIndex]];
-    setCurrentProduct(prevProduct || null);
-    setCurrentIndex(prevIndex);
-  };
-
-  if (!catalogData || !currentProduct) {
-    return <div>Cargando...</div>;
-  }
-
-  return (<div>
-    <div className="max-w-7xl mx-auto pt-4 ml-[220px]">
-      {/* Botón para regresar a la página previa */}
-      <Button
-        variant="default"
-        onClick={(e) => {
-          e.preventDefault();
-          router.back();
-        }}
-        className="flex  items-center  bg-primary gap-2 text-sm hover:text-white hover:bg-secondary"
-      >
-        <ArrowLeft size={20} />
-        Volver al Catálogo
-      </Button>
-    </div>
-
-
-
-    <main className="max-w-7xl mx-auto px-4 py-8 ">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Imagen del Producto */}
-        <Carousel images={currentProduct.images} productName={currentProduct.name} />
-
-        {/* Información del Producto */}
-        <ProductDetails product={currentProduct} />
+  return (
+    <div>
+      <div className="max-w-7xl mx-auto pt-4 ml-[100px]">
+        <BackButtonClient />
       </div>
 
-      {/* Navegación entre productos */}
-      <ProductNavigation
-        goToNextProduct={goToNextProduct}
-        goToPreviousProduct={goToPreviousProduct}
-      />
-    </main>
-  </div>
+      <main className="max-w-7xl mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <Carousel images={product.images} productName={product.name} />
+          <ProductDetails product={product} />
+        </div>
+
+        <ProductNavigationClient
+          nextId={nextId}
+          prevId={prevId}
+        />
+      </main>
+    </div>
   );
 }

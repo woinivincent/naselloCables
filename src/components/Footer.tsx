@@ -1,79 +1,118 @@
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
+import { Youtube, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white ">
-
-      <div className="container mx-auto mt-8  max-sm:p-4">
-
-
-        <div className="grid grid-cols-1 gap-7 md:grid-cols-4">
-
-          <div className="">
-
-            <h3 className="mt-1">
-              Líderes en conductores eléctricos desde hace más de 40 años, ofrecemos soluciones de alta calidad y confiabilidad para todo el país.
-              Calidad, Innovación y Servicio en la industria nacional
-            </h3>
+    <footer className="bg-[#0092d1] text-white ">
+      {/* Main footer content */}
+      <div className="pl-8 py-8 w-full justify-end">
+        <div className=" grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-8 items-center justify-end">
+          {/* Left column - Logo and tagline */}
+          <div className="flex flex-col">
+            <Image
+              src="/assets/Logo-Nasello_negativo.png"
+              alt="Nasello Cables"
+              width={180}
+              height={50}
+              className="h-auto w-auto"
+            />
+            <p className="text-sm mt-2 max-w-[220px]">
+              Líderes en conductores eléctricos desde hace más de 40 años.
+            </p>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold text-white">Enlaces</h3>
-            <ul className="mt-4 space-y-2">
-              <li>
-                <Link href="/productos" className="hover:text-white">
-                  Productos
-                </Link>
-              </li>
-              <li>
-                <Link href="/empresa" className="hover:text-white">
-                  Empresa
-                </Link>
-              </li>
-              <li>
-                <Link href="/calidad" className="hover:text-white">
-                  Calidad
-                </Link>
-              </li>
-              <li>
-                <Link href="/contacto" className="hover:text-white">
-                  Contacto
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold text-white">Contacto</h3>
-            <ul className="mt-4 space-y-2">
-              <li>Luján, Buenos Aires</li>
-              <li>(+54) 9 2323 35-4771</li>
-              <li>info@nasellocables.com</li>
-            </ul>
-          </div>
-
-          <div>
-           
-
+          {/* Middle column - Navigation, contact, social */}
           
-            <div className="max-h-10 object-contain mb-3">  <Image
-              src="/assets/iso9001.png"
-              alt="Iso9001"
-              className="size-full max-[768px]:size-4/12   "
-              width={50}
-              height={24}
-              quality={100}
+          <div className="flex flex-col md:flex-row gap-8 lg:px-8 ">
+            <div className="lg:border-x border-white/50 "></div>
+            {/* Navigation links */}
+            <nav>
+              <ul className="flex flex-col space-y-1 font-semibold">
+                <li>
+                  <Link href="/productos" className="hover:underline">Productos</Link>
+                </li>
+                <li>
+                  <Link href="/empresa" className="hover:underline">Empresa</Link>
+                </li>
+                <li>
+                  <Link href="/calidad" className="hover:underline">Calidad</Link>
+                </li>
+                <li>
+                  <Link href="/contacto" className="hover:underline">Contacto</Link>
+                </li>
+                <li>
+                  <Link href="/pedidos" className="hover:underline">Pedidos</Link>
+                </li>
+              </ul>
+            </nav>
 
-            /></div>
+            <div className="lg:border-x border-white/50 "></div>
+            {/* Contact information */}
+            <div className="text-sm lg:ml-6">
+              <p className="mb-1">J. Saulmer 1008, B6700, Luján,</p>
+              <p className="mb-1">Buenos Aires, Argentina</p>
+              <p className="mb-1">Tel.: (+54) 9 2323 610622</p>
+              <p className="mb-1">info@nasellocables.com.ar</p>
+              <p className="mb-1">ventas@nasellocables.com.ar</p>
+
+
+              {/* Social icons */}
+              <div className="flex gap-3 mt-3">
+                <a href="mailto:info@nasellocables.com.ar" aria-label="Email">
+                  <Image
+                    src="/assets/email.svg"
+                    alt="Email"
+                    width={28}
+                    height={28}
+                  />
+                </a>
+                <a href="https://wa.me/5492323354771" aria-label="WhatsApp">
+                  <Image
+                    src="/assets/whatsapp.svg"
+                    alt="WhatsApp"
+                    width={28}
+                    height={28}
+                  />
+                </a>
+                <a href="https://instagram.com/nasellocables" aria-label="Instagram">
+                  <Image
+                    src="/assets/instagram.svg"
+                    alt="Instagram"
+                    width={28}
+                    height={28}
+                  />
+                </a>
+                <a href="https://youtube.com/@nasellocables" aria-label="Instagram">
+                  <Image
+                    src="/assets/youtube.svg"
+                    alt="YouTube"
+                    width={28}
+                    height={28}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right column - Certifications */}
+          <div className="flex justify-end">
+            <div className="w-[500px]">
+              <Image
+                src="/assets/sellos_pie.png"
+                alt="TÜV ISO Certificados"
+                width={500}
+                height={100}
+                className="h-auto w-full object-cover"
+              />
+            </div>
           </div>
         </div>
+      </div>
 
-        <div className="my-8 border-t border-gray-800 pt-8 text-center">
-          <p className="text-sm  max-[320px]:mt-7 max-[640px]:mt-7">© {new Date().getFullYear()} Nasello Cables. Todos los derechos reservados.| Developed by Vicente Woinilowicz</p>
-
-        </div>
+      {/* Copyright bar */}
+      <div className="text-center text-white text-sm py-3 border-t border-white/50">
+        © {new Date().getFullYear()} Nasello Cables. Todos los derechos reservados. | Developed by Vicente Woinilowicz
       </div>
     </footer>
   );

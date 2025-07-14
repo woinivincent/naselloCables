@@ -1,18 +1,20 @@
-// src/app/productos/[id]/ProductDetails.tsx
-'use client'
+'use client';
 
-import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Package, Shield, Truck, Zap } from "lucide-react";
-import Link from "next/link";
+
+import Shield from '@/icons/producto_Calidad.svg';
+import Package from '@/icons/producto_Stock.svg';
+import Truck from '@/icons/producto_Envio.svg';
 
 type Product = {
+  id: string;
   name: string;
   description: string;
-  images: string[];
-  technical_specs: string;
+  images: (string | { url: string; label: string })[];
   codes: string[];
   colors: string[];
+  presentation: string[];
+  technical_specs: string[] | string;
 };
 
 type ProductDetailsProps = {
@@ -22,68 +24,53 @@ type ProductDetailsProps = {
 export function ProductDetails({ product }: ProductDetailsProps) {
   return (
     <div className="space-y-6">
-      <div className="bg-white rounded-lg shadow-lg p-6 ">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">{product.name}</h1>
-        <p className="text-gray-600 mb-6">{product.description}</p>
+      <div className="bg-white rounded-lg p-6">
+        <h1 className="text-2xl font-bold text-gray-900 mb-4 uppercase">{product.name}</h1>
 
-        {/* Características Principales */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
-          <div className="flex items-center gap-2 text-gray-600">
-            <Shield className="text-primary" size={20} />
+        <p className="text-gray-700 mb-4 leading-relaxed">{product.description}</p>
+
+        {/* Ficha técnica dinámica */}
+        <div className="text-sm space-y-2">
+          {Array.isArray(product.technical_specs) ? (
+            product.technical_specs.map((spec, index) => (
+              <div key={index}>
+                <p className="font-bold">{spec}</p>
+                {index !== product.technical_specs.length - 1 && (
+                  <hr className="border-gray-300" />
+                )}
+              </div>
+            ))
+          ) : (
+            <p>{product.technical_specs}</p>
+          )}
+        </div>
+
+        {/* Iconografía */}
+        <div className="border-b border-t border-gray-300 text-sm font-bold uppercase mt-6">
+          <div className="flex items-center gap-2 mt-1 mb-1">
+            <Package size={16} />
+            <span>Stock disponible</span>
+          </div>
+          <hr className="border-gray-300" />
+          <div className="flex items-center gap-2 mt-1 mb-1">
+            <Shield size={16} />
             <span>Certificado</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Zap className="text-primary "   />
-            <span>{product.technical_specs}</span>
-          </div>
-          <div className="flex items-center gap-2 text-gray-600">
-            <Package className="text-primary" size={20} />
-            <span>Stock Disponible</span>
-          </div>
-          <div className="flex items-center gap-2 text-gray-600">
-            <Truck className="text-primary" size={20} />
-            <span>Envío a todo el país</span>
+          <hr className="border-gray-300" />
+          <div className="flex items-center gap-2 mt-1 mb-1">
+            <Truck size={16} />
+            <span>Envío</span>
           </div>
         </div>
 
-        <Button type="button" className="mt-4 bg-primary text-white hover:bg-secondary w-full" variant="secondary">
-          <Link href="/pedidos">Solicitar Cotización</Link>
-        </Button>
-      </div>
-
-      {/* Especificaciones */}
-      <div className="bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Especificaciones</h2>
-        <div className="space-y-4">
-          {/* Códigos disponibles */}
-          <div>
-            <h3 className="font-semibold text-gray-700 mb-2">Códigos Disponibles:</h3>
-            <div className="flex flex-wrap gap-2">
-              {product.codes.map((code) => (
-                <span key={code} className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">
-                  {code}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Colores disponibles */}
-          <div>
-            <h3 className="font-semibold text-gray-700 mb-2">Colores Disponibles:</h3>
-            <div className="flex flex-wrap gap-2">
-              {product.colors.map((color) => (
-                <span key={color} className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">
-                  {color}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Especificaciones técnicas */}
-          <div>
-            <h3 className="font-semibold text-gray-700 mb-2">Especificaciones Técnicas:</h3>
-            <p className="text-gray-600">{product.technical_specs}</p>
-          </div>
+        {/* Botones */}
+        <div className="flex flex-col gap-y-4 pt-6">
+          <Button className="bg-gray-500 hover:bg-gray-600 text-white w-min rounded-md text-xs">
+            DESCARGAR FICHA TÉCNICA
+          </Button>
+          <Button className="bg-primary hover:bg-secondary text-white w-max rounded-md text-xs">
+            SOLICITAR COTIZACIÓN
+          </Button>
         </div>
       </div>
     </div>

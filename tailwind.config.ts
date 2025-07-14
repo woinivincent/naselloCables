@@ -9,14 +9,14 @@ export default {
 	],
 	theme: {
 		extend: {
-		
+
 
 			fontFamily: {
-				'custom': ['Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif'],
-				'title': ['Montserrat', 'sans-serif'],
-				'body': ['Open Sans', 'sans-serif']
+				custom: ['Roboto', 'sans-serif'],
+				title: ['Roboto', 'sans-serif'],
+				body: ['Roboto', 'sans-serif'],
+				sans: ['Roboto', 'sans-serif'],
 			},
-
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',

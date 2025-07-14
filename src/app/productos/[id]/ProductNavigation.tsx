@@ -13,7 +13,7 @@ export function ProductNavigation({ goToNextProduct, goToPreviousProduct }: Prod
   return (
     <div className="flex gap-4 justify-between mt-3">
       <Button type="button" className="bg-primary text-white hover:bg-secondary" onClick={goToPreviousProduct}>
-        <ArrowLeft size={20} />
+        <ArrowLeft size={30} />
         Anterior
       </Button>
       <Button type="button" className="bg-primary text-white hover:bg-secondary" onClick={goToNextProduct} >

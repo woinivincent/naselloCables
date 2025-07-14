@@ -1,0 +1,513 @@
+{
+  "cable_catalog": {
+    "subterraneos": {
+      "id": "SU001",
+      "name": "SUBTERRÁNEOS",
+      "description": "Conductor eléctrico conformado por cables unipolares multifilares de cobre electrolítico rojo, con doble aislación de PVC: interior antillama y exterior extra flexible. Contiene relleno interno no higroscópico. Uso: instalaciones subterráneas directas o sobre bandejas portacables.",
+      "images": [
+        "/assets/productos/Subterraneo-01.jpg",
+        "/assets/productos/Subterraneo-02.jpg",
+        {
+          "url": "/assets/productos/Subterraneo-01.jpg",
+          "label": "ET-VT-009"
+        }
+      ],
+      "codes": [
+        "S16",
+        "S25",
+        "S35",
+        "S50",
+        "S70",
+        "S95",
+        "S120",
+        "S150",
+        "S185",
+        "S240",
+        "S2X1.5",
+        "S2X2.5",
+        "S2X4",
+        "S2X6",
+        "S2X10",
+        "S2X16",
+        "S3X1.5",
+        "S3X2.5",
+        "S3X4",
+        "S3X6",
+        "S3X10",
+        "S3X16",
+        "S3X25",
+        "S3X25+16",
+        "S3X35",
+        "S3X35+16",
+        "S3X50",
+        "S3X50+25",
+        "S4X1.5",
+        "S4X2.5",
+        "S4X4",
+        "S4X6",
+        "S4X10",
+        "S4X16",
+        "S4X25",
+        "S4X35",
+        "S5X1.5",
+        "S5X2.5",
+        "S5X4",
+        "S5X6",
+        "S5x10",
+        "S7X1.5",
+        "S7x2.5"
+      ],
+      "colors": [
+        " No disponible"
+      ],
+      "presentation": [
+        "Bobina: 1000 mts",
+        "Rollo: 100 mts",
+        "Bobinita: 300 mts "
+      ],
+      "technical_specs": [
+        "Tensión de servicio: 0.6/1 KV (600/1000V)",
+        "Norma de fabricación: IRAM NM 2178-1",
+        "Temperatura de trabajo: -5°C a +70°C",
+        "Flexibilidad: Clase 4 y Clase 5"
+      ]
+    },
+    "tipo_taller_tpr": {
+      "id": "TT001",
+      "name": "TIPO TALLER ",
+      "description": "Conductor eléctrico conformado por cables unipolares multifilares de cobre electrolítico rojo, con doble aislación de PVC: interior antillama y exterior extra flexible. Contiene relleno interno no higroscópico. Uso: instalaciones subterráneas directas o sobre bandejas portacables.",
+      "images": [
+        "/assets/productos/Tipo-taller-01.jpg",
+        "/assets/productos/Tipo-taller-02.jpg",
+        {
+          "url": "/assets/productos/Tipo-taller-01.jpg",
+          "label": "ET-VT-010"
+        }
+      ],
+      "codes": [
+        "2x0.75",
+        "2X1",
+        "2x1.5",
+        "2x2.5",
+        "2x4",
+        "2X6",
+        "2X10",
+        "3X0.75",
+        "3x1",
+        "3x1.5",
+        "3x2.5",
+        "3x4",
+        "3X6",
+        "3X10",
+        "4x0.75",
+        "4x1",
+        "4x1.5",
+        "4x2.5",
+        "4x4",
+        "4X6",
+        "4X10",
+        "4X16",
+        "4X25",
+        "5X1",
+        "5X1.5",
+        "5X2.5",
+        "5X4",
+        "5X6",
+        "5X10",
+        "6X1",
+        "7X1",
+        "7X1.5",
+        "7X2.5",
+        "8X1"
+      ],
+      "colors": [
+        " No disponible"
+      ],
+      "presentation": [
+        "Bobina: 1000 mts",
+        "Rollo: 100 mts",
+        "Bobinita: 300 mts "
+      ],
+      "technical_specs": [
+        "Tensión de servicio: 450/750V",
+        "Norma de fabricación: IRAM 247-53",
+        "Temperatura de trabajo: -5°C a +70°C",
+        "Flexibilidad: Clase 5"
+      ]
+    },
+    "soldadura": {
+      "id": "SG001",
+      "name": "SOLDADURA GOMA ",
+      "description": "Conductor de cobre electrolítico rojo con separador PET (resina de tereftalato) y vaina exterior de goma sintética tipo EPDM.Uso: equipos de soldadura eléctrica. Alta flexibilidad y resistencia térmica, química y mecánica",
+      "images": [
+        "/assets/productos/Soldadura-goma-01.jpg",
+        "/assets/productos/Soldadura-goma-02.jpg",
+        {
+          "url": "/assets/productos/Familia_Soldadura-goma.jpg",
+          "label": "ET-VT-008"
+        }
+      ],
+      "codes": [
+        "G16",
+        "G25",
+        "G35",
+        "G50",
+        "G70",
+        "G95",
+        "G120",
+        "G150"
+      ],
+      "colors": [
+        " NegroGoma"
+      ],
+      "presentation": [
+        "Rollo: 25mts ",
+        "Bobinita: 100mts",
+        "Bobina: 500mts"
+      ],
+      "technical_specs": [
+        "Tensión de servicio: 450/750V",
+        "Norma de fabricación: IEC 245-6",
+        "Temperatura de trabajo: -15°C a +105°C",
+        "Flexibilidad: Clase 6"
+      ]
+    },
+    "bomba_sumergible": {
+      "id": "BS001",
+      "name": "BOMBA SUMERGIBLE",
+      "description": "Cable con conductores multifilares de cobre electrolítico rojo, con aislación interna de PVC flexible antillama y vaina exterior resistente. Incluye separador antiadherente.Uso: conexionado de bombas sumergibles y equipos en ambientes húmedos.",
+      "images": [
+        "/assets/productos/Bomba-sumergible-01.jpg",
+        "/assets/productos/Bomba-sumergible-01.jpg",
+        {
+          "url": "/assets/productos/Familia_Bomba-sumergible.jpg",
+          "label": "ET-VT-002"
+        }
+      ],
+      "codes": [
+        "BS2X1.5",
+        "BS2X2.5",
+        "BS3X1.5",
+        "BS3X2.5",
+        "BS3X4",
+        "BS3X6",
+        "BS3X10",
+        "BS3X16",
+        "BS3X25",
+        "BS3X35",
+        "BS4x1.5",
+        "BS4x2.5"
+      ],
+      "colors": [
+        " No disponible"
+      ],
+      "presentation": [
+        "Bobina: 1000 mts",
+        "Rollo: 100 mts",
+        "Bobinita: 300 mts "
+      ],
+      "technical_specs": [
+        "Tensión de servicio: 450/750V",
+        "Norma de fabricación: IRAM 63007",
+        "Temperatura de trabajo: -5°C a +70°C",
+        "Flexibilidad: Clase 5"
+      ]
+    },
+    "unipolar_antillama": {
+      "id": "UA001",
+      "name": "UNIPOLAR",
+      "description": "Cable unipolar con conductor de cobre electrolítico rojo y aislación de PVC flexible antillama. Disponible en múltiples colores normalizados.Uso: instalaciones fijas domiciliarias, comerciales e industriales.",
+      "images": [
+        "/assets/productos/Unipolar-01.jpg",
+        "/assets/productos/Unipolar-02.jpg",
+        "/assets/productos/Unipolar-03.jpg",
+        {
+          "url": "/assets/productos/Unipolar-01.jpg",
+          "label": "ET-VT-007"
+        }
+      ],
+      "codes": [
+        "0.75",
+        "1",
+        "1.5",
+        "2.5",
+        "4",
+        "6",
+        "10",
+        "16",
+        "25",
+        "35",
+        "50",
+        "70",
+        "95",
+        "120",
+        "150",
+        "185",
+        "240"
+      ],
+      "colors": [
+        "CE",
+        "RO",
+        "V/A",
+        "MA",
+        "NE",
+        "BL"
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
+      ],
+      "technical_specs": [
+        "Tensión de servicio: 450/750V",
+        "Norma de fabricación: IRAM 247-3",
+        "Temperatura de trabajo: -5°C a +70°C",
+        "Flexibilidad: Clase 4 y Clase 5"
+      ]
+    },
+    "bipolar_vaina_plana": {
+      "id": "VP001",
+      "name": "VAINA PLANA",
+      "description": "Cable chato de cobre multifilar con doble aislación de PVC (interna + envolvente). Extra flexible. Uso: instalaciones móviles en locales industriales, agrícolas y domiciliarios (no calefacción)",
+      "images": [
+        "/assets/productos/Vaina-plana-01.jpg",
+        "/assets/productos/Vaina-plana-02.jpg",
+        {
+          "url": " /assets/productos/Familia_Vaina-plana.jpg",
+          "label": "ET-VT-006"
+        }
+      ],
+      "codes": [
+        "VP2X0.75",
+        "VP2X1",
+        "VP2X1.5",
+        "VP2X2.5",
+        "VP3X1",
+        "VP3X1.5",
+        "VP3X2.5"
+      ],
+      "colors": [
+        "NEGRO",
+        "BLANCO"
+      ],
+      "presentation": [
+        "Bobina: 1000 mts",
+        "Rollo: 100 mts",
+        "Bobinita: 300 mts "
+      ],
+      "technical_specs": [
+        "Tensión de servicio: 300/500V",
+"Norma de fabricación: IRAM 247-5",
+"Temperatura de trabajo: -5°C a +70°C",
+"Flexibilidad: Clase 4"
+      ]
+    },
+    "automotor_bateria": {
+      "id": "AB001",
+      "name": "AUTOMOTOR / BATERÍA",
+      "description": "Conductor de cobre electrolítico rojo con aislación de PVC flexible resistente.  Uso: instalaciones en vehículos, conexiones de batería y corriente continua.",
+      "images": [
+        "/assets/productos/Automotor-bateria-01.jpg",
+        "/assets/productos/Automotor-bateria-02.jpg",
+        {
+          "url": " /assets/productos/Familia_Automotor-bateria.jpg",
+          "label": "ET-VT-006"
+        }
+      ],
+      "codes": [
+        "AUT10",
+        "AUT16",
+        "AUT25",
+        "AUT35",
+        "AUT50",
+        "AUT70",
+        "AUT95"
+      ],
+      "colors": [
+        "ROJO",
+        "NEGRO"
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
+      ],
+      "technical_specs": [
+        "Tensión de servicio: 450/750V",
+        "Norma de fabricación: IEC 245-6",
+        "Temperatura de trabajo: -15°C a +105°C",
+        "Flexibilidad: Clase 5 y Clase 6"
+      ]
+    },
+    "cable_cobre_desnudo": {
+      "id": "CD001",
+      "name": "DESNUDO",
+      "description": " Conductor sólido o multifilar de cobre electrolítico rojo, calidad cátodo, grado 1 (pureza mínima 99.5%), conforme norma ASTM B115.Uso: puestas a tierra, pararrayos, instalaciones de antenas",
+      "images": [
+        "/assets/productos/Desnudo-01.jpg",
+        "/assets/productos/Desnudo-02.jpg",
+        {
+          "url": "/assets/productos/Familia_Desnudo.jpg",
+          "label": "ET-VT-005"
+        }
+      ],
+      "codes": [
+        "DES6",
+        "DES10",
+        "DES16",
+        "DES25",
+        "DES35",
+        "DES50",
+        "DES70",
+        "DES95",
+        "DES120",
+        "DES150",
+        "DES200"
+      ],
+      "colors": [
+        " No disponible"
+      ],
+      "presentation": [
+        "Bobina: 1000 mts",
+        "Rollo: 100 mts",
+        "Bobinita: 300 mts "
+      ],
+      "technical_specs": [
+        "Tensión de servicio: sin aislación (uso según normativa de instalación).",
+        "Norma: IRAM NM2004, IRAM NM280",
+        "Flexibilidad: Clase 2, Clase 4 y Clase 5"
+      ]
+    },
+    "bafle_audio_premium": {
+      "id": "BA001",
+      "name": "BAFLE / AUDIO",
+      "description": "Cable bipolar para sistemas de sonido. Conductor de cobre OFC (alta pureza), aislación de PVC cristal.Uso: conexión de parlantes y equipos de audio de alta fidelidad.",
+      "images": [
+        "/assets/productos/Bafle-audio-01.jpg",
+        "/assets/productos/Bafle-audio-02.jpg"
+      ],
+      "codes": [
+        "BA2x0.75",
+        "BA2x1",
+        "BA2x1.5"
+      ],
+      "colors": [
+        ""
+      ],
+      "presentation": [
+        "Bobina",
+        "Rollo",
+        "Bobinita"
+      ],
+      "technical_specs": [
+        "Tensión de servicio: 300/500V",
+        "Norma de fabricación: IEC 247-5",
+        "Flexibilidad: Clase 4"
+      ]
+    },
+    "bipolar_cristal_paralelos": {
+      "id": "BC001",
+      "name": "PARALELO CRISTAL",
+      "description": "Cable bipolar con conductores flexibles de cobre y doble aislación de PVC cristal transparente. Uso: instalaciones visibles, cableado decorativo o conexiones de bajo consumo.",
+      "images": [
+        "/assets/productos/Paralelo-cristal-01.jpg",
+        "/assets/productos/Paralelo-cristal-02.jpg",
+        {
+          "url": "/assets/productos/Familia_Paralelo-cristal.jpg",
+          "label": "ET-VT-004"
+        }
+      ],
+      "codes": [
+        "CRIS2X0.75",
+        "CRIS2X1",
+        "CRIS2X1.5",
+        "CRIS2X2.5",
+        "PAR2X0.75",
+        "PAR2X1",
+        "PAR2X1.5",
+        "PAR2X2.5"
+      ],
+      "colors": [
+        " No disponible"
+      ],
+      "presentation": [
+        "Bobina: 1000 mts",
+        "Rollo: 100 mts",
+        "Bobinita: 300 mts "
+      ],
+      "technical_specs": [
+        "Tensión de servicio: 300/500V",
+        "Norma de fabricación: IRAM 247-3",
+        "Temperatura de trabajo: -5°C a +70°C",
+        "Flexibilidad: Clase 4"
+      ]
+    },
+    "soldadura_azul": {
+      "id": "SA001",
+      "name": "SOLDADURA AZUL",
+      "description": "Utiles oficiales de la empresa para la comercialización de cables",
+      "images": [
+        "/assets/productos/Soldadura-azul-01.jpg",
+        "/assets/productos/Soldadura-azul-02.jpg"
+      ],
+      "codes": [
+        "A16",
+        "A25",
+        "A35",
+        "A50",
+        "A70",
+        "A95",
+        "A120"
+      ],
+      "colors": [
+        " AzulIEC"
+      ],
+      "presentation": [
+        "Bobina: 1000 mts",
+        "Rollo: 100 mts",
+        "Bobinita: 300 mts "
+      ],
+      "technical_specs": [
+        "Tensión de servicio: 450/750V",
+        "Norma de fabricación: IEC 245-6",
+        "Temperatura de trabajo: -5°C a +105°C",
+        "Flexibilidad: Clase 5"
+      ]
+    },
+    "Fotovoltaico": {
+      "id": "FV001",
+      "name": "FOTOVOLTAICO",
+      "description": "Conductor de cobre estañado (CuSn) con aislación y vaina exterior de PEX (polietileno reticulado). Alta resistencia a rayos UV, ozono y condiciones climáticas extremas.Uso: interconexión entre paneles solares, inversores y estructuras en instalaciones fotovoltaicas.",
+      "images": [
+        "/assets/productos/Fotovoltaico-01.jpg",
+        "/assets/productos/Fotovoltaico-02.jpg",
+        "/assets/productos/Fotovoltaico-03.jpg"
+      ],
+      "codes": [
+        "F2",
+        "F4",
+        "F8",
+        "F16",
+        "F32",
+        "F64",
+        "F128"
+      ],
+      "colors": [
+        " ROJO",
+        " NEGRO"
+      ],
+      "presentation": [
+        "Bobina: 1000 mts",
+        "Rollo: 100 mts",
+        "Bobinita: 300 mts "
+      ],
+      "technical_specs": [
+       "Tensión de servicio: 600/1000V AC – 1000/1800V DC",
+"Norma de fabricación: IRAM 62930",
+"Temperatura de trabajo: -40°C a +90°C (en servicio continuo)",
+"Clase de flexibilidad: Clase 5",
+"Color Externo: Negro o Rojo"
+      ]
+    }
+  }
+}
