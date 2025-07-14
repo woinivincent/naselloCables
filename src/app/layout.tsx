@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Nasello Cables',
   description: 'Fabricación y comercialización de cables y conductores eléctricos de alta calidad',
-   icons: {
+ icons: {
     icon: '/logoicon.png', // ← sin assets/
   },
 };
@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" suppressHydrationWarning >
-       <link rel="icon" type='image/png' href="/logoicon.png"  />
+       
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
