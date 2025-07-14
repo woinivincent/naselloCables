@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Nasello Cables',
   description: 'Fabricación y comercialización de cables y conductores eléctricos de alta calidad',
  icons: {
-    icon: '/logoIcon.png', // ← sin assets/
+    icon: '/favicon.png', // ← sin assets/
   },
 };
 
