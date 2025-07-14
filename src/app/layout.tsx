@@ -13,6 +13,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Nasello Cables',
   description: 'Fabricación y comercialización de cables y conductores eléctricos de alta calidad',
+   icons: {
+    icon: '/logoicon.png', // ← sin assets/
+  },
 };
 
 export default function RootLayout({
