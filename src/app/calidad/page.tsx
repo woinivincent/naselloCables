@@ -21,9 +21,10 @@ export default function CalidadPage() {
         />
         <div className="absolute inset-0 flex items-center justify-center text-center text-white">
           <div>
-            <h1 className="mb-4 text-5xl font-bold">GESTIÓN DE CALIDAD</h1>
+            <h1 className="mb-4 text-5xl font-bold">Mejora continua</h1>
             <p className="text-xl">
-              Comprometidos con la excelencia en cada producto
+               Comprometidos con el proceso minucioso que conlleva el producto.
+
             </p>
           </div>
         </div>
@@ -107,7 +108,7 @@ export default function CalidadPage() {
                   <li>Promover la Mejora Continua.</li>
                 </ul>
                 <span className="text-left text-xs">
-                  <p>La Dirección / Mayo 2025</p>
+                  <p>La Dirección / Abril 2025</p>
                 </span>
               </div>
               <div className="relative h-[500px]">

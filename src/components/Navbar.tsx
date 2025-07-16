@@ -88,13 +88,13 @@ const Navbar = () => {
 
           <div className="mt-4 flex space-x-4">
             <a href="mailto:recepcion@nasellocables.com.ar">
-              <Image src="/assets/icons/email.svg" alt="Email" width={28} height={28} />
+              <Image src="/assets/email.svg" alt="Email" width={28} height={28} />
             </a>
-            <a href="https://wa.me/5492323354771">
-              <Image src="/assets/icons/whatsapp.svg" alt="WhatsApp" width={28} height={28} />
+            <a href="https://wa.me/5492323620622">
+              <Image src="/assets/whatsapp.svg" alt="WhatsApp" width={28} height={28} />
             </a>
             <a href="https://instagram.com/nasellocables">
-              <Image src="/assets/icons/instagram.svg" alt="Instagram" width={28} height={28} />
+              <Image src="/assets/instagram.svg" alt="Instagram" width={28} height={28} />
             </a>
           </div>
         </div>

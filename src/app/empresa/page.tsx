@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { History, Users, Target, Factory } from "lucide-react";
 import TimelineSection from "@/components/Timeline";
+import { Button } from "@/components/ui/button";
 
 export default function EmpresaPage() {
   return (
@@ -19,7 +20,8 @@ export default function EmpresaPage() {
             <div>
               <h1 className="mb-4 text-5xl font-medium">NUESTRA EMPRESA</h1>
               <p className="text-xl font-light">
-                Más de 40 años de experiencia en la industria del cable
+                “Un legado familiar” - Dos generaciones de experiencia compartida en la industria.
+
               </p>
             </div>
           </div>
@@ -53,54 +55,71 @@ export default function EmpresaPage() {
                 productos y servicios.
               </p>
             </div>
-            <div className="relative h-[300px]">
-              <Image
-                src="/assets/foto-empresa-1.jpg"
-                alt="Historia Nasello Cables"
-                fill
-
-                className="rounded-lg object-cover"
+            <div className="relative h-[450px] rounded-lg overflow-hidden">
+              {/* Video de YouTube */}
+              <iframe
+                src="https://www.youtube.com/embed/Js76327Blos?autoplay=1&mute=1&controls=0&loop=1&playlist=Js76327Blos&modestbranding=1&rel=0"
+                title="Video institucional"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full scale-[1.5] origin-center"
               />
+
+              {/* Botón en la esquina inferior izquierda */}
+              <a
+                href="https://www.youtube.com/watch?v=Js76327Blos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-4 left-4 z-10"
+              >
+                <Button className="bg-gray-500 hover:bg-secondary text-white w-max rounded-md text-xs">
+                  VER VIDEO
+                </Button>
+              </a>
+
             </div>
           </div>
-        </div>
 
-        {/* Pilares */}
-        <div className="max-sm:p-4">
-          <TimelineSection />
-        </div>
 
-        {/* Instalaciones */}
-        <div className="max-sm:p-4 p-5">
-          <h2 className="mb-8 text-3xl font-medium">NUESTRAS INSTALACIONES</h2>
-          <div className="grid gap-6 md:grid-cols-3 ">
-            <div className="relative h-[250px]">
-              <Image
-                src="/assets/foto-empresa-1.jpg"
-                alt="Planta de producción"
-                fill
-                className="rounded-lg object-cover"
-              />
-            </div>
-            <div className="relative h-[250px]">
-              <Image
-                src="/assets/foto-empresa-2.jpg"
-                alt="Laboratorio de control"
-                fill
-                className="rounded-lg object-cover"
-              />
-            </div>
-            <div className="relative h-[250px]">
-              <Image
-                src="/assets/foto-empresa-3.jpg"
-                alt="Almacén"
-                fill
-                className="rounded-lg object-cover"
-              />
+
+          {/* Pilares */}
+          <div className="max-sm:p-4">
+            <TimelineSection />
+          </div>
+
+          {/* Instalaciones */}
+          <div className="max-sm:p-4 p-5">
+            <h2 className="mb-8 text-3xl font-medium">NUESTRAS INSTALACIONES</h2>
+            <div className="grid gap-6 md:grid-cols-3 ">
+              <div className="relative h-[250px]">
+                <Image
+                  src="/assets/foto-empresa-1.jpg"
+                  alt="Planta de producción"
+                  fill
+                  className="rounded-lg object-cover"
+                />
+              </div>
+              <div className="relative h-[250px]">
+                <Image
+                  src="/assets/foto-empresa-2.jpg"
+                  alt="Laboratorio de control"
+                  fill
+                  className="rounded-lg object-cover"
+                />
+              </div>
+              <div className="relative h-[250px]">
+                <Image
+                  src="/assets/foto-empresa-3.jpg"
+                  alt="Almacén"
+                  fill
+                  className="rounded-lg object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+
+
+    </div>);
 }

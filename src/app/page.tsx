@@ -115,16 +115,32 @@ export default function Home() {
           {/* Texto */}
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h2 className="text-3xl font-bold text-black mb-4 leading-snug">
-              Nueva solución, nuevo estándar
+              Sumando sustentabilidad
             </h2>
             <p className="text-gray-700 text-base leading-relaxed max-w-xl mx-auto md:mx-0">
-              Líderes en conductores eléctricos desde hace más de 40 años,
-              ofrecemos soluciones de alta calidad y confiabilidad para todo el país.<br />
-              <strong>Calidad, Innovación y Servicio</strong> en la industria nacional.
+              Ofrecemos soluciones alternativas de alta calidad y confiabilidad para todo el país.
+              <br />
+              Consultá por nuestros  <strong>cables fotovoltáicos.</strong>
             </p>
           </div>
         </div>
       </section>
+      <section className="relative h-[400px] sm:h-[300px] w-full">
+        <Image
+          src="/assets/imagen-home-celeste.jpg"
+          alt="Imagen de fondo"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 flex items-center justify-center text-center">
+          <h1 className="text-white text-3xl sm:text-5xl font-bold drop-shadow-lg">
+            Logrando cinco décadas de experiencia
+
+          </h1>
+        </div>
+      </section>
+
 
       {/* Features Section */}
       <section className="bg-gray-100 py-20 px-4">
@@ -173,6 +189,7 @@ export default function Home() {
               </div>
             ))}
           </div>
+
         </div>
       </section>
 

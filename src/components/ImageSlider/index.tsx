@@ -13,6 +13,10 @@ interface SlideData {
   description: string;
   imagePath: string;
   textPosition?: 'center' | 'left' | 'right'; // ← agregado
+  type?: 'image' | 'video' | 'youtube';
+  videoPath?: string;
+  youtubeId?: string;
+
 }
 
 interface ImageSliderProps {
@@ -69,23 +73,33 @@ export function ImageSlider({ slides }: ImageSliderProps) {
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent z-10" />
-      
+
       <div ref={emblaRef} className="overflow-hidden max-sm:h-[320px]">
         <div className="flex">
           {slides.map((slide, index) => (
             <div key={slide.id} className="relative flex-[0_0_100%] min-w-0">
               <div className="w-full h-[600px] max-h-[80vh] relative overflow-hidden max-sm:h-[320px]">
-                <Image
-                  src={slide.imagePath}
-                  alt={slide.title}
-                  fill
-                  priority={index === 0}
-                  className="object-center max-sm:h-[600px] max-sm:object-cover max-sm:object-center"
-                  quality={100}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
+                {slide.type === 'youtube' && slide.youtubeId ? (
+                  <div className="absolute inset-0 w-full h-full">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${slide.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${slide.youtubeId}`}
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                      className="w-full h-full absolute top-0 left-0 scale-[1.50] origin-center"
+                    />
+                  </div>
+                ) : (
+                  <Image
+                    src={slide.imagePath!}
+                    alt={slide.title}
+                    fill
+                    priority={index === 0}
+                    className="object-cover max-sm:h-[600px] max-sm:object-cover max-sm:object-center"
+                    quality={100}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                )}
               </div>
-
               {(slide.title || slide.description) && (
                 <div
                   className={cn(
@@ -93,11 +107,11 @@ export function ImageSlider({ slides }: ImageSliderProps) {
                     slide.textPosition === 'center'
                       ? 'justify-center text-center'
                       : slide.textPosition === 'right'
-                      ? 'justify-end text-right'
-                      : 'justify-start text-left'
+                        ? 'justify-end text-right'
+                        : 'justify-start text-left'
                   )}
                 >
-                  <div className="bg-black/50 p-6 rounded-md max-w-xl">
+                  <div className="p-6 rounded-md max-w-xl">
                     <h2 className="text-4xl font-bold text-white mb-2 tracking-tight">
                       {slide.title}
                     </h2>

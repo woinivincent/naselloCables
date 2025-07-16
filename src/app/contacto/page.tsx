@@ -24,14 +24,12 @@ export default function ContactoPage() {
 
     const mailtoLink = `mailto:ventas@nasellocables.com.ar?subject=Consulta de ${formData.nombre}&body=Nombre: ${formData.nombre}%0AEmail: ${formData.email}%0ATeléfono: ${formData.telefono}%0AMensaje: ${formData.mensaje}`;
 
-
     window.location.href = mailtoLink;
 
     toast({
       title: "Correo abierto",
       description: "Se ha abierto tu cliente de correo con los datos del formulario. Puedes enviarlo manualmente.",
     });
-
 
     setFormData({ nombre: "", email: "", telefono: "", mensaje: "" });
   };
@@ -44,119 +42,94 @@ export default function ContactoPage() {
   };
 
   return (
-    <div className="flex justify-center max-sm:p-4">
-      <div className="container py-8">
-        <h1 className="mb-12 text-center text-4xl font-bold">CONTACTO</h1>
+    <div className="w-full max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <h1 className="mb-12 text-center text-3xl sm:text-4xl font-bold">CONTACTO</h1>
 
-        <div className="grid gap-12 md:grid-cols-2 ">
-          {/* Información de Contacto */}
-          <div>
-            <h2 className="mb-6 text-1xl font-semibold">
-              Información de Contacto
-            </h2>
-            <div className="space-y-7">
-              <div className="flex items-start gap-4">
-                <MapPin className="h-8 w-8 text-primary" />
-                <div>
-                  <p> Luján, Buenos Aires</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <Phone className="h-8 w-8 text-primary" />
-                <div>
-
-                  <p>(+54) 9 2323 35-4771</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <Mail className="h-8 w-8 text-primary" />
-                <div>
-
-                  <p>recepcion@nasellocables.com.ar</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <Clock className="h-8 w-8 text-primary" />
-                <div>
-
-                  <p>Lunes a Viernes: 9:00 - 16:00</p>
-                </div>
-              </div>
+      <div className="grid gap-12 md:grid-cols-2">
+        {/* Formulario - Primero en mobile */}
+        <div className="order-1 md:order-2">
+          <h2 className="mb-2 text-xl md:text-2xl font-semibold">Enviar un Mensaje</h2>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="nombre" className="mb-2 block font-medium">Nombre</label>
+              <Input
+                id="nombre"
+                name="nombre"
+                value={formData.nombre}
+                onChange={handleChange}
+                required
+                className="bg-gray-200 text-sm sm:text-base"
+              />
             </div>
 
+            <div>
+              <label htmlFor="email" className="block font-medium">Email</label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="bg-gray-200 text-sm sm:text-base"
+              />
+            </div>
 
-          </div>
+            <div>
+              <label htmlFor="telefono" className="mb-2 block font-medium">Teléfono</label>
+              <Input
+                id="telefono"
+                name="telefono"
+                type="tel"
+                value={formData.telefono}
+                onChange={handleChange}
+                required
+                className="bg-gray-200 text-sm sm:text-base"
+              />
+            </div>
 
-          {/* Formulario de Contacto */}
-          <div>
-            <h2 className="mb-2 text-1xl font-semibold">Enviar un Mensaje</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="nombre" className="mb-2 block font-light">
-                  Nombre
-                </label>
-                <Input
-                  id="nombre"
-                  name="nombre"
-                  value={formData.nombre}
-                  onChange={handleChange}
-                  required
-                  className="bg-gray-200"
-                />
-              </div>
+            <div>
+              <label htmlFor="mensaje" className="mb-2 block font-medium">Mensaje</label>
+              <Textarea
+                id="mensaje"
+                name="mensaje"
+                value={formData.mensaje}
+                onChange={handleChange}
+                rows={5}
+                required
+                className="bg-gray-200 text-sm sm:text-base"
+              />
+            </div>
 
-              <div>
-                <label htmlFor="email" className=" block font-medium">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="bg-gray-200"
-                />
-              </div>
+            <Button type="submit" className="w-full sm:w-auto text-sm sm:text-base bg-primary hover:bg-secondary">
+              ENVIAR MENSAJE
+            </Button>
+          </form>
+        </div>
 
-              <div>
-                <label htmlFor="telefono" className="mb-2 block font-medium">
-                  Teléfono
-                </label>
-                <Input
-                  id="telefono"
-                  name="telefono"
-                  type="tel"
-                  value={formData.telefono}
-                  onChange={handleChange}
-                  required
-                  className="bg-gray-200"
-                />
-              </div>
+        {/* Información de Contacto - Segundo en mobile */}
+        <div className="order-2 md:order-1">
+          <h2 className="mb-6 text-xl md:text-2xl font-semibold">Información de Contacto</h2>
+          <div className="space-y-7">
+            <div className="flex items-start gap-4">
+              <MapPin className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+              <p>Luján, Buenos Aires</p>
+            </div>
 
-              <div>
-                <label htmlFor="mensaje" className="mb-2 block font-medium">
-                  Mensaje
-                </label>
-                <Textarea
-                  id="mensaje"
-                  name="mensaje"
-                  value={formData.mensaje}
-                  onChange={handleChange}
-                  rows={5}
-                  required
-                  className="bg-gray-200"
-                />
-              </div>
+            <div className="flex items-start gap-4">
+              <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+              <p>(+54) 9 2323 610622</p>
+            </div>
 
-              <Button type="submit" className="w-full text-xs bg-primary hover:bg-secondary  sm:w-auto">
-                ENVIAR MENSAJE
-              </Button>
-            </form>
+            <div className="flex items-start gap-4">
+              <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+              <p>recepcion@nasellocables.com.ar</p>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+              <p>Lunes a Viernes: 9:00 - 16:00</p>
+            </div>
           </div>
         </div>
       </div>

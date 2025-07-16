@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from "next/image";
@@ -24,7 +25,7 @@ export default function Carousel({ images, productName }: CarouselProps) {
   const alt = typeof currentImage === 'string' ? productName : currentImage.label || productName;
 
   return (
-    <div className="relative w-[500px] h-[400px] overflow-hidden ">
+    <div className="relative w-full max-w-[500px] h-[300px] sm:h-[350px] lg:h-[400px] overflow-hidden mx-auto lg:mx-0">
       <Image
         src={src}
         alt={alt}
@@ -33,18 +34,18 @@ export default function Carousel({ images, productName }: CarouselProps) {
         sizes="(max-width: 768px) 100vw, 700px"
       />
       <button
-  onClick={handlePrev}
-  className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-400 text-white w-8 h-8 flex items-center justify-center rounded-full text-2xl"
->
-  ‹
-</button>
+        onClick={handlePrev}
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-400 text-white w-8 h-8 flex items-center justify-center rounded-full text-2xl"
+      >
+        ‹
+      </button>
 
-<button
-  onClick={handleNext}
-  className="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-400 text-white w-8 h-8 flex items-center justify-center rounded-full text-2xl"
->
-  ›
-</button>
+      <button
+        onClick={handleNext}
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-400 text-white w-8 h-8 flex items-center justify-center rounded-full text-2xl"
+      >
+        ›
+      </button>
     </div>
   );
 }

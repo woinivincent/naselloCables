@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -22,10 +23,10 @@ export default function ProductosPage() {
 
  return (
   <div className="flex justify-center">
-    <div className="container py-12">
-      <h1 className="mb-9 text-center text-4xl font-bold">NUESTROS PRODUCTOS</h1>
+    <div className="container py-12 px-4 sm:px-6 lg:px-8">
+      <h1 className="mb-9 text-center text-3xl sm:text-4xl font-bold">NUESTROS PRODUCTOS</h1>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {Object.entries(products).map(([id, product]) => {
           const image = Array.isArray(product.images)
             ? typeof product.images[0] === "string"
@@ -35,7 +36,7 @@ export default function ProductosPage() {
 
           return (
             <Link href={`/productos/${id}`} key={id}>
-              <div className="overflow-hidden  transition-all hover:scale-[1.05] group">
+              <div className="overflow-hidden transition-all hover:scale-[1.05] group">
                 {/* Fondo gris claro con solo la esquina superior derecha redondeada */}
                 <div className="bg-[#f0f0f0] overflow-hidden rounded-tr-[40px] relative">
                   {/* Imagen del producto */}
@@ -51,9 +52,9 @@ export default function ProductosPage() {
                   </div>
 
                   {/* Banda blanca colocada con posición absoluta inferior */}
-                  <div className="absolute bottom-5 w-full h-8 bg-white px-3 py-1 flex items-center justify-between ">
-                    <span className="font-bold text-black text-sm md:text-base">{product.name}</span>
-                    <div className="w-6 h-6 rounded-full border border-primary bg-primary flex items-center justify-center">
+                  <div className="absolute bottom-3 sm:bottom-5 w-full h-8 bg-white px-3 py-1 flex items-center justify-between ">
+                    <span className="font-bold text-black text-xs sm:text-sm md:text-base truncate pr-2">{product.name}</span>
+                    <div className="w-6 h-6 rounded-full border border-primary bg-primary flex items-center justify-center flex-shrink-0">
                       <Plus className="text-white w-4 h-4" />
                     </div>
                   </div>
