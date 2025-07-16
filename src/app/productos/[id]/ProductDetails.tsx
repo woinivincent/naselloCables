@@ -69,7 +69,8 @@ export function ProductDetails({ product }: ProductDetailsProps) {
             DESCARGAR FICHA TÉCNICA
           </Button>
           <Button className="bg-primary hover:bg-secondary text-white w-max rounded-md text-xs">
-            SOLICITAR COTIZACIÓN
+            <a href="/pedidos">SOLICITAR COTIZACIÓN</a>
+
           </Button>
         </div>
       </div>
