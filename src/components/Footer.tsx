@@ -54,10 +54,10 @@ const Footer = () => {
                   <a href="https://wa.me/5492323354771" aria-label="WhatsApp">
                     <Image src="/assets/whatsapp.svg" alt="WhatsApp" width={28} height={28} />
                   </a>
-                  <a href="https://instagram.com/nasellocables" aria-label="Instagram">
+                  <a href="https://www.instagram.com/nasellocables_sa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <Image src="/assets/instagram.svg" alt="Instagram" width={28} height={28} />
                   </a>
-                  <a href="https://youtube.com/@nasellocables" aria-label="YouTube">
+                  <a href="https://youtube.com/@nasellocables" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                     <Image src="/assets/youtube.svg" alt="YouTube" width={28} height={28} />
                   </a>
                 </div>

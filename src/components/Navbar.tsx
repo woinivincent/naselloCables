@@ -28,10 +28,10 @@ const Navbar = () => {
             alt="Nasello Cables"
             width={200}
             height={100}
-     
+
             priority
           />
-     
+
         </Link>
 
         {/* NAVEGACIÓN DESKTOP */}
@@ -54,7 +54,7 @@ const Navbar = () => {
             <a href="https://wa.me/5492323354771" target="_blank" rel="noopener noreferrer">
               <Image src="/assets/whatsapp.svg" alt="WhatsApp" width={28} height={28} />
             </a>
-            <a href="https://instagram.com/nasellocables" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/nasellocables_sa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
               <Image src="/assets/instagram.svg" alt="Instagram" width={28} height={28} />
             </a>
           </div>
@@ -93,7 +93,7 @@ const Navbar = () => {
             <a href="https://wa.me/5492323620622">
               <Image src="/assets/whatsapp.svg" alt="WhatsApp" width={28} height={28} />
             </a>
-            <a href="https://instagram.com/nasellocables">
+            <a href="https://www.instagram.com/nasellocables_sa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
               <Image src="/assets/instagram.svg" alt="Instagram" width={28} height={28} />
             </a>
           </div>
