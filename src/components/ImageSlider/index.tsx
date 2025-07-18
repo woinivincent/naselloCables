@@ -26,7 +26,7 @@ interface ImageSliderProps {
 export function ImageSlider({ slides }: ImageSliderProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
-    duration: 20,
+    duration: 31,
     dragFree: true
   });
 
@@ -46,7 +46,7 @@ export function ImageSlider({ slides }: ImageSliderProps) {
 
     const intervalId = setInterval(() => {
       emblaApi.scrollNext();
-    }, 5000);
+    }, 31000);
 
     return () => clearInterval(intervalId);
   }, [emblaApi, isPaused]);
@@ -82,7 +82,7 @@ export function ImageSlider({ slides }: ImageSliderProps) {
                 {slide.type === 'youtube' && slide.youtubeId ? (
                   <div className="absolute inset-0 w-full h-full">
                     <iframe
-                      src={`https://www.youtube.com/embed/${slide.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${slide.youtubeId}`}
+                      src={`https://www.youtube.com/embed/${slide.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${slide.youtubeId}&rel=0&vq=hd1080`}
                       allow="autoplay; encrypted-media"
                       allowFullScreen
                       className="w-full h-full absolute top-0 left-0 scale-[1.50] origin-center"

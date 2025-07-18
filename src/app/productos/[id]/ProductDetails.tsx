@@ -65,9 +65,9 @@ export function ProductDetails({ product }: ProductDetailsProps) {
 
         {/* Botones */}
         <div className="flex flex-col gap-y-4 pt-6">
-          <Button className="bg-gray-500 hover:bg-gray-600 text-white w-min rounded-md text-xs">
+         {/* <Button className="bg-gray-500 hover:bg-gray-600 text-white w-min rounded-md text-xs">
             DESCARGAR FICHA TÉCNICA
-          </Button>
+          </Button>*/}
           <Button className="bg-primary hover:bg-secondary text-white w-max rounded-md text-xs">
             <a href="/pedidos">SOLICITAR COTIZACIÓN</a>
 

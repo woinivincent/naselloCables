@@ -18,9 +18,9 @@ export default function EmpresaPage() {
           />
           <div className="absolute inset-0 flex items-center justify-center text-center text-white">
             <div>
-              <h1 className="mb-4 text-5xl font-medium">NUESTRA EMPRESA</h1>
+              <h1 className="mb-4 text-5xl font-medium">UN LEGADO FAMILIAR</h1>
               <p className="text-xl font-light">
-                “Un legado familiar” - Dos generaciones de experiencia compartida en la industria.
+                 Dos generaciones de experiencia compartida en la industria.
 
               </p>
             </div>
@@ -33,10 +33,11 @@ export default function EmpresaPage() {
           <div className="grid gap-8 md:grid-cols-2">
             <div>
               <p className="mb-4 text-lg font-bold ">
-                Nasello Cables S.A. | Más de 40 años liderando la industria de conductores
-                eléctricos
+                Nasello Cables S.A. | Logrando 50 años en el mercado de conductores
+                eléctricos.
               </p>
-              <p className="mb-4 text-lg font-light"> Contamos con una sólida trayectoria de más de cuatro décadas en la
+              <p className="mb-4  font-light align-middle text-justify">
+                Contamos con una sólida trayectoria de más de cuatro décadas en la
                 fabricación de conductores eléctricos, brindando soluciones de alta calidad y
                 confiabilidad en todo el territorio nacional.
                 <br />
@@ -58,8 +59,7 @@ export default function EmpresaPage() {
             <div className="relative h-[450px] rounded-lg overflow-hidden">
               {/* Video de YouTube */}
               <iframe
-                src="https://www.youtube.com/embed/Js76327Blos?autoplay=1&mute=1&controls=0&loop=1&playlist=Js76327Blos&modestbranding=1&rel=0"
-                title="Video institucional"
+                src="https://www.youtube.com/embed/Js76327Blos?autoplay=1&mute=1&controls=0&loop=1&playlist=Js76327Blos&modestbranding=1&rel=0&vq=hd1080"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
                 className="absolute top-0 left-0 w-full h-full scale-[1.5] origin-center"
@@ -93,7 +93,7 @@ export default function EmpresaPage() {
             <div className="grid gap-6 md:grid-cols-3 ">
               <div className="relative h-[250px]">
                 <Image
-                  src="/assets/foto-empresa-1.jpg"
+                  src="/assets/foto-empresa-2.jpg"
                   alt="Planta de producción"
                   fill
                   className="rounded-lg object-cover"
@@ -101,7 +101,7 @@ export default function EmpresaPage() {
               </div>
               <div className="relative h-[250px]">
                 <Image
-                  src="/assets/foto-empresa-2.jpg"
+                  src="/assets/foto-empresa-1.jpg"
                   alt="Laboratorio de control"
                   fill
                   className="rounded-lg object-cover"

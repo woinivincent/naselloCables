@@ -13,11 +13,11 @@ const Footer = () => {
             <Image
               src="/assets/Logo-Nasello_negativo.png"
               alt="Nasello Cables"
-              width={180}
+              width={200}
               height={50}
-              className="h-auto w-auto"
+              className="mb-4 ml-1"
             />
-            <p className="text-sm mt-2 max-w-[220px]">
+            <p className="text-sm ml-4 mt-2 max-w-[220px]">
               Líderes en conductores eléctricos desde hace más de 40 años.
             </p>
           </div>
@@ -67,11 +67,11 @@ const Footer = () => {
 
           {/* Right column - Certifications */}
           <div className="flex justify-center lg:justify-end w-full">
-            <div className="w-full max-w-[500px]">
+            <div className="w-[500px] mr-0 pr-0  ">
               <Image
                 src="/assets/sellos_pie.png"
                 alt="TÜV ISO Certificados"
-                width={500}
+                width={50}
                 height={100}
                 className="h-auto w-full object-cover"
               />

@@ -92,13 +92,13 @@ export default function CalidadPage() {
             <h2 className="mb-8 text-3xl font-bold">PROCESO DE CONTROL DE CALIDAD</h2>
             <div className="grid gap-8 md:grid-cols-2">
               <div>
-                <p className="mb-4 text-balance">
+                <p className="mb-4 text-justify">
                   Nasello Cables S.A. es una empresa con amplia trayectoria en la fabricación de cables para la industria eléctrica y de la construcción, comprometida en brindar a sus clientes productos confiables que cumplan con los más altos estándares de calidad, así como de proveer un servicio de post venta y asesoramiento de excelencia.
                   <br />
                   <br />
                   A través de la implementación y el mantenimiento del Sistema de Gestion de Calidad, Nasello Cables S.A. se compromete a cumplir los requisitos aplicables a sus productos, como así también trabaja para hacer realidad los siguientes objetivos de calidad:
                 </p>
-                <ul className="list-inside list-disc space-y-2 mb-4 font-bold">
+                <ul className="list-inside list-disc space-y-2 mb-3 font-bold text-justify">
                   <li>Orientar el negocio para brindar productos para las nuevas fuentes de energía sustentables con el medio ambiente.</li>
                   <li>Aumentar las ventas, y la rentabilidad del negocio.</li>
                   <li>Aumentar la satisfacción de clientes y que seamos su mejor opción.</li>
@@ -108,7 +108,7 @@ export default function CalidadPage() {
                   <li>Promover la Mejora Continua.</li>
                 </ul>
                 <span className="text-left text-xs">
-                  <p>La Dirección / Abril 2025</p>
+                  <p>La Dirección / Abril 2023</p>
                 </span>
               </div>
               <div className="relative h-[500px]">

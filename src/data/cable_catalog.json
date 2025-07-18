@@ -8,10 +8,11 @@
         "/assets/productos/Subterraneo-01.jpg",
         "/assets/productos/Subterraneo-02.jpg",
         {
-          "url": "/assets/productos/Subterraneo-01.jpg",
+          "url": "/assets/productos/Familia_subterraneo.jpg",
           "label": "ET-VT-009"
         }
       ],
+      "slug": "subterraneos",
       "codes": [
         "S16",
         "S25",
@@ -80,7 +81,7 @@
         "/assets/productos/Tipo-taller-01.jpg",
         "/assets/productos/Tipo-taller-02.jpg",
         {
-          "url": "/assets/productos/Tipo-taller-01.jpg",
+          "url": "/assets/productos/Familia_Tipo-taller.jpg",
           "label": "ET-VT-010"
         }
       ],
@@ -222,7 +223,7 @@
         "/assets/productos/Unipolar-02.jpg",
         "/assets/productos/Unipolar-03.jpg",
         {
-          "url": "/assets/productos/Unipolar-01.jpg",
+          "url": "/assets/productos/Familia_Unipolares.jpg",
           "label": "ET-VT-007"
         }
       ],
@@ -297,9 +298,9 @@
       ],
       "technical_specs": [
         "Tensión de servicio: 300/500V",
-"Norma de fabricación: IRAM 247-5",
-"Temperatura de trabajo: -5°C a +70°C",
-"Flexibilidad: Clase 4"
+        "Norma de fabricación: IRAM 247-5",
+        "Temperatura de trabajo: -5°C a +70°C",
+        "Flexibilidad: Clase 4"
       ]
     },
     "automotor_bateria": {
@@ -384,7 +385,11 @@
       "description": "Cable bipolar para sistemas de sonido. Conductor de cobre OFC (alta pureza), aislación de PVC cristal.Uso: conexión de parlantes y equipos de audio de alta fidelidad.",
       "images": [
         "/assets/productos/Bafle-audio-01.jpg",
-        "/assets/productos/Bafle-audio-02.jpg"
+        "/assets/productos/Bafle-audio-02.jpg",
+         {
+          "url": "/assets/productos/Familia_Bafle-audio.jpg",
+          "label": "ET-VT-005"
+        }
       ],
       "codes": [
         "BA2x0.75",
@@ -448,8 +453,13 @@
       "description": "Utiles oficiales de la empresa para la comercialización de cables",
       "images": [
         "/assets/productos/Soldadura-azul-01.jpg",
-        "/assets/productos/Soldadura-azul-02.jpg"
+        "/assets/productos/Soldadura-azul-02.jpg",
+        {
+          "url": "/assets/productos/Familia_Soldadura-azul.jpg",
+          "label": "ET-VT-008"
+        }
       ],
+      
       "codes": [
         "A16",
         "A25",
@@ -481,7 +491,11 @@
       "images": [
         "/assets/productos/Fotovoltaico-01.jpg",
         "/assets/productos/Fotovoltaico-02.jpg",
-        "/assets/productos/Fotovoltaico-03.jpg"
+        "/assets/productos/Fotovoltaico-03.jpg",
+        {
+          "url": "/assets/productos/Familia_fotovoltaico.jpg",
+          "label": "ET-VT-008"
+        }
       ],
       "codes": [
         "F2",
@@ -502,11 +516,11 @@
         "Bobinita: 300 mts "
       ],
       "technical_specs": [
-       "Tensión de servicio: 600/1000V AC – 1000/1800V DC",
-"Norma de fabricación: IRAM 62930",
-"Temperatura de trabajo: -40°C a +90°C (en servicio continuo)",
-"Clase de flexibilidad: Clase 5",
-"Color Externo: Negro o Rojo"
+        "Tensión de servicio: 600/1000V AC – 1000/1800V DC",
+        "Norma de fabricación: IRAM 62930",
+        "Temperatura de trabajo: -40°C a +90°C (en servicio continuo)",
+        "Clase de flexibilidad: Clase 5",
+        "Color Externo: Negro o Rojo"
       ]
     }
   }
