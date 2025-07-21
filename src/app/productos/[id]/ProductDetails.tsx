@@ -15,10 +15,12 @@ type Product = {
   colors: string[];
   presentation: string[];
   technical_specs: string[] | string;
+  use: string | null;
 };
 
 type ProductDetailsProps = {
   product: Product;
+ 
 };
 
 export function ProductDetails({ product }: ProductDetailsProps) {
@@ -27,7 +29,15 @@ export function ProductDetails({ product }: ProductDetailsProps) {
       <div className="bg-white rounded-lg p-6">
         <h1 className="text-2xl font-bold text-gray-900 mb-4 uppercase">{product.name}</h1>
 
-        <p className="text-gray-700 mb-4 leading-relaxed">{product.description}</p>
+        <p className="text-gray-700 leading-5">{product.description}</p>
+        {product.use && (
+          <p className="text-gray-700 mb-4 leading-relaxed">
+            <span className="font-bold">
+              {product.use.split(":")[0]}:
+            </span>
+            {` ${product.use.split(":").slice(1).join(":").trim()}`}
+          </p>
+        )}
 
         {/* Ficha técnica dinámica */}
         <div className="text-sm space-y-2">
@@ -65,7 +75,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
 
         {/* Botones */}
         <div className="flex flex-col gap-y-4 pt-6">
-         {/* <Button className="bg-gray-500 hover:bg-gray-600 text-white w-min rounded-md text-xs">
+          {/* <Button className="bg-gray-500 hover:bg-gray-600 text-white w-min rounded-md text-xs">
             DESCARGAR FICHA TÉCNICA
           </Button>*/}
           <Button className="bg-primary hover:bg-secondary text-white w-max rounded-md text-xs">

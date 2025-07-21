@@ -93,7 +93,7 @@ export default function Home() {
 
                 {/* Botón */}
                 <Link
-                   href={`/productos/${product.slug}`}
+                  href={`/productos/${product.slug}`}
                   className="bg-[#009CDE] hover:bg-[#007bb8] text-white text-sm font-medium px-5 py-2 rounded-full transition"
                 >
                   Ver más
@@ -104,27 +104,29 @@ export default function Home() {
         </div>
 
       </section>
-      <section className="bg-white py-12 px-6 relative overflow-hidden h-[450px]">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+      <section className="relative bg-white overflow-hidden h-auto md:h-[450px] flex flex-col md:flex-row">
+  {/* Imagen arriba en mobile, izquierda en desktop */}
+  <div className="w-full md:w-[90%] h-[250px] mt-2 md:h-auto">
+    <img
+      src="/assets/imagen-home-fotovoltaico.jpg"
+      className="w-full h-[98%] object-contain object-left"
+      alt="Sumando sustentabilidad"
+    />
+  </div>
 
-          {/* Imagen fuera del container hacia la izquierda */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/2 max-w-none">
-            <img
-              src="/assets/imagen-home-fotovoltaico.jpg"
-              alt="Cable solar"
-              className="w-full"
-            />
-          </div>
-
-          {/* Texto u otro contenido centrado */}
-          <div className="w-full md:w-1/2 ml-auto flex flex-col mt-28  text-justify">
-            {/* Aquí tu contenido textual */}
-            <h2 className="text-3xl font-bold">Sumando sustentabilidad</h2>
-            <p className="mt-4 text-gray-700">Nueva línea de cables fotovoltaicos <br />
-              alternativa de alta calidad.</p>
-          </div>
-        </div>
-      </section>
+  {/* Texto abajo en mobile, derecha en desktop */}
+  <div className="w-full md:w-1/2 flex items-center justify-center px-6 py-6">
+    <div className="max-w-md text-center md:text-left">
+      <h2 className="text-xl md:text-3xl font-bold text-black">
+        Sumando sustentabilidad
+      </h2>
+      <p className="mt-2 text-gray-700 text-sm md:text-base">
+        Nueva línea de cables fotovoltaicos.<br />
+        Alternativa de alta calidad.
+      </p>
+    </div>
+  </div>
+</section>
       <section className="relative h-[400px] sm:h-[300px] w-full">
         <Image
           src="/assets/imagen-home-celeste.jpg"

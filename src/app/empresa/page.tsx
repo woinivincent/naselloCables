@@ -20,7 +20,7 @@ export default function EmpresaPage() {
             <div>
               <h1 className="mb-4 text-5xl font-medium">UN LEGADO FAMILIAR</h1>
               <p className="text-xl font-light">
-                 Dos generaciones de experiencia compartida en la industria.
+                Dos generaciones de experiencia compartida en la industria.
 
               </p>
             </div>
@@ -56,15 +56,18 @@ export default function EmpresaPage() {
                 productos y servicios.
               </p>
             </div>
-            <div className="relative h-[450px] rounded-lg overflow-hidden">
+            <div className="relative h-[400px] rounded-lg overflow-hidden">
               {/* Video de YouTube */}
-              <iframe
-                src="https://www.youtube.com/embed/Js76327Blos?autoplay=1&mute=1&controls=0&loop=1&playlist=Js76327Blos&modestbranding=1&rel=0&vq=hd1080"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="absolute top-0 left-0 w-full h-full scale-[1.5] origin-center"
-              />
-
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover absolute top-0 left-0"
+              >
+                <source src={"/assets/Video_slider.mp4"} type="video/mp4" />
+              </video>
               {/* Botón en la esquina inferior izquierda */}
               <a
                 href="https://www.youtube.com/watch?v=Js76327Blos"

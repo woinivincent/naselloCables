@@ -6,17 +6,15 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-
+import { Plus } from 'lucide-react';
 interface SlideData {
   id: number;
-  title: string;
-  description: string;
-  imagePath: string;
-  textPosition?: 'center' | 'left' | 'right'; // ← agregado
-  type?: 'image' | 'video' | 'youtube';
+  type: 'image' | 'video';
+  imagePath?: string;
   videoPath?: string;
-  youtubeId?: string;
-
+  title?: string;
+  description?: string;
+  textPosition?: 'center' | 'left' | 'right';
 }
 
 interface ImageSliderProps {
@@ -68,55 +66,62 @@ export function ImageSlider({ slides }: ImageSliderProps) {
 
   return (
     <div
-      className="relative w-full h-[65vh] overflow-hidden max-sm:h-[320px]"
+      className="relative w-full h-[63vh] overflow-hidden max-sm:h-[320px]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent z-10" />
-
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent z-0" />
       <div ref={emblaRef} className="overflow-hidden max-sm:h-[320px]">
         <div className="flex">
           {slides.map((slide, index) => (
-            <div key={slide.id} className="relative flex-[0_0_100%] min-w-0">
-              <div className="w-full h-[600px] max-h-[80vh] relative overflow-hidden max-sm:h-[320px]">
-                {slide.type === 'youtube' && slide.youtubeId ? (
-                  <div className="absolute inset-0 w-full h-full">
-                    <iframe
-                      src={`https://www.youtube.com/embed/${slide.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${slide.youtubeId}&rel=0&vq=hd1080`}
-                      allow="autoplay; encrypted-media"
-                      allowFullScreen
-                      className="w-full h-full absolute top-0 left-0 scale-[1.50] origin-center"
-                    />
-                  </div>
+            <div className="relative flex-[0_0_100%] min-w-0">
+              {/* Fondo visual */}
+              <div className="w-full h-[600px] max-h-[63vh] relative overflow-hidden max-sm:h-[320px]">
+                {slide.type === 'video' && slide.videoPath ? (
+                  selectedIndex === index && (
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      className="w-full h-full object-cover absolute top-0 left-0 pointer-events-none z-0"
+                    >
+                      <source src={slide.videoPath} type="video/mp4" />
+                    </video>
+                  )
                 ) : (
                   <Image
                     src={slide.imagePath!}
-                    alt={slide.title}
+                    alt="image"
                     fill
                     priority={index === 0}
-                    className="object-cover max-sm:h-[600px] max-sm:object-cover max-sm:object-center"
-                    quality={100}
+                    className="object-cover pointer-events-none z-0"
+                    quality={90}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 )}
               </div>
-              {(slide.title || slide.description) && (
-                <div
-                  className={cn(
-                    'absolute inset-0 flex items-center p-8 z-20',
-                    slide.textPosition === 'center'
-                      ? 'justify-center text-center'
-                      : slide.textPosition === 'right'
-                        ? 'justify-end text-right'
-                        : 'justify-start text-left'
+
+              {/* Botones clickeables */}
+              {slide.type === 'image' && (
+                <div className="absolute bottom-28 left-2/3 z-50 flex flex-col gap-2 pointer-events-auto">
+                  {slide.id === 3 && (
+                    <Button
+                      asChild
+                      className="w-6 h-6 aspect-square p-0 bg-primary hover:bg-secondary text-white rounded-full flex items-center justify-center text-[14px] font-bold z-50 pointer-events-auto"
+                    >
+                      <a href="/productos">+</a>
+                    </Button>
                   )}
-                >
-                  <div className="p-6 rounded-md max-w-xl">
-                    <h2 className="text-4xl font-bold text-white mb-2 tracking-tight">
-                      {slide.title}
-                    </h2>
-                    <p className="text-lg text-white/90">{slide.description}</p>
-                  </div>
+                  {slide.id === 4 && (
+                    <Button
+                      asChild
+                      className="w-6 h-6 aspect-square p-0 bg-primary hover:bg-secondary text-white rounded-full flex items-center justify-center text-[14px] font-bold z-50 pointer-events-auto"
+                    >
+                      <a href="/calidad">+</a>
+                    </Button>
+                  )}
                 </div>
               )}
             </div>
@@ -125,7 +130,7 @@ export function ImageSlider({ slides }: ImageSliderProps) {
       </div>
 
       {/* Navigation Controls */}
-      <div className="absolute bottom-8 right-8 flex items-center gap-4 z-30">
+      <div className="absolute bottom-8 right-8 flex items-center gap-4 z-50">
         <Button
           variant="outline"
           size="icon"

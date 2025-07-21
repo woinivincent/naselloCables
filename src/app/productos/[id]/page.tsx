@@ -33,6 +33,7 @@ type Product = {
   colors: string[];
   presentation: string[];
   technical_specs: string[] | string;
+  use: string | null;
 };
 
 export async function generateStaticParams() {

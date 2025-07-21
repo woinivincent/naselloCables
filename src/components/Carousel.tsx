@@ -25,7 +25,7 @@ export default function Carousel({ images, productName }: CarouselProps) {
   const alt = typeof currentImage === 'string' ? productName : currentImage.label || productName;
 
   return (
-    <div className="relative w-full max-w-[550px] h-[300px] sm:h-[350px] lg:h-[470px] overflow-hidden mx-auto lg:mx-0">
+    <div className="relative w-full max-w-[480px] h-[300px] sm:h-[350px] lg:h-[480px] overflow-hidden mx-auto lg:mx-0">
       <Image
         src={src}
         alt={alt}

@@ -40,7 +40,7 @@ export default function ProductosPage() {
                 {/* Fondo gris claro con solo la esquina superior derecha redondeada */}
                 <div className="bg-[#f0f0f0] overflow-hidden rounded-tr-[40px] relative">
                   {/* Imagen del producto */}
-                  <div className="relative aspect-[1.23] w-full">
+                  <div className="relative aspect-[1.05] w-full">
                     <Image
                       src={product.images.find(img => typeof img === "object" && "url" in img)?.url || image}
                       alt={product.name}

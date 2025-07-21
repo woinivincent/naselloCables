@@ -55,13 +55,12 @@ const TimelineSection = () => {
       year: "2023",
       title: "CERTIF. ISO 9001",
       content: "Certificación oficial de ISO 9001.",
-      icon: <a href="https://www.certipedia.com/quality_marks/9000031724" target="_blank" rel="noopener noreferrer"><CheckIcon className="w-24 h-24" /></a>,
-    },
+      icon: <CheckIcon className="w-24 h-24" />},
     {
       year: "2025",
       title: "CERTIF. IRAM",
       content: "Proceso de certificación oficial de normas IRAM.",
-      icon: <a href="https://drive.google.com/file/d/187HMG9h-jmWI8ZjCFAbGv_WGwa3B5RhI/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><AwardIcon className="w-24 h-24" /></a>,
+      icon: <AwardIcon className="w-24 h-24" />,
     },
   ];
 

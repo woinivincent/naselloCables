@@ -1,23 +1,23 @@
 export const slides = [
-  {
+ {
     id: 1,
-    type: "youtube",
-    youtubeId: "Js76327Blos"
+    type: "video",
+    videoPath: "/assets/Video_slider.mp4",
+    
   },
 
   {
     id: 3,
-    title: 'Nuevo Cable fotovoltaico',
-    description: 'Lanzamos el nuevo cable fotovoltaico.Conocé los beneficios y las ventajas.',
-    imagePath: '/assets/slider_fotovoltaico.jpg',
-    textPosition: 'right',
+     type: "image",
+    imagePath: '/assets/slider_fotovoltaico.jpg', 
+    
+  
   },
   {
     id: 4,
-    title:' Laboratorio interno',
-    description: 'Controles diarios asegurados para cumplir con los más altos estándares de calidad. ',
+     type: "image",
     imagePath: '/assets/slider_laboratorio.jpg',
-    textPosition: 'right',
+ 
   },
 
 ];

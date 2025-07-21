@@ -3,7 +3,8 @@
     "subterraneos": {
       "id": "SU001",
       "name": "SUBTERRÁNEOS",
-      "description": "Conductor eléctrico conformado por cables unipolares multifilares de cobre electrolítico rojo, con doble aislación de PVC: interior antillama y exterior extra flexible. Contiene relleno interno no higroscópico. Uso: instalaciones subterráneas directas o sobre bandejas portacables.",
+      "description": "Conductor eléctrico conformado por cables unipolares multifilares de cobre electrolítico rojo, con doble aislación de PVC: interior antillama y exterior extra flexible. Contiene relleno interno no higroscópico.",
+      "use":"Uso: instalaciones subterráneas directas o sobre bandejas portacables.",
       "images": [
         "/assets/productos/Subterraneo-01.jpg",
         "/assets/productos/Subterraneo-02.jpg",
@@ -76,7 +77,8 @@
     "tipo_taller_tpr": {
       "id": "TT001",
       "name": "TIPO TALLER ",
-      "description": "Conductor eléctrico conformado por cables unipolares multifilares de cobre electrolítico rojo, con doble aislación de PVC: interior antillama y exterior extra flexible. Contiene relleno interno no higroscópico. Uso: instalaciones subterráneas directas o sobre bandejas portacables.",
+      "description": "Conductor eléctrico conformado por cables unipolares multifilares de cobre electrolítico rojo, con doble aislación de PVC: interior antillama y exterior extra flexible. Contiene relleno interno no higroscópico.",
+      "use":" Uso: instalaciones subterráneas directas o sobre bandejas portacables.",
       "images": [
         "/assets/productos/Tipo-taller-01.jpg",
         "/assets/productos/Tipo-taller-02.jpg",
@@ -139,7 +141,8 @@
     "soldadura": {
       "id": "SG001",
       "name": "SOLDADURA GOMA ",
-      "description": "Conductor de cobre electrolítico rojo con separador PET (resina de tereftalato) y vaina exterior de goma sintética tipo EPDM.Uso: equipos de soldadura eléctrica. Alta flexibilidad y resistencia térmica, química y mecánica",
+      "description": "Conductor de cobre electrolítico rojo con separador PET (resina de tereftalato) y vaina exterior de goma sintética tipo EPDM.",
+      "use":"Uso: equipos de soldadura eléctrica. Alta flexibilidad y resistencia térmica, química y mecánica",
       "images": [
         "/assets/productos/Soldadura-goma-01.jpg",
         "/assets/productos/Soldadura-goma-02.jpg",
@@ -176,7 +179,8 @@
     "bomba_sumergible": {
       "id": "BS001",
       "name": "BOMBA SUMERGIBLE",
-      "description": "Cable con conductores multifilares de cobre electrolítico rojo, con aislación interna de PVC flexible antillama y vaina exterior resistente. Incluye separador antiadherente.Uso: conexionado de bombas sumergibles y equipos en ambientes húmedos.",
+      "description": "Cable con conductores multifilares de cobre electrolítico rojo, con aislación interna de PVC flexible antillama y vaina exterior resistente. Incluye separador antiadherente.",
+      "use":"Uso: conexionado de bombas sumergibles y equipos en ambientes húmedos.",
       "images": [
         "/assets/productos/Bomba-sumergible-01.jpg",
         "/assets/productos/Bomba-sumergible-01.jpg",
@@ -217,7 +221,8 @@
     "unipolar_antillama": {
       "id": "UA001",
       "name": "UNIPOLAR",
-      "description": "Cable unipolar con conductor de cobre electrolítico rojo y aislación de PVC flexible antillama. Disponible en múltiples colores normalizados.Uso: instalaciones fijas domiciliarias, comerciales e industriales.",
+      "description": "Cable unipolar con conductor de cobre electrolítico rojo y aislación de PVC flexible antillama. Disponible en múltiples colores normalizados.",
+      "use":"Uso: instalaciones fijas domiciliarias, comerciales e industriales.",
       "images": [
         "/assets/productos/Unipolar-01.jpg",
         "/assets/productos/Unipolar-02.jpg",
@@ -269,7 +274,8 @@
     "bipolar_vaina_plana": {
       "id": "VP001",
       "name": "VAINA PLANA",
-      "description": "Cable chato de cobre multifilar con doble aislación de PVC (interna + envolvente). Extra flexible. Uso: instalaciones móviles en locales industriales, agrícolas y domiciliarios (no calefacción)",
+      "description": "Cable chato de cobre multifilar con doble aislación de PVC (interna + envolvente). Extra flexible.",
+      "use": "Uso: instalaciones móviles en locales industriales, agrícolas y domiciliarios (no calefacción)",
       "images": [
         "/assets/productos/Vaina-plana-01.jpg",
         "/assets/productos/Vaina-plana-02.jpg",
@@ -306,7 +312,8 @@
     "automotor_bateria": {
       "id": "AB001",
       "name": "AUTOMOTOR / BATERÍA",
-      "description": "Conductor de cobre electrolítico rojo con aislación de PVC flexible resistente.  Uso: instalaciones en vehículos, conexiones de batería y corriente continua.",
+      "description": "Conductor de cobre electrolítico rojo con aislación de PVC flexible resistente.",
+      "use":" Uso: instalaciones en vehículos, conexiones de batería y corriente continua.",
       "images": [
         "/assets/productos/Automotor-bateria-01.jpg",
         "/assets/productos/Automotor-bateria-02.jpg",
@@ -343,7 +350,8 @@
     "cable_cobre_desnudo": {
       "id": "CD001",
       "name": "DESNUDO",
-      "description": " Conductor sólido o multifilar de cobre electrolítico rojo, calidad cátodo, grado 1 (pureza mínima 99.5%), conforme norma ASTM B115.Uso: puestas a tierra, pararrayos, instalaciones de antenas",
+      "description": " Conductor sólido o multifilar de cobre electrolítico rojo, calidad cátodo, grado 1 (pureza mínima 99.5%), conforme norma ASTM B115.",
+       "use":"Uso: puestas a tierra, pararrayos, instalaciones de antenas",
       "images": [
         "/assets/productos/Desnudo-01.jpg",
         "/assets/productos/Desnudo-02.jpg",
@@ -382,11 +390,12 @@
     "bafle_audio_premium": {
       "id": "BA001",
       "name": "BAFLE / AUDIO",
-      "description": "Cable bipolar para sistemas de sonido. Conductor de cobre OFC (alta pureza), aislación de PVC cristal.Uso: conexión de parlantes y equipos de audio de alta fidelidad.",
+      "description": "Cable bipolar para sistemas de sonido. Conductor de cobre OFC (alta pureza), aislación de PVC cristal.",
+      "use":"Uso: conexión de parlantes y equipos de audio de alta fidelidad.",
       "images": [
         "/assets/productos/Bafle-audio-01.jpg",
         "/assets/productos/Bafle-audio-02.jpg",
-         {
+        {
           "url": "/assets/productos/Familia_Bafle-audio.jpg",
           "label": "ET-VT-005"
         }
@@ -413,7 +422,8 @@
     "bipolar_cristal_paralelos": {
       "id": "BC001",
       "name": "PARALELO CRISTAL",
-      "description": "Cable bipolar con conductores flexibles de cobre y doble aislación de PVC cristal transparente. Uso: instalaciones visibles, cableado decorativo o conexiones de bajo consumo.",
+      "description": "Cable bipolar con conductores flexibles de cobre y doble aislación de PVC cristal transparente.",
+      "use":"  Uso: instalaciones visibles, cableado decorativo o conexiones de bajo consumo.",
       "images": [
         "/assets/productos/Paralelo-cristal-01.jpg",
         "/assets/productos/Paralelo-cristal-02.jpg",
@@ -450,7 +460,8 @@
     "soldadura_azul": {
       "id": "SA001",
       "name": "SOLDADURA AZUL",
-      "description": "Utiles oficiales de la empresa para la comercialización de cables",
+      "description": "Conductor de cobre electrolítico rojo con separador de papel y vaina exterior de caucho EPDM azul.",
+      "use":"Uso: máquinas de soldadura eléctrica. Alta resistencia mecánica,térmica y química.",
       "images": [
         "/assets/productos/Soldadura-azul-01.jpg",
         "/assets/productos/Soldadura-azul-02.jpg",
@@ -459,7 +470,6 @@
           "label": "ET-VT-008"
         }
       ],
-      
       "codes": [
         "A16",
         "A25",
@@ -487,7 +497,8 @@
     "Fotovoltaico": {
       "id": "FV001",
       "name": "FOTOVOLTAICO",
-      "description": "Conductor de cobre estañado (CuSn) con aislación y vaina exterior de PEX (polietileno reticulado). Alta resistencia a rayos UV, ozono y condiciones climáticas extremas.Uso: interconexión entre paneles solares, inversores y estructuras en instalaciones fotovoltaicas.",
+      "description": "Conductor de cobre estañado (CuSn) con aislación y vaina exterior de PEX (polietileno reticulado). Alta resistencia a rayos UV, ozono y condiciones climáticas extremas.",
+    "use":"Uso: interconexión entre paneles solares, inversores y estructuras en instalaciones fotovoltaicas.",
       "images": [
         "/assets/productos/Fotovoltaico-01.jpg",
         "/assets/productos/Fotovoltaico-02.jpg",

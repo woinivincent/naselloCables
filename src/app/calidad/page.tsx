@@ -21,9 +21,9 @@ export default function CalidadPage() {
         />
         <div className="absolute inset-0 flex items-center justify-center text-center text-white">
           <div>
-            <h1 className="mb-4 text-5xl font-bold">Mejora continua</h1>
+            <h1 className="mb-4 text-5xl font-bold">MEJORA CONTINUA</h1>
             <p className="text-xl">
-               Comprometidos con el proceso minucioso que conlleva el producto.
+              Comprometidos con el proceso minucioso que conlleva el producto.
 
             </p>
           </div>
@@ -37,7 +37,7 @@ export default function CalidadPage() {
           <div className="mb-16 max-sm:p-4">
             <h2 className="mb-8 text-3xl font-bold">NUESTRAS CERTIFICACIONES</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card>
+              <a href="https://www.certipedia.com/quality_marks/9000031724" target="_blank" rel="noopener noreferrer"> <Card>
                 <CardHeader className="flex items-center ">
                   <ISO height={100} />
                   <div>
@@ -48,8 +48,8 @@ export default function CalidadPage() {
                   </div>
                 </CardHeader>
               </Card>
-
-              <Card>
+              </a>
+              <a href="https://drive.google.com/drive/folders/1sa4x_Mp5ytgYTuu0k3L1Jy7GMb-TWuOF?usp=sharing" target="_blank" rel="noopener noreferrer"> <Card>
                 <CardHeader className="flex items-center ">
                   <IRAM height={100} />
                   <div>
@@ -60,6 +60,7 @@ export default function CalidadPage() {
                   </div>
                 </CardHeader>
               </Card>
+              </a>
 
               <Card>
                 <CardHeader className="flex items-center ">

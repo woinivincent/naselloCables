@@ -118,7 +118,7 @@ export default function ContactoPage() {
 
             <div className="flex items-start gap-4">
               <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-              <p>(+54) 9 2323 610622</p>
+              <p>2323 422757 / 429457</p>
             </div>
 
             <div className="flex items-start gap-4">
@@ -128,7 +128,7 @@ export default function ContactoPage() {
 
             <div className="flex items-start gap-4">
               <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-              <p>Lunes a Viernes: 9:00 - 16:00</p>
+              <p>Lunes a Viernes: 8:30 -16:30</p>
             </div>
           </div>
         </div>
