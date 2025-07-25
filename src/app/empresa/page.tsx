@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 export default function EmpresaPage() {
   return (
     <div className="flex justify-center ">
-      <div className=" py-12">
+      <div >
         {/* Hero Section */}
         <div className="relative mb-12 h-[400px] w-full">
           <Image

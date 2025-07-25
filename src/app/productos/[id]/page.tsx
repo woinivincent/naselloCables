@@ -54,12 +54,19 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   return (
     <div>
       <div className="max-w-7xl mx-auto pt-4 px-4 sm:px-6 lg:ml-[100px] lg:px-0 max-sm:hidden">
-        <BackButtonClient  />
+        <BackButtonClient />
       </div>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-          <Carousel images={product.images} productName={product.name} />
+          <Carousel
+            images={product.images.filter(
+              (img) =>
+                typeof img === 'string' ||
+                (typeof img === 'object' && (!img.label || !img.url))
+            )}
+            productName={product.name}
+          />
           <ProductDetails product={product} />
         </div>
 

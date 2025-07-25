@@ -30,7 +30,7 @@ export default function Carousel({ images, productName }: CarouselProps) {
         src={src}
         alt={alt}
         fill
-        className="object-fit"
+        className="object-contain"
         sizes="(max-width: 1080px) 100vw, 700px"
       />
       <button

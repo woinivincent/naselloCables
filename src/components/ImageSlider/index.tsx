@@ -2,11 +2,10 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { Plus } from 'lucide-react';
+
 interface SlideData {
   id: number;
   type: 'image' | 'video';
@@ -66,46 +65,48 @@ export function ImageSlider({ slides }: ImageSliderProps) {
 
   return (
     <div
-      className="relative w-full h-[63vh] overflow-hidden max-sm:h-[320px]"
+      className="w-full relative overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent z-0" />
-      <div ref={emblaRef} className="overflow-hidden max-sm:h-[320px]">
+
+      <div ref={emblaRef} className="overflow-hidden">
         <div className="flex">
           {slides.map((slide, index) => (
-            <div className="relative flex-[0_0_100%] min-w-0">
+            <div key={index} className="relative flex-[0_0_100%] min-w-0">
               {/* Fondo visual */}
-              <div className="w-full h-[600px] max-h-[63vh] relative overflow-hidden max-sm:h-[320px]">
-                {slide.type === 'video' && slide.videoPath ? (
-                  selectedIndex === index && (
-                    <video
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="auto"
-                      className="w-full h-full object-cover absolute top-0 left-0 pointer-events-none z-0"
-                    >
-                      <source src={slide.videoPath} type="video/mp4" />
-                    </video>
-                  )
-                ) : (
+              {slide.type === 'video' && slide.videoPath && selectedIndex === index ? (
+                <div className="w-full h-[500px] max-h-[63vh] relative overflow-hidden max-sm:h-[320px]">
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    className="w-full h-full object-cover absolute top-0 left-0 pointer-events-none z-0"
+                  >
+                    <source src={slide.videoPath} type="video/mp4" />
+                  </video>
+                </div>
+              ) : slide.type === 'image' && slide.imagePath ? (
+                <div className="relative w-full overflow-hidden">
                   <Image
-                    src={slide.imagePath!}
+                    src={slide.imagePath}
                     alt="image"
-                    fill
+                    width={1200}
+                    height={405}
+                    className="w-full h-auto object-contain pointer-events-none z-0"
                     priority={index === 0}
-                    className="object-cover pointer-events-none z-0"
-                    quality={90}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    quality={100}
+                    sizes="100vw"
                   />
-                )}
-              </div>
+                </div>
+              ) : null}
 
-              {/* Botones clickeables */}
+              {/* Botones clickeables (solo en desktop) */}
               {slide.type === 'image' && (
-                <div className="absolute bottom-28 left-2/3 z-50 flex flex-col gap-2 pointer-events-auto">
+                <div className="absolute bottom-28 left-2/3 z-50 gap-2 pointer-events-auto hidden lg:flex flex-col">
                   {slide.id === 3 && (
                     <Button
                       asChild
@@ -129,27 +130,7 @@ export function ImageSlider({ slides }: ImageSliderProps) {
         </div>
       </div>
 
-      {/* Navigation Controls */}
-      <div className="absolute bottom-8 right-8 flex items-center gap-4 z-50">
-        <Button
-          variant="outline"
-          size="icon"
-          className="h-10 w-10 rounded-full bg-white/10 backdrop-blur hover:bg-white/20 border-white/20"
-          onClick={scrollPrev}
-        >
-          <ChevronLeft className="h-5 w-5 text-white" />
-        </Button>
-        <Button
-          variant="outline"
-          size="icon"
-          className="h-10 w-10 rounded-full bg-white/10 backdrop-blur hover:bg-white/20 border-white/20"
-          onClick={scrollNext}
-        >
-          <ChevronRight className="h-5 w-5 text-white" />
-        </Button>
-      </div>
-
-      {/* Progress Indicators */}
+      {/* Indicadores de progreso */}
       <div className="absolute bottom-8 left-8 flex gap-2 z-30">
         {slides.map((_, index) => (
           <button

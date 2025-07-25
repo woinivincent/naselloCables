@@ -31,7 +31,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
 
         <p className="text-gray-700 leading-5">{product.description}</p>
         {product.use && (
-          <p className="text-gray-700 mb-4 leading-relaxed">
+          <p className="text-gray-700 mb-4 ">
             <span className="font-bold">
               {product.use.split(":")[0]}:
             </span>

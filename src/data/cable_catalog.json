@@ -8,6 +8,8 @@
       "images": [
         "/assets/productos/Subterraneo-01.jpg",
         "/assets/productos/Subterraneo-02.jpg",
+        "/assets/productos/Subterraneo-03.jpg",
+        "/assets/productos/Subterraneo-04.jpg",
         {
           "url": "/assets/productos/Familia_subterraneo.jpg",
           "label": "ET-VT-009"
@@ -183,7 +185,7 @@
       "use":"Uso: conexionado de bombas sumergibles y equipos en ambientes húmedos.",
       "images": [
         "/assets/productos/Bomba-sumergible-01.jpg",
-        "/assets/productos/Bomba-sumergible-01.jpg",
+        "/assets/productos/Bomba-sumergible-02.jpg",
         {
           "url": "/assets/productos/Familia_Bomba-sumergible.jpg",
           "label": "ET-VT-002"

@@ -1,84 +1,60 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
-import { Shield, Award, Zap, Factory } from "lucide-react";
 import { ImageSlider } from "@/components/ImageSlider";
-
-import { slides } from "@/components/ImageSlider/data";
-
-
-
+import { videoSlide, imageSlides } from "@/components/ImageSlider/data";
 
 export default function Home() {
   return (
     <>
-
-      <section className="relative h-full max-sm:h-[320px] " >
-        <ImageSlider slides={slides} />
-        <div className="absolute inset-0 flex z-10 items-center justify-center ">
-          {/* <div className="container text-center text-white max-sm:hidden">
-            <h1 className="mb-6 text-5xl font-medium text-white">
-              CALIDAD Y CONFIABILIDAD EN CADA PRODUCTO
-            </h1>
-            <p className="mb-8 text-xl">Más de 40 años de experiencia en la industria</p>
-            <Button asChild size="lg" className="bg-primary hover:bg-secondary">
-              <Link href="/productos">Ver Productos</Link>
-            </Button>
-          </div>*/}
-        </div>
+      {/* Slider con solo el video */}
+      <section className="relative h-[320px] sm:h-[400px] md:h-[400px]">
+        <ImageSlider slides={[videoSlide]} />
       </section>
 
-
-
+      {/* Sección de productos destacados */}
       <section
         className="bg-cover bg-center bg-no-repeat py-10 px-4"
         style={{ backgroundImage: "url('/assets/fondo-home.jpg')" }}
       >
-
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-black">
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-black">
             NUESTROS PRODUCTOS DESTACADOS
           </h2>
 
-
-          <div className="grid gap-10 md:grid-cols-3 items-start justify-center ">
+          <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start justify-center">
             {[
               {
                 title: "Cables Subterráneos",
-                description: "Cables de alta resistencia para realizar instalaciones bajo tierra.",
+                description:
+                  "Cables de alta resistencia para realizar instalaciones bajo tierra.",
                 image: "/assets/imagen-home-destacado_subterraneo.jpg",
                 slug: "subterraneos",
               },
               {
                 title: "Cables para soldadura",
-                description: "Especialistas en la confección de cables de soldadura desde 1976",
+                description:
+                  "Especialistas en la confección de cables de soldadura desde 1976",
                 image: "/assets/imagen-home-destacado_soldadura.jpg",
                 slug: "soldadura",
               },
               {
                 title: "Cables Unipolares",
-                description: "Amplia variedad de secciones y colores en cables de uso domiciliario e industrial",
+                description:
+                  "Amplia variedad de secciones y colores en cables de uso domiciliario e industrial",
                 image: "/assets/imagen-home-destacado_unipolares.jpg",
                 slug: "unipolar_antillama",
               },
             ].map((product, index) => (
               <div key={index} className="flex flex-col items-center">
                 {/* Imagen redonda con borde */}
-                <div className="rounded-full border-[6px] border-gray-300 overflow-hidden w-68 h-68 flex items-center justify-center bg-gradient-to-b from-gray-200 to-white shadow-inner">
-                  <div className="relative w-72 h-72">
+                <div className="rounded-full border-[6px] border-gray-300 overflow-hidden w-64 h-64 flex items-center justify-center bg-gradient-to-b from-gray-200 to-white shadow-inner">
+                  <div className="relative w-64 h-64">
                     <Image
                       src={product.image}
                       alt={product.title}
                       fill
-                      className="object-fill"
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -102,32 +78,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-
       </section>
-      <section className="relative bg-white overflow-hidden h-auto md:h-[450px] flex flex-col md:flex-row">
-  {/* Imagen arriba en mobile, izquierda en desktop */}
-  <div className="w-full md:w-[90%] h-[250px] mt-2 md:h-auto">
-    <img
-      src="/assets/imagen-home-fotovoltaico.jpg"
-      className="w-full h-[98%] object-contain object-left"
-      alt="Sumando sustentabilidad"
-    />
-  </div>
 
-  {/* Texto abajo en mobile, derecha en desktop */}
-  <div className="w-full md:w-1/2 flex items-center justify-center px-6 py-6">
-    <div className="max-w-md text-center md:text-left">
-      <h2 className="text-xl md:text-3xl font-bold text-black">
-        Sumando sustentabilidad
-      </h2>
-      <p className="mt-2 text-gray-700 text-sm md:text-base">
-        Nueva línea de cables fotovoltaicos.<br />
-        Alternativa de alta calidad.
-      </p>
-    </div>
-  </div>
-</section>
-      <section className="relative h-[400px] sm:h-[300px] w-full">
+      {/* Imagen con texto central */}
+      <section className="relative h-[280px] sm:h-[320px] md:h-[400px] w-full">
         <Image
           src="/assets/imagen-home-celeste.jpg"
           alt="Imagen de fondo"
@@ -136,17 +90,22 @@ export default function Home() {
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center text-center">
-          <h1 className="text-white text-3xl sm:text-5xl font-bold drop-shadow-lg">
+          <h1 className="text-white text-xl sm:text-3xl md:text-5xl font-bold drop-shadow-lg px-2">
             Logrando cinco décadas de experiencia
-
           </h1>
         </div>
       </section>
 
+      {/* Slider con imágenes */}
+      <section className="relative bg-white overflow-hidden">
+        {/* Altura automática para que se adapte a la imagen */}
+        <ImageSlider slides={imageSlides} />
+      </section>
 
+      {/* Sección de íconos y ventajas */}
       <section className="bg-gray-100 py-20 px-4">
         <div className="container mx-auto">
-          <div className="grid gap-10 md:grid-cols-4 text-center">
+          <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-center">
             {[
               {
                 icon: "/assets/Calidad.svg",
@@ -157,8 +116,7 @@ export default function Home() {
               {
                 icon: "/assets/Experiencia.svg",
                 title: "Experiencia",
-                description:
-                  "Cinco décadas haciendo historia en el rubro.",
+                description: "Cinco décadas haciendo historia en el rubro.",
               },
               {
                 icon: "/assets/Innovacion.svg",
@@ -169,8 +127,7 @@ export default function Home() {
               {
                 icon: "/assets/Fabricacion.svg",
                 title: "Fabricación Nacional",
-                description:
-                  "Producción nacional con estándar asegurado.",
+                description: "Producción nacional con estándar asegurado.",
               },
             ].map((item, index) => (
               <div
@@ -195,10 +152,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
-
-
     </>
   );
 }
