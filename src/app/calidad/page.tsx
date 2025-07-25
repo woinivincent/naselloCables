@@ -10,26 +10,27 @@ import LABO from "@/icons/Certificaciones_LABORATORIO.svg"
 export default function CalidadPage() {
   return (
     <div>
-      {/* Hero Section - FUERA del container, ocupa toda la pantalla */}
-      <div className="relative mb-12 h-[400px] w-full">
+      {/* Hero Section  */}
+
+      <div className="relative z-0 mb-12 w-full h-[220px] sm:h-[280px] md:h-[350px] lg:h-[400px]">
         <Image
           src="/assets/imagen-encabezado-calidad.jpg"
           alt="Control de Calidad"
           fill
-          quality={1}
-          className="object-cover "
+          priority
+          className="brightness-70 object-cover object-[20%_center]"
         />
-        <div className="absolute inset-0 flex items-center justify-center text-center text-white">
-          <div>
-            <h1 className="mb-4 text-5xl font-bold">MEJORA CONTINUA</h1>
-            <p className="text-xl">
+        <div className="absolute inset-0 flex items-center justify-center text-center text-white px-4">
+          <div className="max-w-[90%] sm:max-w-[75%] md:max-w-[60%]">
+            <h1 className="mb-3 text-xl sm:text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
+              MEJORA CONTINUA
+            </h1>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light">
               Comprometidos con el proceso minucioso que conlleva el producto.
-
             </p>
           </div>
         </div>
       </div>
-
       {/* Resto del contenido - CON container */}
       <div className="flex justify-center">
         <div className="container py-12">

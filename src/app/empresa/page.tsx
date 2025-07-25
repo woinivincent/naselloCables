@@ -9,24 +9,25 @@ export default function EmpresaPage() {
     <div className="flex justify-center ">
       <div >
         {/* Hero Section */}
-        <div className="relative mb-12 h-[400px] w-full">
+        <div className="relative z-0 mb-12 w-full h-[220px] sm:h-[280px] md:h-[350px] lg:h-[400px]">
           <Image
             src="/assets/imagen-encabezado-empresa.jpg"
             alt="Fábrica Nasello Cables"
             fill
-            className="object-cover brightness-70"
+            priority
+            className="brightness-70 object-cover object-[20%_center]"
           />
-          <div className="absolute inset-0 flex items-center justify-center text-center text-white">
-            <div>
-              <h1 className="mb-4 text-5xl font-medium">UN LEGADO FAMILIAR</h1>
-              <p className="text-xl font-light">
+          <div className="absolute inset-0 flex items-center justify-center text-center text-white px-4">
+            <div className="max-w-[90%] sm:max-w-[75%] md:max-w-[60%]">
+              <h1 className="mb-3 text-xl sm:text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
+                UN LEGADO FAMILIAR
+              </h1>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light">
                 Dos generaciones de experiencia compartida en la industria.
-
               </p>
             </div>
           </div>
         </div>
-
         {/* Historia y Valores */}
         <div className="p-12 mb-10 max-sm:p-4">
           <h2 className="mb-8 text-3xl font-bold">HISTORIA Y VALORES</h2>
