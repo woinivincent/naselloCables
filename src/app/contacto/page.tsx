@@ -118,7 +118,7 @@ export default function ContactoPage() {
 
             <div className="flex items-start gap-4">
               <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-              <p>2323 422757 / 429457</p>
+              <p>2323 422757 / 429457 - 2323 610622</p>
             </div>
 
             <div className="flex items-start gap-4">

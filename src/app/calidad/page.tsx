@@ -91,7 +91,7 @@ export default function CalidadPage() {
 
           {/* Proceso de Control */}
           <div className="mb-16 max-sm:p-4">
-            <h2 className="mb-8 text-3xl font-bold">PROCESO DE CONTROL DE CALIDAD</h2>
+            <h2 className="mb-8 text-3xl font-bold">POLITICA DE CALIDAD</h2>
             <div className="grid gap-8 md:grid-cols-2">
               <div>
                 <p className="mb-4 text-justify">

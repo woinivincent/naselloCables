@@ -52,7 +52,7 @@ export default function EmpresaPage() {
                 <br />
                 Ofrecemos atención personalizada a grandes y medianos distribuidores, con
                 un enfoque orientado a construir relaciones de confianza a largo plazo.</p>
-              <p className="text-lg font-light">
+              <p className=" font-light">
                 Te invitamos a visitar nuestro sitio web y descubrir más sobre nuestros
                 productos y servicios.
               </p>
@@ -71,7 +71,7 @@ export default function EmpresaPage() {
               </video>
               {/* Botón en la esquina inferior izquierda */}
               <a
-                href="https://www.youtube.com/watch?v=Js76327Blos"
+                href="https://www.youtube.com/watch?v=t-gLf3yxzU8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute bottom-4 left-4 z-10"

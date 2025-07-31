@@ -43,7 +43,7 @@ export function ImageSlider({ slides }: ImageSliderProps) {
 
     const intervalId = setInterval(() => {
       emblaApi.scrollNext();
-    }, 31000);
+    }, 3000);
 
     return () => clearInterval(intervalId);
   }, [emblaApi, isPaused]);
@@ -95,7 +95,7 @@ export function ImageSlider({ slides }: ImageSliderProps) {
                     src={slide.imagePath}
                     alt="image"
                     width={1200}
-                    height={405}
+                    height={350}
                     className="w-full h-auto object-contain pointer-events-none z-0"
                     priority={index === 0}
                     quality={100}

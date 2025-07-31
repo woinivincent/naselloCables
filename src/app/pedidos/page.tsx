@@ -20,11 +20,12 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Plus, Trash2, Download } from 'lucide-react';
+import { Trash2, Download } from 'lucide-react';
 import InfoLegend from '@/components/InfoLegend';
 import cableCatalog from '@/data/cable_catalog.json' assert { type: "json" };
 import Agregar from '@/icons/icono_Pedidos_Agrgar-producto_.svg';
 import Datos from '@/icons/icono_Pedidos_Info_ (1).svg';
+
 interface OrderItem {
   code: string;
   type: string;
@@ -112,45 +113,68 @@ export default function PedidosPage() {
     setItems(items.filter((_, i) => i !== index));
   };
 
-  const generateCSV = () => {
-    let csvContent = `Nombre,Email,Teléfono,Notas\n"${customerInfo.name}","${customerInfo.email}","${customerInfo.phone}","${customerInfo.notes}"\n\n`;
-    csvContent += 'Código,Tipo,Color,Presentación,Cantidad\n';
+  const enviarPedido = async () => {
+    if (!customerInfo.name || !customerInfo.email || items.length === 0) {
+      toast({
+        title: "Error",
+        description: "Debes completar los datos del cliente y al menos un producto",
+        variant: "destructive",
+      });
+      return;
+    }
 
-    items.forEach((item) => {
-      csvContent += `"${item.code}","${item.type}","${item.color}","${item.presentation}","${item.quantity}"\n`;
-    });
+    try {
+      const res = await fetch("/api/enviar-pedido", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          cliente: {
+            nombre: customerInfo.name,
+            email: customerInfo.email,
+            telefono: customerInfo.phone,
+            mensaje: customerInfo.notes,
+          },
+          pedido: items.map((item) => ({
+            codigo: item.code,
+            color: item.color,
+            descripcion: item.type,
+            tipoEnvase: item.presentation,
+            cantidadEnvases: item.quantity,
+            metrosPorEnvase: 100,
+            totalMetros: item.quantity * 100,
+            precioMetro: 120,
+            subtotal: item.quantity * 100 * 120,
+            obsParticular: "",
+            obsFacturacion: "",
+          })),
+        }),
+      });
 
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute(
-      'download',
-      `pedido_${customerInfo.name || 'cliente'}.csv`
-    );
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    toast({
-      title: 'Pedido generado',
-      description:
-        'El pedido ha sido generado en formato CSV. Podés enviarlo por correo manualmente.',
-    });
+      const data = await res.json();
+      if (res.ok) {
+        toast({ title: "Éxito", description: "Pedido enviado correctamente." });
+      } else {
+        toast({ title: "Error", description: data.error, variant: "destructive" });
+      }
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Error de red",
+        description: "No se pudo conectar con el servidor",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-background">
       <div className="w-full max-w-[1400px] px-4 py-12">
         <h1 className="mb-8 text-center text-4xl font-bold">Realizar Pedido</h1>
-
         <div className="flex flex-row gap-6">
           <div className="flex-1">
             <div className="space-y-8">
               {/* Datos del cliente */}
-              <div className=" border p-6 bg-card">
-
+              <div className="border p-6 bg-card">
                 <div className="flex items-center mb-4">
                   <Datos className="h-6 mr-2" />
                   <h2 className="mb-3 text-xl font-semibold">
@@ -200,7 +224,7 @@ export default function PedidosPage() {
               </div>
 
               {/* Formulario de productos */}
-              <div className=" border p-6 bg-card">
+              <div className="border p-6 bg-card">
                 <div className="flex items-center mb-4">
                   <Agregar className="h-6 mr-2" />
                   <h2 className="text-xl font-semibold">Agregar Productos</h2>
@@ -217,7 +241,6 @@ export default function PedidosPage() {
                         presentation: '',
                       })
                     }
-
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Seleccionar tipo" />
@@ -305,16 +328,14 @@ export default function PedidosPage() {
                   />
                 </div>
                 <Button className="mt-4 p-2 hover:bg-secondary" onClick={addItem}>
-                 <p className='text-xs'>AGREGAR PEDIDO</p>
+                  <p className='text-xs'>AGREGAR PEDIDO</p>
                 </Button>
               </div>
 
               {/* Tabla de resumen */}
               {items.length > 0 && (
                 <div className="rounded-lg border p-6 bg-card">
-                  <h2 className="mb-4 text-xl font-semibold">
-                    Resumen del Pedido
-                  </h2>
+                  <h2 className="mb-4 text-xl font-semibold">Resumen del Pedido</h2>
                   <Table>
                     <TableHeader>
                       <TableRow>
@@ -347,20 +368,17 @@ export default function PedidosPage() {
                       ))}
                     </TableBody>
                   </Table>
-
                   <Button
                     className="mt-4 bg-green-600 text-white hover:bg-green-700"
-                    onClick={generateCSV}
+                    onClick={enviarPedido}
                   >
                     <Download className="mr-2 h-4 w-4" />
-                    Descargar Pedido (CSV)
+                    Enviar Pedido por Email
                   </Button>
                 </div>
               )}
             </div>
           </div>
-
-          {/* Leyenda o sección informativa */}
           <div className="w-[350px] hidden lg:block">
             <InfoLegend />
           </div>

@@ -81,7 +81,7 @@ export default function Home() {
       </section>
 
       {/* Imagen con texto central */}
-      <section className="relative h-[280px] sm:h-[320px] md:h-[400px] w-full">
+     {/* <section className="relative h-[280px] sm:h-[320px] md:h-[400px] w-full">
         <Image
           src="/assets/imagen-home-celeste.jpg"
           alt="Imagen de fondo"
@@ -94,7 +94,7 @@ export default function Home() {
             Logrando cinco décadas de experiencia
           </h1>
         </div>
-      </section>
+      </section>*/}
 
       {/* Slider con imágenes */}
       <section className="relative bg-white overflow-hidden">

@@ -25,12 +25,13 @@ export default function Carousel({ images, productName }: CarouselProps) {
   const alt = typeof currentImage === 'string' ? productName : currentImage.label || productName;
 
   return (
-    <div className="relative w-full max-w-[480px] h-[300px] sm:h-[350px] lg:h-[480px] overflow-hidden mx-auto lg:mx-0">
+   <div className="relative w-full max-w-[480px] h-[300px] sm:h-[350px] lg:h-[480px] overflow-hidden mx-auto lg:mx-0 rounded-tr-[40px]">
+
       <Image
         src={src}
         alt={alt}
         fill
-        className="object-contain"
+        className="object-cover rounded-tr-[40px]"
         sizes="(max-width: 1080px) 100vw, 700px"
       />
       <button

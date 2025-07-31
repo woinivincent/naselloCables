@@ -17,4 +17,9 @@ export const imageSlides: SlideData[] = [
     type: "image",
     imagePath: "/assets/slider_laboratorio.jpg",
   },
+   {
+    id: 5,
+    type: "image",
+    imagePath: "/assets/slider_acometida.jpg",
+  },
 ];
