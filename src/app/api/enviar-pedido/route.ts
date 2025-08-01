@@ -55,7 +55,12 @@ export async function POST(req: NextRequest) {
         pass: process.env.SMTP_PASS,
       },
     });
-
+    console.log("Enviando correo a", process.env.DESTINO_PEDIDO);
+    console.log({
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
+      user: process.env.SMTP_USER
+    });
     await transporter.sendMail({
       from: `"Sitio Web" <${process.env.SMTP_USER}>`,
       to: process.env.DESTINO_PEDIDO,
@@ -70,8 +75,8 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ mensaje: "Pedido enviado correctamente" });
-  } catch (error) {
-    console.error("Error al enviar:", error);
+  } catch (error: any) {
+    console.error("Error al enviar:", error, error.response, error.stack);
     return NextResponse.json({ error: "No se pudo enviar el correo" }, { status: 500 });
   }
 }
