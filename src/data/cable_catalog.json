@@ -462,8 +462,8 @@
     "soldadura_azul": {
       "id": "SA001",
       "name": "SOLDADURA AZUL",
-      "description": "Conductor de cobre electrolítico rojo con separador de papel y vaina exterior de caucho EPDM azul.",
-      "use":"Uso: máquinas de soldadura eléctrica. Alta resistencia mecánica,térmica y química.",
+      "description": "Conductor de cobre electrolítico rojo, envuelto en una vaina exterior de caucho sintético EPDM azul. ",
+      "use":"Uso: máquinas de soldadura eléctrica. Alta resistencia mecánica, térmica y química.",
       "images": [
         "/assets/productos/Soldadura-azul-01.jpg",
         "/assets/productos/Soldadura-azul-02.jpg",

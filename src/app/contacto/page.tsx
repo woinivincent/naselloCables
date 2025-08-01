@@ -9,7 +9,8 @@ import MapPin from "@/icons/icono_Contacto_Ubicacion_.svg";
 import Phone from "@/icons/icono_Contacto_Telefono_.svg";
 import Mail from "@/icons/icono_Contacto_Mail_.svg";
 import Clock from "@/icons/icono_Contacto_Horario_.svg";
-
+import WhatsApp from "@/icons/whatsapp.svg";
+import Image from "next/image";
 export default function ContactoPage() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -120,7 +121,10 @@ export default function ContactoPage() {
               <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
               <p>2323 422757 / 429457 - 2323 610622</p>
             </div>
-
+            <div className="flex items-start gap-4">
+                <WhatsApp className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+                <p>(+54) 9 2323 -610622</p>
+            </div>
             <div className="flex items-start gap-4">
               <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
               <p>recepcion@nasellocables.com.ar</p>
@@ -130,6 +134,7 @@ export default function ContactoPage() {
               <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
               <p>Lunes a Viernes: 8:30 -16:30</p>
             </div>
+
           </div>
         </div>
       </div>
