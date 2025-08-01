@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
     const sheet = workbook.addWorksheet("Pedido");
 
     sheet.addRow(["PEDIDO NASELLO CABLES"]);
-    sheet.addRow(["CLIENTE", cliente.nombre, "", "", "", `FECHA: ${fechaTexto}`]);
+    sheet.addRow(["CLIENTE", cliente.nombre, "", "", "", `FECHA: ${fechaTexto}`])
     sheet.addRow([]);
     sheet.addRow([
       "Ítem", "Código", "Color", "Descripción", "Tipo de envase", "Cantidad envases",
