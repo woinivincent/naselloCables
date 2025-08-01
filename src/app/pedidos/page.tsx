@@ -124,7 +124,7 @@ export default function PedidosPage() {
     }
 
     try {
-      const res = await fetch("/api/enviar-pedido", {
+      const res = await fetch("/api/enviar-pedido/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
