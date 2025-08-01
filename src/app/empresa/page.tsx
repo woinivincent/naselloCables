@@ -34,12 +34,12 @@ export default function EmpresaPage() {
           <div className="grid gap-8 md:grid-cols-2">
             <div>
               <p className="mb-4 text-lg font-bold ">
-                Nasello Cables S.A. | Logrando 50 años en el mercado de conductores
-                eléctricos.
+                Nasello Cables S.A. | Medio siglo en el mercado de conductores eléctricos
+
               </p>
               <p className="mb-4  font-light align-middle text-justify">
-                Contamos con una sólida trayectoria de más de cuatro décadas en la
-                fabricación de conductores eléctricos, brindando soluciones de alta calidad y
+                Contamos con una trayectoria de cinco décadas en la fabricación de conductoreseléctricos, 
+                brindando soluciones de alta calidad y
                 confiabilidad en todo el territorio nacional.
                 <br />
                 <br />
