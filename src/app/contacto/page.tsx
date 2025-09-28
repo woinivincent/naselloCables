@@ -113,28 +113,59 @@ export default function ContactoPage() {
           <h2 className="mb-6 text-xl md:text-2xl font-semibold">Información de Contacto</h2>
           <div className="space-y-7">
             <div className="flex items-start gap-4">
-              <MapPin className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+              <Image
+                src="/icons/icono_Contacto_Ubicacion_.svg"
+                alt="Ubicación"
+                width={32}
+                height={32}
+                className="sm:w-8 sm:h-8 w-6 h-6"
+              />
               <p>Luján, Buenos Aires</p>
             </div>
 
             <div className="flex items-start gap-4">
-              <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-              <p>2323 422757 / 429457 - 2323 610622</p>
+              <Image
+                src="/icons/icono_Contacto_Telefono_.svg"
+                alt="Teléfono"
+                width={32}
+                height={32}
+                className="sm:w-8 sm:h-8 w-6 h-6"
+              />
+              <p>2323 422757 / 429457 - 2323 610622</p>
             </div>
+
             <div className="flex items-start gap-4">
-                <WhatsApp className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-                <p>(+54) 9 2323 -610622</p>
+              <Image
+                src="/icons/whatsapp.svg"
+                alt="WhatsApp"
+                width={32}
+                height={32}
+                className="sm:w-8 sm:h-8 w-6 h-6"
+              />
+              <p>(+54) 9 2323 -610622</p>
             </div>
+
             <div className="flex items-start gap-4">
-              <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+              <Image
+                src="/icons/icono_Contacto_Mail_.svg"
+                alt="Correo"
+                width={32}
+                height={32}
+                className="sm:w-8 sm:h-8 w-6 h-6"
+              />
               <p>recepcion@nasellocables.com.ar</p>
             </div>
 
             <div className="flex items-start gap-4">
-              <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+              <Image
+                src="/icons/icono_Contacto_Horario_.svg"
+                alt="Horario"
+                width={32}
+                height={32}
+                className="sm:w-8 sm:h-8 w-6 h-6"
+              />
               <p>Lunes a Viernes: 8:30 -16:30</p>
             </div>
-
           </div>
         </div>
       </div>

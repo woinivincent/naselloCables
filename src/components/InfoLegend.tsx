@@ -3,13 +3,14 @@ import { AlertCircle } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Guide from '@/icons/icono_Pedidos_Guia_.svg'
+import Image from 'next/image';
 
 const InfoLegend = () => {
   return (
     <Card className="h-fit sticky top-4">
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-lg">
-          <Guide className="h-5 w-5 text-primary" />
+            <Image src="/icons/icono_Pedidos_Guia_.svg" alt="Guía" width={20} height={20} />
           Guía de Referencia
         </CardTitle>
       </CardHeader>

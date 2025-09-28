@@ -71,7 +71,7 @@ export default function EmpresaPage() {
               </video>
               {/* Botón en la esquina inferior izquierda */}
               <a
-                href="https://www.youtube.com/watch?v=t-gLf3yxzU8"
+                href="https://www.youtube.com/watch?v=FdsY9alig6o"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute bottom-4 left-4 z-10"

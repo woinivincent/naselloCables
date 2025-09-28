@@ -39,10 +39,10 @@ export default function CalidadPage() {
             <h2 className="mb-8 text-3xl font-bold">NUESTRAS CERTIFICACIONES</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <a href="https://www.certipedia.com/quality_marks/9000031724" target="_blank" rel="noopener noreferrer"> <Card>
-                <CardHeader className="flex items-center ">
-                  <ISO height={100} />
-                  <div>
-                    <CardTitle className="text-lg font-bold mb-1 ml-6">ISO 9001:2015</CardTitle>
+                <CardHeader className="flex items-center">
+                  <Image src="/icons/Certificaciones_ISO-9001.svg" alt="ISO 9001" width={64} height={64} />
+                  <div className="ml-6">
+                    <CardTitle className="text-lg font-bold mb-1">ISO 9001:2015</CardTitle>
                     <CardContent>
                       <p className="text-sm text-gray-600">Sistema de Gestión de Calidad certificado</p>
                     </CardContent>
@@ -51,12 +51,12 @@ export default function CalidadPage() {
               </Card>
               </a>
               <a href="https://drive.google.com/drive/folders/1sa4x_Mp5ytgYTuu0k3L1Jy7GMb-TWuOF?usp=sharing" target="_blank" rel="noopener noreferrer"> <Card>
-                <CardHeader className="flex items-center ">
-                  <IRAM height={100} />
-                  <div>
-                    <CardTitle className="text-lg font-bold mb-1 ml-6">IRAM</CardTitle>
+                <CardHeader className="flex items-center">
+                  <Image src="/icons/Certificaciones_IRAM.svg" alt="IRAM" width={64} height={64} />
+                  <div className="ml-6">
+                    <CardTitle className="text-lg font-bold mb-1">IRAM</CardTitle>
                     <CardContent>
-                      <p className="text-sm text-gray-600">Certificación de productos según normas IRAM</p>
+                      <p className="text-sm text-gray-600"> Certificación productos de según normas IRAM</p>
                     </CardContent>
                   </div>
                 </CardHeader>
@@ -64,24 +64,24 @@ export default function CalidadPage() {
               </a>
 
               <Card>
-                <CardHeader className="flex items-center ">
-                  <IEC height={100} />
-                  <div>
-                    <CardTitle className="text-lg font-bold mb-1 ml-6">IEC</CardTitle>
+                <CardHeader className="flex items-center">
+                  <Image src="/icons/Certificaciones_IEC.svg" alt="IEC" width={64} height={64} />
+                  <div className="ml-6">
+                    <CardTitle className="text-lg font-bold mb-1">ISO 9001:2015</CardTitle>
                     <CardContent>
-                      <p className="text-sm text-gray-600">Cumplimiento de estándares internacionales</p>
+                      <p className="text-sm text-gray-600">Sistema de Gestión de Calidad certificado</p>
                     </CardContent>
                   </div>
                 </CardHeader>
               </Card>
 
               <Card>
-                <CardHeader className="flex items-center ">
-                  <LABO height={100} />
-                  <div>
-                    <CardTitle className="text-lg font-bold mb-1 ml-6">LABORATORIO</CardTitle>
+                <CardHeader className="flex items-center">
+                  <Image src="/icons/Certificaciones_LABORATORIO.svg" alt="LABORATORIO" width={64} height={64} />
+                  <div className="ml-6">
+                    <CardTitle className="text-lg font-bold mb-1">IEC</CardTitle>
                     <CardContent>
-                      <p className="text-sm text-gray-600">Laboratorio de ensayos técnicos interno.</p>
+                      <p className="text-sm text-gray-600"> Cumplimiento de estándares internacionales</p>
                     </CardContent>
                   </div>
                 </CardHeader>

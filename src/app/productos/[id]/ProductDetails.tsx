@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 import Shield from '@/icons/producto_Calidad.svg';
 import Package from '@/icons/producto_Stock.svg';
@@ -20,7 +21,7 @@ type Product = {
 
 type ProductDetailsProps = {
   product: Product;
- 
+
 };
 
 export function ProductDetails({ product }: ProductDetailsProps) {
@@ -55,24 +56,40 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           )}
         </div>
 
-        {/* Iconografía */}
         <div className="border-b border-t border-gray-300 text-sm font-bold uppercase mt-6">
           <div className="flex items-center gap-2 mt-1 mb-1">
-            <Package size={16} />
+            <Image
+              src="/icons/producto_Stock.svg"
+              alt="Stock"
+              width={16}
+              height={16}
+              className="w-4 h-4"
+            />
             <span>Stock disponible</span>
           </div>
           <hr className="border-gray-300" />
           <div className="flex items-center gap-2 mt-1 mb-1">
-            <Shield size={16} />
+            <Image
+              src="/icons/producto_Calidad.svg"
+              alt="Certificado"
+              width={16}
+              height={16}
+              className="w-4 h-4"
+            />
             <span>Certificado</span>
           </div>
           <hr className="border-gray-300" />
           <div className="flex items-center gap-2 mt-1 mb-1">
-            <Truck size={16} />
+            <Image
+              src="/icons/producto_Envio.svg"
+              alt="Envío"
+              width={16}
+              height={16}
+              className="w-4 h-4"
+            />
             <span>Envío</span>
           </div>
         </div>
-
         {/* Botones */}
         <div className="flex flex-col gap-y-4 pt-6">
           {/* <Button className="bg-gray-500 hover:bg-gray-600 text-white w-min rounded-md text-xs">

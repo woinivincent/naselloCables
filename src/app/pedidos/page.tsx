@@ -25,7 +25,7 @@ import InfoLegend from '@/components/InfoLegend';
 import cableCatalog from '@/data/cable_catalog.json' assert { type: "json" };
 import Agregar from '@/icons/icono_Pedidos_Agrgar-producto_.svg';
 import Datos from '@/icons/icono_Pedidos_Info_ (1).svg';
-
+import Image from 'next/image';
 interface OrderItem {
   code: string;
   type: string;
@@ -123,49 +123,49 @@ export default function PedidosPage() {
       return;
     }
 
-    try {
-      const res = await fetch("/api/enviar-pedido/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          cliente: {
-            nombre: customerInfo.name,
-            email: customerInfo.email,
-            telefono: customerInfo.phone,
-            mensaje: customerInfo.notes,
-          },
-          pedido: items.map((item) => ({
-            codigo: item.code,
-            color: item.color,
-            descripcion: item.type,
-            tipoEnvase: item.presentation,
-            cantidadEnvases: item.quantity,
-            metrosPorEnvase: 100,
-            totalMetros: item.quantity * 100,
-            precioMetro: 120,
-            subtotal: item.quantity * 100 * 120,
-            obsParticular: "",
-            obsFacturacion: "",
-          })),
-        }),
-      });
+   try {
+  const res = await fetch("/enviar-pedido.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      cliente: {
+        nombre: customerInfo.name,
+        email: customerInfo.email,
+        telefono: customerInfo.phone,
+        mensaje: customerInfo.notes,
+      },
+      pedido: items.map((item) => ({
+        codigo: item.code,
+        color: item.color,
+        descripcion: item.type,
+        tipoEnvase: item.presentation,
+        cantidadEnvases: item.quantity,
+        metrosPorEnvase: 100,
+        totalMetros: item.quantity * 100,
+        precioMetro: 120,
+        subtotal: item.quantity * 100 * 120,
+        obsParticular: "",
+        obsFacturacion: "",
+      })),
+    }),
+  });
 
-      const data = await res.json();
-      if (res.ok) {
-        toast({ title: "Éxito", description: "Pedido enviado correctamente." });
-      } else {
-        toast({ title: "Error", description: data.error, variant: "destructive" });
-      }
-    } catch (err) {
-      console.error(err);
-      toast({
-        title: "Error de red",
-        description: "No se pudo conectar con el servidor",
-        variant: "destructive",
-      });
-    }
+  const data = await res.json();
+  if (res.ok) {
+    toast({ title: "Éxito", description: "Pedido enviado correctamente." });
+  } else {
+    toast({ title: "Error", description: data.error, variant: "destructive" });
+  }
+} catch (err) {
+  console.error(err);
+  toast({
+    title: "Error de red",
+    description: "No se pudo conectar con el servidor",
+    variant: "destructive",
+  });
+}
   };
-
+  
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-background">
       <div className="w-full max-w-[1400px] px-4 py-12">
@@ -176,7 +176,7 @@ export default function PedidosPage() {
               {/* Datos del cliente */}
               <div className="border p-6 bg-card">
                 <div className="flex items-center mb-4">
-                  <Datos className="h-6 mr-2" />
+                 <Image src="/icons/icono_Pedidos_Info_ (1).svg" alt="Datos" width={24} height={24} className="mr-2" />
                   <h2 className="mb-3 text-xl font-semibold">
                     Información de Contacto
                   </h2>
@@ -226,7 +226,7 @@ export default function PedidosPage() {
               {/* Formulario de productos */}
               <div className="border p-6 bg-card">
                 <div className="flex items-center mb-4">
-                  <Agregar className="h-6 mr-2" />
+                  <Image src="/icons/icono_Pedidos_Agrgar-producto_.svg" alt="Agregar" width={24} height={24} className="mr-2" />
                   <h2 className="text-xl font-semibold">Agregar Productos</h2>
                 </div>
                 <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">

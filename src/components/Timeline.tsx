@@ -2,14 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, ChevronDown } from "lucide-react";
-import LightbulbIcon from "@/icons/Linea_tiempo_1976.svg";
-import CalendarIcon from "@/icons/Linea_tiempo_2001.svg";
-import RefreshIcon from "@/icons/Linea_tiempo_2006.svg";
-import BuildingIcon from "@/icons/Linea_tiempo_2008.svg";
-import ZapIcon from "@/icons/Linea_tiempo_2013.svg";
-import FactoryIcon from "@/icons/Linea_tiempo_2018.svg";
-import CheckIcon from "@/icons/Linea_tiempo_2023.svg";
-import AwardIcon from "@/icons/Linea_tiempo_2025.svg";
 
 const TimelineSection = () => {
   const timelineEvents = [
@@ -18,56 +10,52 @@ const TimelineSection = () => {
       title: "NACIMIENTO",
       content:
         "Fundación de la micro empresa familiar dirigida por Hector y Mirta Nasello junto con Carlos y Holga Garavano.",
-      icon: <LightbulbIcon className="w-24 h-24" />,
+      icon: "/icons/Linea_tiempo_1976.svg", // reemplaza por la real
     },
     {
       year: "2001",
       title: "CESE",
       content: "Cese de actividades.",
-      icon: <CalendarIcon className="w-24 h-24" />,
+      icon: "/icons/Linea_tiempo_2001.svg",
     },
     {
       year: "2006",
       title: "REINSERCIÓN",
       content: "Reinserción laboral a cargo de los hermanos Nasello.",
-      icon: <RefreshIcon className="w-24 h-24" />,
+      icon: "/icons/Linea_tiempo_2006.svg",
     },
     {
       year: "2008",
       title: "CONSOLIDACIÓN",
       content: "Consolidación oficial de la Sociedad Anónima.",
-      icon: <BuildingIcon className="w-24 h-24" />,
+      icon: "/icons/Linea_tiempo_2008.svg",
     },
     {
       year: "2013",
       title: "+ MAQUINARIA",
       content: "Adquisición de maquinaria y ampliación de depósito.",
-      icon: <ZapIcon className="w-24 h-24" />,
+      icon: "/icons/Linea_tiempo_2013.svg",
     },
     {
       year: "2018",
       title: "AMPLIACIÓN",
       content:
         "Ampliación de planta productiva y gama de conductores eléctricos.",
-      icon: <FactoryIcon className="w-24 h-24" />,
+      icon: "/icons/Linea_tiempo_2018.svg",
     },
     {
       year: "2023",
       title: "CERTIF. ISO 9001",
       content: "Certificación oficial de ISO 9001.",
-      icon: <CheckIcon className="w-24 h-24" />},
+      icon: "/icons/Linea_tiempo_2023.svg",
+    },
     {
       year: "2025",
       title: "CERTIF. IRAM",
       content: "Proceso de certificación oficial de normas IRAM.",
-      icon: <AwardIcon className="w-24 h-24" />,
+      icon: "/icons/Linea_tiempo_2025.svg",
     },
   ];
-
-  const containerVariants = {
-    hidden: {},
-    visible: {},
-  };
 
   const itemVariants = {
     hidden: { opacity: 0, x: -40 },
@@ -78,7 +66,6 @@ const TimelineSection = () => {
     },
   };
 
-  // Variantes para móvil (animación vertical)
   const itemVariantsMobile = {
     hidden: { opacity: 0, y: -40 },
     visible: {
@@ -91,9 +78,8 @@ const TimelineSection = () => {
   return (
     <section className="py-20 bg-white relative z-0 overflow-visible">
       <div className="container mx-auto relative">
-        {/* Desktop Layout */}
+        {/* Desktop */}
         <div className="hidden md:block">
-          {/* Línea azul animada + flecha centrada */}
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
@@ -101,15 +87,12 @@ const TimelineSection = () => {
             viewport={{ once: true }}
             className="origin-left absolute top-[48px] left-0 w-full h-[6px] z-0 bg-primary overflow-visible"
           >
-            {/* Flecha moviéndose con la línea */}
             <div className="absolute right-[-70px] top-1/2 -translate-y-1/2">
               <ChevronRight className="w-20 h-20 text-primary" />
             </div>
           </motion.div>
 
-          {/* Timeline items sin stagger */}
           <motion.div
-            variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -121,15 +104,13 @@ const TimelineSection = () => {
                 variants={itemVariants}
                 className="group relative flex flex-col items-center text-center min-w-[100px] px-2"
               >
-                {/* Ícono */}
                 <motion.div
                   whileHover={{ scale: 1.15 }}
                   className="relative h-[96px] mb-2 flex items-center justify-center"
                 >
-                  {event.icon}
+                  <img src={event.icon} alt={event.title} className="w-24 h-24" />
                 </motion.div>
 
-                {/* Tooltip */}
                 <div className="absolute w-48 -top-20 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0 sm:w-56">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
@@ -143,9 +124,8 @@ const TimelineSection = () => {
           </motion.div>
         </div>
 
-        {/* Mobile Layout */}
+        {/* Mobile */}
         <div className="md:hidden">
-          {/* Línea vertical animada + flecha */}
           <motion.div
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
@@ -153,15 +133,12 @@ const TimelineSection = () => {
             viewport={{ once: true }}
             className="origin-top absolute left-[48px] top-0 h-full w-[6px] z-0 bg-primary overflow-visible hidden"
           >
-            {/* Flecha moviéndose con la línea */}
             <div className="absolute bottom-[-70px] left-1/2 -translate-x-1/2">
               <ChevronDown className="w-20 h-20 text-primary" />
             </div>
           </motion.div>
 
-          {/* Timeline items verticales */}
           <motion.div
-            variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -173,15 +150,13 @@ const TimelineSection = () => {
                 variants={itemVariantsMobile}
                 className="group relative flex items-center"
               >
-                {/* Ícono */}
                 <motion.div
                   whileHover={{ scale: 1.15 }}
                   className="relative h-[96px] w-[96px] flex items-center justify-center flex-shrink-0"
                 >
-                  {event.icon}
+                  <img src={event.icon} alt={event.title} className="w-24 h-24" />
                 </motion.div>
 
-                {/* Contenido al lado del ícono */}
                 <div className="ml-6 flex-1">
                   <div className="bg-white p-4 rounded-xl shadow-lg">
                     <h3 className="font-bold text-lg mb-1">{event.year}</h3>
