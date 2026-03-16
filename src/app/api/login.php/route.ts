@@ -1,7 +1,6 @@
 // DEV ONLY — simulates /api/login.php
 // Credentials: admin / admin123
 
-import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 
 const DEV_USER = 'admin';
@@ -14,8 +13,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Credenciales inválidas' }, { status: 401 });
   }
 
-  const cookieStore = await cookies();
-  cookieStore.set('dev_admin', '1', { path: '/', httpOnly: false, sameSite: 'lax' });
-
-  return NextResponse.json({ ok: true, username });
+  const res = NextResponse.json({ ok: true, username });
+  // NextResponse.cookies is the correct API for setting cookies in Route Handlers
+  res.cookies.set('dev_admin', '1', {
+    path:     '/',
+    httpOnly: false,
+    sameSite: 'lax',
+    maxAge:   60 * 60 * 8, // 8 hours
+  });
+  return res;
 }
