@@ -22,7 +22,7 @@ import {
 } from '@/components/ui/table';
 import { Trash2, Download } from 'lucide-react';
 import InfoLegend from '@/components/InfoLegend';
-import cableCatalog from '@/data/cable_catalog.json' assert { type: 'json' };
+import rawCatalog from '@/data/cable_catalog.json';
 import Image from 'next/image';
 
 interface OrderItem {
@@ -60,14 +60,51 @@ type SplitResult = {
 
 const WHATSAPP_NUMBER = '54911XXXXXXXX';
 
+// ---------- Types for API catalog ----------
+type DBProduct = {
+  id: number;
+  product_code: string;
+  name: string;
+  description: string;
+  category: string;
+  slug: string | null;
+  use_text: string | null;
+  images: string;
+  codes: string;
+  colors: string;
+  presentation: string;
+  technical_specs: string;
+};
+
+type CatalogItem = {
+  name: string;
+  codes: string[];
+  colors: string[];
+  presentation: string[];
+};
+
+type RawCatalogEntry = {
+  name: string;
+  codes: string[];
+  colors: string[];
+  presentation: string[];
+};
+
+function buildCatalogItemsFromJSON(): CatalogItem[] {
+  const catalog = rawCatalog as { cable_catalog: Record<string, RawCatalogEntry> };
+  return Object.values(catalog.cable_catalog).map((c) => ({
+    name: c.name,
+    codes: c.codes,
+    colors: c.colors,
+    presentation: c.presentation,
+  }));
+}
+
 // ---------- Helpers ----------
 const cleanOptions = (arr?: string[]) =>
   (arr ?? [])
     .map((s) => (s ?? '').trim())
     .filter((s) => s.length > 0 && s.toLowerCase() !== 'no disponible');
-
-const findCableByName = (name: string) =>
-  Object.values(cableCatalog.cable_catalog).find((cable) => cable.name === name);
 
 const parseMainSectionMm2 = (code: string): number | null => {
   if (!code) return null;
@@ -264,7 +301,31 @@ export default function PedidosPage() {
     notes: '',
   });
 
-  const cableTypes = Object.values(cableCatalog.cable_catalog).map((cable) => cable.name);
+  const [catalogItems, setCatalogItems] = useState<CatalogItem[]>(buildCatalogItemsFromJSON);
+
+  useEffect(() => {
+    fetch('/api/products.php')
+      .then((r) => {
+        if (!r.ok) throw new Error('fetch failed');
+        return r.json();
+      })
+      .then((data: DBProduct[]) => {
+        setCatalogItems(
+          data.map((p) => ({
+            name: p.name,
+            codes: JSON.parse(p.codes),
+            colors: JSON.parse(p.colors),
+            presentation: JSON.parse(p.presentation),
+          }))
+        );
+      })
+      .catch(() => {}); // already initialized from JSON
+  }, []);
+
+  const findCableByName = (name: string) =>
+    catalogItems.find((c) => c.name === name);
+
+  const cableTypes = catalogItems.map((c) => c.name);
 
   const getAvailableCodes = (selectedType: string) => {
     const selectedCable = findCableByName(selectedType);
@@ -283,7 +344,8 @@ export default function PedidosPage() {
 
   const availableColors = useMemo(
     () => (currentItem.type ? getAvailableColors(currentItem.type) : []),
-    [currentItem.type]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [currentItem.type, catalogItems]
   );
   const requiresColor = availableColors.length > 0;
 
