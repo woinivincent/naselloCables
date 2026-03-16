@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Carousel from '@/components/Carousel';
 import { ProductDetails } from './ProductDetails';
 import { ProductNavigationClient } from './ProductNavigationClient';
+import rawCatalog from '@/data/cable_catalog.json';
 
 type DBProduct = {
   id: number;
@@ -46,6 +47,31 @@ function mapDBProduct(db: DBProduct): Product {
   };
 }
 
+type CatalogEntry = {
+  name: string;
+  description: string;
+  use?: string;
+  images: (string | { url: string; label?: string })[];
+  codes: string[];
+  colors: string[];
+  presentation: string[];
+  technical_specs: string[] | string;
+};
+
+function mapCatalogEntry(id: string, entry: CatalogEntry): Product {
+  return {
+    id,
+    name: entry.name,
+    description: entry.description,
+    use: entry.use ?? null,
+    images: entry.images,
+    codes: entry.codes,
+    colors: entry.colors,
+    presentation: entry.presentation,
+    technical_specs: entry.technical_specs,
+  };
+}
+
 type Props = {
   id: string;
   nextId: string;
@@ -64,16 +90,24 @@ export function ProductPageClient({ id, nextId, prevId }: Props) {
       })
       .then((data: DBProduct[]) => {
         const match = data.find((p) => p.category === id);
-        if (!match) { setError(true); return; }
+        if (!match) throw new Error('product not found');
         setProduct(mapDBProduct(match));
       })
-      .catch(() => setError(true));
+      .catch(() => {
+        // API unavailable — fall back to local JSON catalog
+        const catalog = rawCatalog as {
+          cable_catalog: { [key: string]: CatalogEntry };
+        };
+        const entry = catalog.cable_catalog[id];
+        if (!entry) { setError(true); return; }
+        setProduct(mapCatalogEntry(id, entry));
+      });
   }, [id]);
 
   if (error) {
     return (
       <p className="text-center py-16 text-red-500">
-        Error al cargar el producto.
+        Producto no encontrado.
       </p>
     );
   }
