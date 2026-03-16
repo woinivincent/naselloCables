@@ -1,39 +1,11 @@
 import { notFound } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import Carousel from "@/components/Carousel";
-import { ProductDetails } from "./ProductDetails";
-import { ProductNavigationClient } from "./ProductNavigationClient";
-import { ArrowLeft } from "lucide-react";
 import { BackButtonClient } from './BackButtonClient';
+import { ProductPageClient } from './ProductPageClient';
 
 import rawCatalog from "@/data/cable_catalog.json";
 
-
 const catalog = rawCatalog as {
-  cable_catalog: {
-    [key: string]: {
-      id: string;
-      name: string;
-      description: string;
-      images: (string | { url: string; label?: string })[];
-      codes: string[];
-      colors: string[];
-      presentation: string[];
-      technical_specs: string[] | string;
-    };
-  };
-};
-
-type Product = {
-  id: string;
-  name: string;
-  description: string;
-  images: (string | { url: string; label: string })[];
-  codes: string[];
-  colors: string[];
-  presentation: string[];
-  technical_specs: string[] | string;
-  use: string | null;
+  cable_catalog: { [key: string]: unknown };
 };
 
 export async function generateStaticParams() {
@@ -42,11 +14,10 @@ export async function generateStaticParams() {
 
 export default function ProductPage({ params }: { params: { id: string } }) {
   const keys = Object.keys(catalog.cable_catalog);
-  const id = params.id;
+  const { id } = params;
 
   if (!keys.includes(id)) return notFound();
 
-  const product = catalog.cable_catalog[id] as Product;
   const index = keys.indexOf(id);
   const nextId = keys[(index + 1) % keys.length];
   const prevId = keys[(index - 1 + keys.length) % keys.length];
@@ -57,24 +28,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         <BackButtonClient />
       </div>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-          <Carousel
-            images={product.images.filter(
-              (img) =>
-                typeof img === 'string' ||
-                (typeof img === 'object' && (!img.label || !img.url))
-            )}
-            productName={product.name}
-          />
-          <ProductDetails product={product} />
-        </div>
-
-        <ProductNavigationClient
-          nextId={nextId}
-          prevId={prevId}
-        />
-      </main>
+      <ProductPageClient id={id} nextId={nextId} prevId={prevId} />
     </div>
   );
 }

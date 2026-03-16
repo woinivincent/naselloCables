@@ -11,7 +11,7 @@ type Product = {
   id: string;
   name: string;
   description: string;
-  images: (string | { url: string; label: string })[];
+  images: (string | { url: string; label?: string })[];
   codes: string[];
   colors: string[];
   presentation: string[];
