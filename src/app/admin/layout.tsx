@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -9,31 +9,48 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const pathname = usePathname();
   const isLogin  = pathname.startsWith('/admin/login');
 
-  const [checking,  setChecking]  = useState(!isLogin);
-  const [username,  setUsername]  = useState('');
+  const [checking, setChecking] = useState(true);
+  const [username, setUsername] = useState('');
+
+  // Stable router ref — prevents router from being a useEffect dependency
+  const routerRef = useRef(router);
+  useEffect(() => { routerRef.current = router; });
 
   useEffect(() => {
-    if (isLogin) return;
+    // On the login page: no auth check needed
+    if (isLogin) {
+      setChecking(false);
+      return;
+    }
+
+    // Reset to loading state before every auth check
+    setChecking(true);
+    let cancelled = false;
 
     fetch('/api/check-auth.php', { credentials: 'include' })
       .then((r) => r.json())
       .then((data) => {
+        if (cancelled) return;
         if (!data.ok) {
-          router.replace('/admin/login');
+          routerRef.current.replace('/admin/login');
         } else {
           setUsername(data.username ?? '');
           setChecking(false);
         }
       })
-      .catch(() => router.replace('/admin/login'));
-  }, [isLogin, router]);
+      .catch(() => {
+        if (!cancelled) routerRef.current.replace('/admin/login');
+      });
+
+    return () => { cancelled = true; };
+  }, [isLogin]); // router intentionally excluded via ref
 
   const handleLogout = async () => {
     await fetch('/api/logout.php', { method: 'POST', credentials: 'include' });
-    router.replace('/admin/login');
+    routerRef.current.replace('/admin/login');
   };
 
-  // Login page — render without chrome
+  // Login page — render without chrome or auth spinner
   if (isLogin) return <>{children}</>;
 
   // Auth check in progress
@@ -47,7 +64,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
-      {/* Top nav */}
       <header className="bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-6">
           <span className="font-bold text-gray-800">Admin — Nasello Cables</span>

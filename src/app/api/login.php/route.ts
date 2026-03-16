@@ -1,7 +1,7 @@
 // DEV ONLY — simulates /api/login.php
-// In production this route is never hit; the real PHP file handles it.
 // Credentials: admin / admin123
 
+import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 
 const DEV_USER = 'admin';
@@ -14,7 +14,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Credenciales inválidas' }, { status: 401 });
   }
 
-  const res = NextResponse.json({ ok: true, username });
-  res.cookies.set('dev_admin', '1', { path: '/', httpOnly: false, sameSite: 'lax' });
-  return res;
+  const cookieStore = await cookies();
+  cookieStore.set('dev_admin', '1', { path: '/', httpOnly: false, sameSite: 'lax' });
+
+  return NextResponse.json({ ok: true, username });
 }
