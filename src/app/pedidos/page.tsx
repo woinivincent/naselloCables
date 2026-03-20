@@ -41,6 +41,7 @@ interface CustomerInfo {
   notes: string;
 }
 
+
 const WHATSAPP_NUMBER = '5492323610622';
 
 // ── DB types ──────────────────────────────────────────────────────────────────
@@ -261,17 +262,17 @@ export default function PedidosPage() {
       };
 
       if (is_wholesale) {
-        // Mayorista → WhatsApp
+        // Mayorista (>$3M) → email
+        await enviarPorEmail(items);
+      } else {
+        // Minorista (≤$3M) → WhatsApp
         const msg = buildWhatsappMessage(customerInfo, items);
         const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
         window.open(url, '_blank');
-        toast({ title: 'Pedido mayorista', description: 'Te redirigimos a WhatsApp.' });
-      } else {
-        // Minorista → email form
-        await enviarPorEmail(items);
+        toast({ title: 'Pedido enviado', description: 'Te redirigimos a WhatsApp.' });
       }
     } catch {
-      // If price API fails, default to email form
+      // Si falla el cálculo de precio, enviar por email
       await enviarPorEmail(items);
     } finally {
       setSubmitting(false);

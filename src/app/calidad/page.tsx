@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Shield, Award, FileCheck, Import } from "lucide-react";
+import { CheckCircle, Shield, Award, FileCheck } from "lucide-react";
 import IEC from "@/icons/Certificaciones_IEC.svg"
 import IRAM from "@/icons/Certificaciones_IRAM.svg"
 import ISO from "@/icons/Certificaciones_ISO-9001.svg"
@@ -38,55 +38,77 @@ export default function CalidadPage() {
           <div className="mb-16 max-sm:p-4">
             <h2 className="mb-8 text-3xl font-bold">NUESTRAS CERTIFICACIONES</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <a href="https://www.certipedia.com/quality_marks/9000031724" target="_blank" rel="noopener noreferrer"> <Card>
-                <CardHeader className="flex items-center">
-                  <Image src="/icons/Certificaciones_ISO-9001.svg" alt="ISO 9001" width={64} height={64} />
-                  <div className="ml-6">
-                    <CardTitle className="text-lg font-bold mb-1">ISO 9001:2015</CardTitle>
-                    <CardContent>
-                      <p className="text-sm text-gray-600">Sistema de Gestión de Calidad certificado</p>
-                    </CardContent>
-                  </div>
-                </CardHeader>
-              </Card>
-              </a>
-              <a href="https://drive.google.com/drive/folders/1sa4x_Mp5ytgYTuu0k3L1Jy7GMb-TWuOF?usp=sharing" target="_blank" rel="noopener noreferrer"> <Card>
-                <CardHeader className="flex items-center">
-                  <Image src="/icons/Certificaciones_IRAM.svg" alt="IRAM" width={64} height={64} />
-                  <div className="ml-6">
-                    <CardTitle className="text-lg font-bold mb-1">IRAM</CardTitle>
-                    <CardContent>
-                      <p className="text-sm text-gray-600"> Certificación productos de según normas IRAM</p>
-                    </CardContent>
-                  </div>
-                </CardHeader>
-              </Card>
+
+              <a href="https://www.certipedia.com/quality_marks/9000031724" target="_blank" rel="noopener noreferrer" className="hover:no-underline">
+                <Card className="h-full hover:shadow-md transition-shadow">
+                  <CardHeader className="flex flex-row items-center gap-4 pb-2">
+                    <Image src="/icons/Certificaciones_ISO-9001.svg" alt="ISO 9001" width={56} height={56} className="shrink-0" />
+                    <CardTitle className="text-base font-bold leading-tight">ISO 9001:2015</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-gray-600">Sistema de Gestión de Calidad certificado internacionalmente.</p>
+                  </CardContent>
+                </Card>
               </a>
 
-              <Card>
-                <CardHeader className="flex items-center">
-                  <Image src="/icons/Certificaciones_IEC.svg" alt="IEC" width={64} height={64} />
-                  <div className="ml-6">
-                    <CardTitle className="text-lg font-bold mb-1">ISO 9001:2015</CardTitle>
-                    <CardContent>
-                      <p className="text-sm text-gray-600">Sistema de Gestión de Calidad certificado</p>
-                    </CardContent>
-                  </div>
+              <a href="https://qr.iram.org.ar/Certificacion/Empresa?ID=QPwNH4_dkDxmTAWfU9r-2unH6LYlJmTSuP1D9TafjX4" target="_blank" rel="noopener noreferrer" className="hover:no-underline">
+                <Card className="h-full hover:shadow-md transition-shadow">
+                  <CardHeader className="flex flex-row items-center gap-4 pb-2">
+                    <Image src="/icons/Certificaciones_IRAM.svg" alt="IRAM" width={56} height={56} className="shrink-0" />
+                    <CardTitle className="text-base font-bold leading-tight">IRAM</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-gray-600">Certificación de productos según normas IRAM vigentes.</p>
+                  </CardContent>
+                </Card>
+              </a>
+
+              <Card className="h-full">
+                <CardHeader className="flex flex-row items-center gap-4 pb-2">
+                  <Image src="/icons/Certificaciones_IEC.svg" alt="IEC" width={56} height={56} className="shrink-0" />
+                  <CardTitle className="text-base font-bold leading-tight">IEC</CardTitle>
                 </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-600">Cumplimiento de estándares internacionales IEC para cables eléctricos.</p>
+                </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader className="flex items-center">
-                  <Image src="/icons/Certificaciones_LABORATORIO.svg" alt="LABORATORIO" width={64} height={64} />
-                  <div className="ml-6">
-                    <CardTitle className="text-lg font-bold mb-1">IEC</CardTitle>
-                    <CardContent>
-                      <p className="text-sm text-gray-600"> Cumplimiento de estándares internacionales</p>
-                    </CardContent>
-                  </div>
+              <Card className="h-full">
+                <CardHeader className="flex flex-row items-center gap-4 pb-2">
+                  <Image src="/icons/Certificaciones_LABORATORIO.svg" alt="Laboratorio" width={56} height={56} className="shrink-0" />
+                  <CardTitle className="text-base font-bold leading-tight">Laboratorio Propio</CardTitle>
                 </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-600">Ensayos eléctricos y mecánicos realizados en laboratorio propio.</p>
+                </CardContent>
               </Card>
+
             </div>
+          </div>
+
+          {/* QR IRAM */}
+          <div className="mb-16 max-sm:p-4">
+            <a
+              href="https://qr.iram.org.ar/Certificacion/Empresa?ID=QPwNH4_dkDxmTAWfU9r-2unH6LYlJmTSuP1D9TafjX4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col sm:flex-row items-center gap-6 rounded-xl border bg-card p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <Image
+                src="/assets/iram-qr.svg"
+                alt="QR Certificación IRAM"
+                width={140}
+                height={140}
+                className="shrink-0"
+              />
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">Verificación oficial</p>
+                <h3 className="text-xl font-bold mb-2">Certificación IRAM</h3>
+                <p className="text-sm text-gray-600 max-w-md">
+                  Escaneá el código QR o hacé clic para verificar nuestra certificación directamente en el registro oficial de IRAM. Por normativa vigente, todos nuestros rollos de cable incluyen este QR.
+                </p>
+              </div>
+            </a>
           </div>
 
           {/* Proceso de Control */}
