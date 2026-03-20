@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/db.php';
 // POST /api/user-create.php
 // Body: { "username": "...", "email": "...", "password": "...", "role": "admin|editor" }
 // Requires admin session. Max 5 users total.

@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/db.php';
 // POST /api/user-delete.php
 // Body: { "id": N }
 // Soft-deletes (active = 0). Requires admin session.

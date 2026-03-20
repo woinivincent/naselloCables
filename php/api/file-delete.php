@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/db.php';
 // POST /api/file-delete.php  (requires active admin session)
 // JSON body: { "id": 1 }
 

@@ -1,0 +1,12 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+RewriteBase /
+
+# No redirigir archivos o carpetas que existen físicamente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Servir index.html del subdirectorio si existe
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}index.html -f
+RewriteRule ^(.*)$ %{REQUEST_URI}index.html [L]

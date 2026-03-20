@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/db.php';
 // POST /api/calculate-order.php  — PUBLIC
 // Input:  { items: [{ category, code, quantity, presentation }] }
 // Output: { total, is_wholesale }

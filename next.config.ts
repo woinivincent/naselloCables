@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import path from 'path';
 
 /** @type {import('next').NextConfig} */
 const isDev = process.env.NODE_ENV === 'development';
@@ -10,7 +11,7 @@ const nextConfig: NextConfig = {
   ...(!isDev && { output: 'export' }),
   trailingSlash: true,
   images: {
-    unoptimized: true, // ✅ obligatorio en exportación estática si usás <Image />
+    unoptimized: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
@@ -18,11 +19,23 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  webpack(config) {
+  webpack(config, { isServer }) {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
+
+    // In production builds, replace dev-only mock API routes with a static stub
+    // so they don't break the static export (output: 'export').
+    if (!isDev && isServer) {
+      const { NormalModuleReplacementPlugin } = require('webpack');
+      config.plugins.push(
+        new NormalModuleReplacementPlugin(
+          /[/\\]app[/\\]api[/\\][^/\\]+[/\\]route\.ts$/,
+          path.resolve('./src/lib/mock-api-stub.ts')
+        )
+      );
+    }
 
     return config;
   },
