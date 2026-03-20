@@ -38,6 +38,8 @@ interface CustomerInfo {
   name: string;
   email: string;
   phone: string;
+  cuit: string;
+  dni: string;
   notes: string;
 }
 
@@ -130,6 +132,8 @@ const buildWhatsappMessage = (customer: CustomerInfo, its: OrderItem[]) => {
   if (customer.name)  lines.push(`Nombre/Empresa: ${customer.name}`);
   if (customer.phone) lines.push(`Teléfono: ${customer.phone}`);
   if (customer.email) lines.push(`Email: ${customer.email}`);
+  if (customer.cuit)  lines.push(`CUIT/CUIL: ${customer.cuit}`);
+  if (customer.dni)   lines.push(`DNI: ${customer.dni}`);
   if (customer.notes) lines.push(`Notas: ${customer.notes}`);
   lines.push('');
   lines.push('Detalle:');
@@ -159,7 +163,7 @@ export default function PedidosPage() {
   });
 
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
-    name: '', email: '', phone: '', notes: '',
+    name: '', email: '', phone: '', cuit: '', dni: '', notes: '',
   });
 
   const [catalogItems, setCatalogItems] = useState<CatalogItem[]>(buildCatalogItemsFromJSON);
@@ -289,6 +293,8 @@ export default function PedidosPage() {
             nombre:   customerInfo.name,
             email:    customerInfo.email,
             telefono: customerInfo.phone,
+            cuit:     customerInfo.cuit,
+            dni:      customerInfo.dni,
             mensaje:  customerInfo.notes,
           },
           pedido: itemsToSend.map((item) => {
@@ -356,6 +362,18 @@ export default function PedidosPage() {
                   placeholder="Número de teléfono"
                   value={customerInfo.phone}
                   onChange={(e) => setCustomerInfo({ ...customerInfo, phone: e.target.value })}
+                  className="bg-gray-200"
+                />
+                <Input
+                  placeholder="CUIT / CUIL (XX-XXXXXXXX-X)"
+                  value={customerInfo.cuit}
+                  onChange={(e) => setCustomerInfo({ ...customerInfo, cuit: e.target.value })}
+                  className="bg-gray-200"
+                />
+                <Input
+                  placeholder="DNI"
+                  value={customerInfo.dni}
+                  onChange={(e) => setCustomerInfo({ ...customerInfo, dni: e.target.value })}
                   className="bg-gray-200"
                 />
                 <Textarea

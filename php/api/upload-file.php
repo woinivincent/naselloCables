@@ -70,7 +70,7 @@ $ext      = 'pdf';
 $base     = preg_replace('/[^a-z0-9_\-]/i', '_', pathinfo($file['name'], PATHINFO_FILENAME));
 $filename = $category . '_' . $base . '_' . time() . '.' . $ext;
 
-$uploadDir = __DIR__ . '/../../uploads/technical_files/';
+$uploadDir = __DIR__ . '/../uploads/technical_files/';
 if (!is_dir($uploadDir)) {
     mkdir($uploadDir, 0755, true);
 }
