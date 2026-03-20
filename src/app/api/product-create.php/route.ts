@@ -4,6 +4,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import { devStore } from '@/lib/devStore';
 
 export async function POST(req: NextRequest) {
+  const username = req.cookies.get('dev_admin')?.value;
+  if (!username) {
+    return NextResponse.json({ error: 'No autorizado' }, { status: 401 });
+  }
+
   const data = await req.json();
 
   if (!data.name || !data.description || !data.category) {

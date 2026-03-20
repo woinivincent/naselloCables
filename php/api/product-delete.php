@@ -2,7 +2,10 @@
 // POST /api/product-delete.php  (requires active admin session)
 // Body: { "id": 5 }
 
+ini_set('session.cookie_httponly', 1);
+ini_set('session.cookie_samesite', 'Lax');
 ini_set('session.cookie_path', '/');
+if (!empty($_SERVER['HTTPS'])) ini_set('session.cookie_secure', 1);
 session_start();
 header('Content-Type: application/json');
 
@@ -43,6 +46,7 @@ try {
     echo json_encode(['ok' => true]);
 
 } catch (Exception $e) {
+    error_log($e->getMessage());
     http_response_code(500);
     echo json_encode(['error' => 'Error del servidor']);
 }

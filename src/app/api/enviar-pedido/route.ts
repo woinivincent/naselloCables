@@ -26,7 +26,13 @@ export async function POST(req: NextRequest) {
       "Obs.particular", "Obs.Facturacion"
     ]);
 
-    pedido.forEach((item: any, index: number) => {
+    type PedidoItem = {
+      codigo: string; color: string; descripcion: string; tipoEnvase: string;
+      cantidadEnvases: number; metrosPorEnvase: number; totalMetros: number;
+      precioMetro: string; subtotal: string;
+      obsParticular?: string; obsFacturacion?: string;
+    };
+    (pedido as PedidoItem[]).forEach((item, index: number) => {
       sheet.addRow([
         index + 1,
         item.codigo,
@@ -55,12 +61,6 @@ export async function POST(req: NextRequest) {
         pass: process.env.SMTP_PASS,
       },
     });
-    console.log("Enviando correo a", process.env.DESTINO_PEDIDO);
-    console.log({
-      host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
-      user: process.env.SMTP_USER
-    });
     await transporter.sendMail({
       from: `"Sitio Web" <${process.env.SMTP_USER}>`,
       to: process.env.DESTINO_PEDIDO,
@@ -75,8 +75,8 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ mensaje: "Pedido enviado correctamente" });
-  } catch (error: any) {
-    console.error("Error al enviar:", error, error.response, error.stack);
+  } catch (error: unknown) {
+    console.error("Error al enviar:", error);
     return NextResponse.json({ error: "No se pudo enviar el correo" }, { status: 500 });
   }
 }

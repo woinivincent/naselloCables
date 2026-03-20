@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Carousel from '@/components/Carousel';
-import { ProductDetails } from './ProductDetails';
+import { ProductDetails, TechnicalFile } from './ProductDetails';
 import { ProductNavigationClient } from './ProductNavigationClient';
 import rawCatalog from '@/data/cable_catalog.json';
 
@@ -80,7 +80,8 @@ type Props = {
 
 export function ProductPageClient({ id, nextId, prevId }: Props) {
   const [product, setProduct] = useState<Product | null>(null);
-  const [error, setError] = useState(false);
+  const [files,   setFiles]   = useState<TechnicalFile[]>([]);
+  const [error,   setError]   = useState(false);
 
   useEffect(() => {
     fetch('/api/products.php')
@@ -102,6 +103,12 @@ export function ProductPageClient({ id, nextId, prevId }: Props) {
         if (!entry) { setError(true); return; }
         setProduct(mapCatalogEntry(id, entry));
       });
+
+    // Fetch technical files (non-fatal — missing files are fine)
+    fetch(`/api/product-files.php?category=${encodeURIComponent(id)}`)
+      .then((r) => r.ok ? r.json() : [])
+      .then((data: TechnicalFile[]) => setFiles(data))
+      .catch(() => {/* no files available */});
   }, [id]);
 
   if (error) {
@@ -129,7 +136,7 @@ export function ProductPageClient({ id, nextId, prevId }: Props) {
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
         <Carousel images={carouselImages} productName={product.name} />
-        <ProductDetails product={product} />
+        <ProductDetails product={product} files={files} />
       </div>
       <ProductNavigationClient nextId={nextId} prevId={prevId} />
     </main>

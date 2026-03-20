@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -85,6 +86,15 @@ export default function AdminLoginPage() {
             {loading ? 'Ingresando…' : 'Ingresar'}
           </button>
         </form>
+
+        <div className="mt-4 text-center">
+          <Link
+            href="/admin/forgot-password"
+            className="text-xs text-gray-400 hover:text-gray-700 underline"
+          >
+            Olvidé mi contraseña
+          </Link>
+        </div>
       </div>
     </div>
   );
