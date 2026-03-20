@@ -44,7 +44,7 @@ interface CustomerInfo {
 }
 
 
-const WHATSAPP_NUMBER = '5492323610622';
+const WHATSAPP_NUMBER = '542323329648';
 
 // ── DB types ──────────────────────────────────────────────────────────────────
 
@@ -248,6 +248,15 @@ export default function PedidosPage() {
     }
 
     setSubmitting(true);
+
+    // Fotovoltaico no tiene precio cargado → siempre gestión por email
+    const hasFotovoltaico = items.some((i) => i.category === 'Fotovoltaico');
+    if (hasFotovoltaico) {
+      await enviarPorEmail(items);
+      setSubmitting(false);
+      return;
+    }
+
     try {
       const res  = await fetch('/api/calculate-order.php', {
         method:  'POST',
