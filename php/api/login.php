@@ -5,6 +5,7 @@
 ini_set('session.cookie_httponly', 1);
 ini_set('session.cookie_samesite', 'Lax');
 ini_set('session.cookie_path', '/');
+if (!empty($_SERVER['HTTPS'])) ini_set('session.cookie_secure', 1);
 session_start();
 
 header('Content-Type: application/json');
@@ -29,7 +30,7 @@ require_once __DIR__ . '/db.php';
 
 try {
     $db  = getDB();
-    $stmt = $db->prepare('SELECT id, password_hash FROM users WHERE username = ? AND active = 1 LIMIT 1');
+    $stmt = $db->prepare('SELECT id, password_hash, role FROM users WHERE username = ? AND active = 1 LIMIT 1');
     $stmt->execute([$username]);
     $user = $stmt->fetch();
 
@@ -43,10 +44,12 @@ try {
     $_SESSION['admin']    = true;
     $_SESSION['user_id']  = $user['id'];
     $_SESSION['username'] = $username;
+    $_SESSION['role']     = $user['role'];
 
-    echo json_encode(['ok' => true, 'username' => $username]);
+    echo json_encode(['ok' => true, 'username' => $username, 'role' => $user['role']]);
 
 } catch (Exception $e) {
+    error_log($e->getMessage());
     http_response_code(500);
     echo json_encode(['error' => 'Error del servidor']);
 }

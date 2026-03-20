@@ -93,7 +93,7 @@ const Navbar = () => {
             <a href="mailto:recepcion@nasellocables.com.ar">
               <Image src="/assets/email.svg" alt="Email" width={28} height={28} />
             </a>
-            <a href="https://wa.me/5492323620622">
+            <a href="https://wa.me/5492323610622">
               <Image src="/assets/whatsapp.svg" alt="WhatsApp" width={28} height={28} />
             </a>
             <a href="https://www.instagram.com/nasellocables_sa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">

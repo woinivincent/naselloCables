@@ -34,8 +34,7 @@ type CatalogEntry = {
 
 function firstImage(images: (string | { url: string; label?: string })[]): string {
   if (!Array.isArray(images) || images.length === 0) return '/placeholder.png';
-  const obj = images.find((img) => typeof img === 'object' && 'url' in img);
-  if (obj && typeof obj === 'object') return obj.url;
+  // Prefer plain string images (product photos); labeled objects are ET technical sheets
   const str = images.find((img) => typeof img === 'string');
   return typeof str === 'string' ? str : '/placeholder.png';
 }

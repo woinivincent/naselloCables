@@ -19,12 +19,18 @@ type Product = {
   use: string | null;
 };
 
-type ProductDetailsProps = {
-  product: Product;
-
+export type TechnicalFile = {
+  id: number;
+  label: string;
+  url: string;
 };
 
-export function ProductDetails({ product }: ProductDetailsProps) {
+type ProductDetailsProps = {
+  product: Product;
+  files?: TechnicalFile[];
+};
+
+export function ProductDetails({ product, files }: ProductDetailsProps) {
   return (
     <div className="space-y-6">
       <div className="bg-white rounded-lg p-6">
@@ -92,12 +98,19 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         </div>
         {/* Botones */}
         <div className="flex flex-col gap-y-4 pt-6">
-          {/* <Button className="bg-gray-500 hover:bg-gray-600 text-white w-min rounded-md text-xs">
-            DESCARGAR FICHA TÉCNICA
-          </Button>*/}
+          {files && files.length > 0 && files.map((file) => (
+            <Button
+              key={file.id}
+              asChild
+              className="bg-gray-500 hover:bg-gray-600 text-white w-max rounded-md text-xs"
+            >
+              <a href={file.url} target="_blank" rel="noopener noreferrer">
+                DESCARGAR FICHA TÉCNICA{files.length > 1 ? `: ${file.label}` : ''}
+              </a>
+            </Button>
+          ))}
           <Button className="bg-primary hover:bg-secondary text-white w-max rounded-md text-xs">
             <a href="/pedidos">SOLICITAR COTIZACIÓN</a>
-
           </Button>
         </div>
       </div>

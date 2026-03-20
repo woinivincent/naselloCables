@@ -7,10 +7,14 @@ import Link from 'next/link';
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const router   = useRouter();
   const pathname = usePathname();
-  const isLogin  = pathname.startsWith('/admin/login');
+  // Pages that render without auth check (public auth flow)
+  const isLogin  = pathname.startsWith('/admin/login')
+                || pathname.startsWith('/admin/forgot-password')
+                || pathname.startsWith('/admin/reset-password');
 
   const [checking, setChecking] = useState(true);
   const [username, setUsername] = useState('');
+  const [role,     setRole]     = useState<'admin' | 'editor' | ''>('');
 
   // Stable router ref — prevents router from being a useEffect dependency
   const routerRef = useRef(router);
@@ -35,6 +39,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           routerRef.current.replace('/admin/login');
         } else {
           setUsername(data.username ?? '');
+          setRole(data.role ?? '');
           setChecking(false);
         }
       })
@@ -70,6 +75,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <nav className="flex gap-4 text-sm">
             <Link href="/admin/dashboard" className="text-gray-600 hover:text-black">Dashboard</Link>
             <Link href="/admin/products"  className="text-gray-600 hover:text-black">Productos</Link>
+            <Link href="/admin/prices"    className="text-gray-600 hover:text-black">Precios</Link>
+            <Link href="/admin/media"     className="text-gray-600 hover:text-black">Media</Link>
+            {role === 'admin' && (
+              <Link href="/admin/users" className="text-gray-600 hover:text-black">Usuarios</Link>
+            )}
           </nav>
         </div>
         <div className="flex items-center gap-4 text-sm text-gray-500">

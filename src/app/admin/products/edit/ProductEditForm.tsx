@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -33,6 +33,12 @@ type FormState = {
   technical_specs: string;
   // images as raw JSON (can be strings or objects)
   images:          string;
+};
+
+type TechnicalFile = {
+  id: number;
+  label: string;
+  url: string;
 };
 
 const EMPTY_FORM: FormState = {
@@ -103,6 +109,14 @@ export default function ProductEditForm() {
   const [saving,  setSaving]  = useState(false);
   const [error,   setError]   = useState('');
 
+  // ── Technical files state ─────────────────────────────────────────────────
+  const [files,       setFiles]       = useState<TechnicalFile[]>([]);
+  const [fileLabel,   setFileLabel]   = useState('');
+  const [fileInput,   setFileInput]   = useState<File | null>(null);
+  const [uploading,   setUploading]   = useState(false);
+  const [uploadError, setUploadError] = useState('');
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
   // Load existing product when editing
   useEffect(() => {
     if (!isEdit) return;
@@ -120,6 +134,15 @@ export default function ProductEditForm() {
       .catch(() => setError('Error al cargar el producto'))
       .finally(() => setLoading(false));
   }, [editId, isEdit]);
+
+  // Load files when we have the category
+  useEffect(() => {
+    if (!isEdit || !form.category) return;
+    fetch(`/api/product-files.php?category=${encodeURIComponent(form.category)}`, { credentials: 'include' })
+      .then((r) => r.ok ? r.json() : [])
+      .then((data: TechnicalFile[]) => setFiles(data))
+      .catch(() => {/* ignore */});
+  }, [isEdit, form.category]);
 
   const set = (field: keyof FormState) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
@@ -167,6 +190,52 @@ export default function ProductEditForm() {
     } finally {
       setSaving(false);
     }
+  };
+
+  // ── File upload ───────────────────────────────────────────────────────────
+  const handleUpload = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!fileInput || !fileLabel.trim()) return;
+    setUploadError('');
+    setUploading(true);
+
+    const fd = new FormData();
+    fd.append('category', form.category);
+    fd.append('label',    fileLabel.trim());
+    fd.append('file',     fileInput);
+
+    try {
+      const res  = await fetch('/api/upload-file.php', {
+        method:      'POST',
+        credentials: 'include',
+        body:        fd,
+      });
+      const data = await res.json();
+      if (!res.ok) { setUploadError(data.error ?? 'Error al subir'); return; }
+      setFiles((prev) => [...prev, { id: data.id, label: fileLabel.trim(), url: data.url }]);
+      setFileLabel('');
+      setFileInput(null);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+    } catch {
+      setUploadError('Error de conexión');
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  // ── File delete ───────────────────────────────────────────────────────────
+  const handleDeleteFile = async (id: number) => {
+    try {
+      const res = await fetch('/api/file-delete.php', {
+        method:      'POST',
+        credentials: 'include',
+        headers:     { 'Content-Type': 'application/json' },
+        body:        JSON.stringify({ id }),
+      });
+      if (res.ok) {
+        setFiles((prev) => prev.filter((f) => f.id !== id));
+      }
+    } catch {/* ignore */}
   };
 
   if (loading) return <p className="text-gray-400">Cargando producto…</p>;
@@ -331,6 +400,77 @@ export default function ProductEditForm() {
           </Link>
         </div>
       </form>
+
+      {/* ── Fichas técnicas (PDF) — only when editing ── */}
+      {isEdit && form.category && (
+        <section className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm space-y-4 mt-6">
+          <h2 className="font-semibold text-gray-800">Fichas técnicas (PDF)</h2>
+
+          {/* Existing files */}
+          {files.length > 0 ? (
+            <ul className="space-y-2">
+              {files.map((f) => (
+                <li key={f.id} className="flex items-center justify-between gap-3 text-sm">
+                  <a
+                    href={f.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:underline truncate"
+                  >
+                    {f.label}
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => handleDeleteFile(f.id)}
+                    className="shrink-0 px-2 py-1 text-xs border border-red-200 text-red-600 rounded hover:bg-red-50"
+                  >
+                    Eliminar
+                  </button>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-gray-400">Sin fichas cargadas.</p>
+          )}
+
+          {/* Upload form */}
+          <form onSubmit={handleUpload} className="border-t border-gray-100 pt-4 space-y-3">
+            <p className="text-xs font-medium text-gray-600">Agregar ficha técnica</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label className="block text-xs text-gray-500 mb-1">Etiqueta</label>
+                <input
+                  type="text"
+                  value={fileLabel}
+                  onChange={(e) => setFileLabel(e.target.value)}
+                  placeholder="Ficha técnica VT-009"
+                  className={inputCls}
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-xs text-gray-500 mb-1">Archivo PDF</label>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="application/pdf"
+                  onChange={(e) => setFileInput(e.target.files?.[0] ?? null)}
+                  className="w-full text-sm text-gray-600 file:mr-3 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200"
+                  required
+                />
+              </div>
+            </div>
+            {uploadError && <p className="text-red-500 text-xs">{uploadError}</p>}
+            <button
+              type="submit"
+              disabled={uploading || !fileInput || !fileLabel.trim()}
+              className="px-4 py-2 bg-black text-white text-xs rounded hover:bg-gray-800 disabled:opacity-40"
+            >
+              {uploading ? 'Subiendo…' : 'Subir PDF'}
+            </button>
+          </form>
+        </section>
+      )}
     </div>
   );
 }
