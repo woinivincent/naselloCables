@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/db.php';
 // POST /api/forgot-password.php
 // Body: { "email": "..." }
 // Always returns { ok: true } to avoid user enumeration.

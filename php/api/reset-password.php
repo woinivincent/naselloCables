@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/db.php';
 // POST /api/reset-password.php
 // Body: { "token": "...", "password": "..." }
 

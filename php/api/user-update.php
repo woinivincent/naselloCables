@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/db.php';
 // POST /api/user-update.php
 // Body: { "id": N, "username"?: "...", "password"?: "...", "role"?: "admin|editor" }
 // Requires admin session.

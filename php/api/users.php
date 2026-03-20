@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/db.php';
 // GET /api/users.php
 // Returns all users (no passwords). Requires admin session.
 

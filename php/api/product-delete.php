@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/db.php';
 // POST /api/product-delete.php  (requires active admin session)
 // Body: { "id": 5 }
 

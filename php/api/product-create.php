@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/db.php';
 // POST /api/product-create.php  (requires active admin session)
 
 ini_set('session.cookie_httponly', 1);

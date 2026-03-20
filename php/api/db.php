@@ -5,9 +5,9 @@
 // ─────────────────────────────────────────────
 
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'your_db_name');
-define('DB_USER', 'your_db_user');
-define('DB_PASS', 'your_db_pass');
+define('DB_NAME', 'mantra16_nasello_db');
+define('DB_USER', 'mantra16_nasello_user');
+define('DB_PASS', 'Gg6h1#(.CMID');
 
 function getDB(): PDO {
     static $pdo = null;

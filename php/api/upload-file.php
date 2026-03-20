@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/db.php';
 // POST /api/upload-file.php  (requires active admin session)
 // multipart/form-data fields: category (string), label (string), file (PDF)
 

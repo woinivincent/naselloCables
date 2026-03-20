@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/db.php';
 // POST /api/price-save.php  (admin only)
 // Body: { product_category, code, price_per_meter, supplier? }
 
