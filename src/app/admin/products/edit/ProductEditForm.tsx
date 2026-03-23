@@ -69,7 +69,8 @@ function arrayToLines(json: string): string {
 }
 
 /** Convert one-item-per-line text back to JSON array string */
-function linesToArray(text: string): string {
+function linesToArray(text: string | null | undefined): string {
+  if (!text) return '[]';
   const lines = text.split('\n').map((l) => l.trim()).filter(Boolean);
   const arr = lines.map((line) => {
     try {
@@ -90,10 +91,10 @@ function productToForm(p: DBProduct): FormState {
     category:        p.category,
     slug:            p.slug ?? '',
     use_text:        p.use_text ?? '',
-    codes:           arrayToLines(p.codes),
-    colors:          arrayToLines(p.colors),
-    presentation:    arrayToLines(p.presentation),
-    technical_specs: arrayToLines(p.technical_specs),
+    codes:           arrayToLines(p.codes ?? '[]'),
+    colors:          arrayToLines(p.colors ?? '[]'),
+    presentation:    arrayToLines(p.presentation ?? '[]'),
+    technical_specs: arrayToLines(p.technical_specs ?? '[]'),
     images:          p.images,
   };
 }

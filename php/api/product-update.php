@@ -30,7 +30,7 @@ if ($id <= 0) {
     exit;
 }
 
-$required = ['name', 'description', 'category'];
+$required = ['name', 'category'];
 foreach ($required as $field) {
     if (empty(trim($data[$field] ?? ''))) {
         http_response_code(400);
