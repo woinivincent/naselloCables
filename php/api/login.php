@@ -2,6 +2,7 @@
 require_once __DIR__ . '/db.php';
 // POST /api/login.php
 // Body: { "username": "...", "password": "..." }
+// "username" acepta nombre de usuario o email.
 
 ini_set('session.cookie_httponly', 1);
 ini_set('session.cookie_samesite', 'Lax');
@@ -31,8 +32,8 @@ require_once __DIR__ . '/db.php';
 
 try {
     $db  = getDB();
-    $stmt = $db->prepare('SELECT id, password_hash, role FROM users WHERE username = ? AND active = 1 LIMIT 1');
-    $stmt->execute([$username]);
+    $stmt = $db->prepare('SELECT id, username, password_hash, role FROM users WHERE (username = ? OR email = ?) AND active = 1 LIMIT 1');
+    $stmt->execute([$username, strtolower($username)]);
     $user = $stmt->fetch();
 
     if (!$user || !password_verify($password, $user['password_hash'])) {
@@ -44,10 +45,10 @@ try {
     session_regenerate_id(true);
     $_SESSION['admin']    = true;
     $_SESSION['user_id']  = $user['id'];
-    $_SESSION['username'] = $username;
+    $_SESSION['username'] = $user['username'];
     $_SESSION['role']     = $user['role'];
 
-    echo json_encode(['ok' => true, 'username' => $username, 'role' => $user['role']]);
+    echo json_encode(['ok' => true, 'username' => $user['username'], 'role' => $user['role']]);
 
 } catch (Exception $e) {
     error_log($e->getMessage());

@@ -76,6 +76,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <Link href="/admin/dashboard" className="text-gray-600 hover:text-black">Dashboard</Link>
             <Link href="/admin/products"  className="text-gray-600 hover:text-black">Productos</Link>
             <Link href="/admin/prices"    className="text-gray-600 hover:text-black">Precios</Link>
+            <Link href="/admin/catalogs"  className="text-gray-600 hover:text-black">Catálogos</Link>
             <Link href="/admin/media"     className="text-gray-600 hover:text-black">Media</Link>
             {role === 'admin' && (
               <Link href="/admin/users" className="text-gray-600 hover:text-black">Usuarios</Link>

@@ -27,7 +27,7 @@ require_once __DIR__ . '/db.php';
 
 try {
     $db   = getDB();
-    $stmt = $db->query('SELECT id, username, role, created_at FROM users WHERE active = 1 ORDER BY id ASC');
+    $stmt = $db->query('SELECT id, username, email, role, created_at FROM users WHERE active = 1 ORDER BY id ASC');
     echo json_encode($stmt->fetchAll());
 } catch (Exception $e) {
     error_log($e->getMessage());

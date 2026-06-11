@@ -4,6 +4,18 @@
 
 import rawCatalog from '@/data/cable_catalog.json';
 
+// Next.js dev compiles each route handler as a separate bundle, so plain
+// module-level state is NOT shared between API routes (and is lost on HMR).
+// Stashing every store on globalThis guarantees a single shared instance.
+function devGlobal<T>(key: string, init: () => T): T {
+  const g = globalThis as unknown as Record<string, T | undefined>;
+  if (g[key] === undefined) g[key] = init();
+  return g[key] as T;
+}
+
+const nextIdOf = (items: { id: number }[]): number =>
+  items.reduce((max, i) => Math.max(max, i.id), 0) + 1;
+
 type DBProduct = {
   id: number;
   product_code: string;
@@ -70,13 +82,12 @@ type ResetToken = {
 };
 
 // In-memory token store for dev — keyed by token string
-const resetTokens = new Map<string, ResetToken>();
+const resetTokens = devGlobal('__dev_reset_tokens', () => new Map<string, ResetToken>());
 
 // Seed: one admin. Up to 4 more can be created via the panel.
-const users: DevUser[] = [
+const users = devGlobal<DevUser[]>('__dev_users', () => [
   { id: 1, username: 'admin', password: 'admin123', role: 'admin', email: 'webadmin@nasellocables.com', created_at: new Date().toISOString() },
-];
-let nextUserId = 2;
+]);
 
 export const devUsers = {
   getAll: (): Omit<DevUser, 'password'>[] =>
@@ -95,7 +106,7 @@ export const devUsers = {
     if (users.length >= 5) {
       return { ok: false, error: 'Máximo 5 usuarios permitidos' };
     }
-    users.push({ ...data, id: nextUserId++, created_at: new Date().toISOString() });
+    users.push({ ...data, id: nextIdOf(users), created_at: new Date().toISOString() });
     return { ok: true };
   },
 
@@ -165,15 +176,14 @@ export type DevFile = {
   url: string;
 };
 
-const techFiles: DevFile[] = [];
-let nextFileId = 1;
+const techFiles = devGlobal<DevFile[]>('__dev_tech_files', () => []);
 
 export const devFiles = {
   getByCategory: (category: string): DevFile[] =>
     techFiles.filter((f) => f.product_category === category),
 
   create: (data: { product_category: string; label: string; url: string }): DevFile => {
-    const entry: DevFile = { id: nextFileId++, ...data };
+    const entry: DevFile = { id: nextIdOf(techFiles), ...data };
     techFiles.push(entry);
     return entry;
   },
@@ -182,6 +192,63 @@ export const devFiles = {
     const idx = techFiles.findIndex((f) => f.id === id);
     if (idx === -1) return false;
     techFiles.splice(idx, 1);
+    return true;
+  },
+};
+
+// ─── Catalogs (supplier price lists) ──────────────────────────────────────────
+
+export type DevCatalog = {
+  id: number;
+  name: string;
+  supplier: string;
+  file_url: string | null;
+  items_count: number;
+  imported_at: string | null;
+  created_at: string;
+};
+
+const catalogs = devGlobal<DevCatalog[]>('__dev_catalogs', () => []);
+
+export const devCatalogs = {
+  getAll: (): DevCatalog[] => [...catalogs].sort((a, b) => b.id - a.id),
+
+  findById: (id: number): DevCatalog | undefined =>
+    catalogs.find((c) => c.id === id),
+
+  create: (data: { name: string; supplier: string }): DevCatalog => {
+    const entry: DevCatalog = {
+      id: nextIdOf(catalogs),
+      name: data.name,
+      supplier: data.supplier,
+      file_url: null,
+      items_count: 0,
+      imported_at: null,
+      created_at: new Date().toISOString(),
+    };
+    catalogs.push(entry);
+    return entry;
+  },
+
+  update: (id: number, data: { name?: string; supplier?: string; file_url?: string }): boolean => {
+    const entry = catalogs.find((c) => c.id === id);
+    if (!entry) return false;
+    Object.assign(entry, data);
+    return true;
+  },
+
+  markImported: (id: number, itemsCount: number): boolean => {
+    const entry = catalogs.find((c) => c.id === id);
+    if (!entry) return false;
+    entry.items_count = itemsCount;
+    entry.imported_at = new Date().toISOString();
+    return true;
+  },
+
+  remove: (id: number): boolean => {
+    const idx = catalogs.findIndex((c) => c.id === id);
+    if (idx === -1) return false;
+    catalogs.splice(idx, 1);
     return true;
   },
 };
@@ -493,8 +560,11 @@ const initialPrices: DevProductPrice[] = [
 const normalizeKey = (cat: string, code: string) =>
   `${cat.toUpperCase()}::${code.toUpperCase().replace(/,/g, '.')}`;
 
-const priceMap = new Map<string, DevProductPrice>();
-initialPrices.forEach((p) => priceMap.set(normalizeKey(p.product_category, p.code), { ...p }));
+const priceMap = devGlobal('__dev_price_map', () => {
+  const map = new Map<string, DevProductPrice>();
+  initialPrices.forEach((p) => map.set(normalizeKey(p.product_category, p.code), { ...p }));
+  return map;
+});
 
 export const devProductPrices = {
   getAll: (): DevProductPrice[] => Array.from(priceMap.values()),
@@ -519,9 +589,8 @@ export const devProductPrices = {
 
 // ─── Products ─────────────────────────────────────────────────────────────────
 
-// Module-level singleton — survives across requests within the same process
-const products: DBProduct[] = initFromJSON();
-let nextId = products.length + 1;
+// Global singleton — survives across requests, route bundles and HMR
+const products = devGlobal<DBProduct[]>('__dev_products', () => initFromJSON());
 
 export const devStore = {
   getAll: (): DBProduct[] => [...products],
@@ -533,7 +602,7 @@ export const devStore = {
     products.find((p) => p.category === category),
 
   create: (data: Partial<DBProduct>): number => {
-    const id = nextId++;
+    const id = nextIdOf(products);
     products.push({
       id,
       product_code:    data.product_code    ?? '',

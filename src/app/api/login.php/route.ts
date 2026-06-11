@@ -6,7 +6,9 @@ import { devUsers } from '@/lib/devStore';
 export async function POST(req: NextRequest) {
   const { username, password } = await req.json();
 
-  const user = devUsers.findByUsername(username);
+  // "username" acepta nombre de usuario o email (igual que el PHP de producción)
+  const user = devUsers.findByUsername(username)
+            ?? devUsers.findByEmail(String(username ?? '').toLowerCase());
   if (!user || user.password !== password) {
     return NextResponse.json({ error: 'Credenciales inválidas' }, { status: 401 });
   }
