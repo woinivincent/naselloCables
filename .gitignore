@@ -46,3 +46,7 @@ nasello-config.php
 php/config.php
 .env*
 !.env.example
+
+# archivos comprimidos / backups del proyecto
+*.rar
+/package.zip
