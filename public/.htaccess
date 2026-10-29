@@ -13,6 +13,11 @@ Options -Indexes
 # El worker de pdfjs (/admin/catalogs) es un .mjs: asegurar que se sirva como JS.
 AddType text/javascript .mjs
 
+# No exponer la configuración de PHP por directorio.
+<Files ".user.ini">
+    Require all denied
+</Files>
+
 <IfModule mod_headers.c>
     Header always unset X-Powered-By
     Header unset X-Powered-By
