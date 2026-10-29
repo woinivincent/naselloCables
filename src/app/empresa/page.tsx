@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { History, Users, Target, Factory } from "lucide-react";
 import TimelineSection from "@/components/Timeline";
+import { LazyVideo } from "@/components/LazyVideo";
 import { Button } from "@/components/ui/button";
 
 export default function EmpresaPage() {
@@ -59,16 +60,11 @@ export default function EmpresaPage() {
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden">
               {/* Video de YouTube */}
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
+              <LazyVideo
+                src="/assets/Video_slider.mp4"
+                poster="/assets/Video_slider-poster.webp"
                 className="w-full h-full object-cover absolute top-0 left-0"
-              >
-                <source src={"/assets/Video_slider.mp4"} type="video/mp4" />
-              </video>
+              />
               {/* Botón en la esquina inferior izquierda */}
               <a
                 href="https://www.youtube.com/watch?v=FdsY9alig6o"

@@ -43,6 +43,11 @@ const GENERAL_SECTIONS: { section: string; items: ImageItem[] }[] = [
       { label: 'Slider acometida',    path: 'slider_acometida.jpg' },
       { label: 'Slider fotovoltaico', path: 'slider_fotovoltaico.jpg' },
       { label: 'Slider laboratorio',  path: 'slider_laboratorio.jpg' },
+      // The site serves the .webp versions first (the .jpg is the fallback):
+      // when replacing a slider, replace both files.
+      { label: 'Slider acometida (WebP)',    path: 'slider_acometida.webp' },
+      { label: 'Slider fotovoltaico (WebP)', path: 'slider_fotovoltaico.webp' },
+      { label: 'Slider laboratorio (WebP)',  path: 'slider_laboratorio.webp' },
     ],
   },
   {

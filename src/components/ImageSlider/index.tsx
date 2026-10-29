@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import Image from 'next/image';
+import { LazyVideo } from '@/components/LazyVideo';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -11,6 +11,8 @@ interface SlideData {
   type: 'image' | 'video';
   imagePath?: string;
   videoPath?: string;
+  posterPath?: string;
+  webpPath?: string;
   title?: string;
   description?: string;
   textPosition?: 'center' | 'left' | 'right';
@@ -78,29 +80,26 @@ export function ImageSlider({ slides }: ImageSliderProps) {
               {/* Fondo visual */}
               {slide.type === 'video' && slide.videoPath && selectedIndex === index ? (
                 <div className="w-full h-[500px] max-h-[63vh] relative overflow-hidden max-sm:h-[320px]">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
+                  <LazyVideo
+                    src={slide.videoPath}
+                    poster={slide.posterPath ?? ''}
                     className="w-full h-full object-cover absolute top-0 left-0 pointer-events-none z-0"
-                  >
-                    <source src={slide.videoPath} type="video/mp4" />
-                  </video>
+                  />
                 </div>
               ) : slide.type === 'image' && slide.imagePath ? (
                 <div className="relative w-full overflow-hidden">
-                  <Image
-                    src={slide.imagePath}
-                    alt="image"
-                    width={1200}
-                    height={350}
-                    className="w-full h-auto object-contain pointer-events-none z-0"
-                    priority={index === 0}
-                    quality={100}
-                    sizes="100vw"
-                  />
+                  <picture>
+                    {slide.webpPath && <source srcSet={slide.webpPath} type="image/webp" />}
+                    <img
+                      src={slide.imagePath}
+                      alt="image"
+                      width={1200}
+                      height={405}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-auto object-contain pointer-events-none z-0"
+                    />
+                  </picture>
                 </div>
               ) : null}
 
