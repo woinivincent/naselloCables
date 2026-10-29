@@ -1,0 +1,12 @@
+# Deploy to public_html/api/.htaccess
+# db.php is a library included by the endpoints: it must never be requested directly.
+<Files "db.php">
+    Require all denied
+</Files>
+
+# Never serve configuration, backup or example files from the API folder.
+<FilesMatch "(^config.*\.php$|\.(bak|old|orig|sql|ini|log|env|sw[op])$|~$)">
+    Require all denied
+</FilesMatch>
+
+Options -Indexes

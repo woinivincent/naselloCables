@@ -41,3 +41,8 @@ yarn-error.log*
 
 .vercel
 .env
+# server-side secrets (live outside the repo / web root)
+nasello-config.php
+php/config.php
+.env*
+!.env.example
