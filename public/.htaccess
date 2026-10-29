@@ -1,5 +1,48 @@
 DirectoryIndex index.html
 
+# ─────────────────────────────────────────────
+# Ocultar versión del servidor (H7)
+# ServerSignature se puede definir desde .htaccess.
+# ServerTokens Prod NO: solo es válido en la configuración global de Apache
+# (lo tiene que cambiar el hosting; ver docs/seguridad/checklist-externo.md).
+# ─────────────────────────────────────────────
+ServerSignature Off
+Options -Indexes
+
+# Con X-Content-Type-Options: nosniff el navegador exige el MIME correcto.
+# El worker de pdfjs (/admin/catalogs) es un .mjs: asegurar que se sirva como JS.
+AddType text/javascript .mjs
+
+<IfModule mod_headers.c>
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
+
+    # ── Cabeceras de seguridad (H1) ──
+
+    # HSTS: solo sobre HTTPS. Arranca con 5 minutos para poder volver atrás.
+    # Subirlo por etapas una vez verificado que todo el sitio funciona por HTTPS:
+    #   1 semana:  max-age=604800
+    #   1 mes:     max-age=2592000
+    #   1 año:     max-age=31536000
+    # includeSubDomains solo cuando TODOS los subdominios (webmail, cpanel, etc.)
+    # respondan por HTTPS; "preload" solo después de eso y si se va a inscribir
+    # en https://hstspreload.org (es difícil de revertir).
+    Header always set Strict-Transport-Security "max-age=300" "expr=%{HTTPS} == 'on'"
+
+    # CSP inicial ajustada a lo que carga el sitio (todo desde el mismo origen):
+    # - script-src 'unsafe-inline': el export estático de Next.js inserta scripts
+    #   inline (self.__next_f.push) en cada página. Quitarlo requiere hashes o nonces.
+    # - style-src 'unsafe-inline': estilos inline de React/framer-motion.
+    # - worker-src blob: pdfjs-dist (importación de catálogos en /admin).
+    # - img-src data: blob: previsualizaciones e íconos embebidos.
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self'; connect-src 'self'; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+
+    Header always set X-Frame-Options "DENY"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()"
+</IfModule>
+
 RewriteEngine On
 RewriteBase /
 
